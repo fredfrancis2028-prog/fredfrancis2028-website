@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seeing the Budget — Fred Francis 2028</title>
+<meta name="description" content="Working prototypes of the budget transparency tools the Fred Francis 2028 campaign intends to build — national budget and foreign aid spending, illustrated.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-row">
+    <a href="/index.html" class="nav-home-btn">HOME</a>
+    <div class="nav-title">Fred Francis 2028</div>
+    <button id="navToggle" class="nav-toggle" aria-label="Open menu">☰</button>
+  </div>
+  <div class="red-stripe"></div>
+  <div id="navMenu" class="nav-menu">
+    <a href="/index.html" class="nav-item">Home</a>
+    <button id="navIssuesToggle" type="button" class="nav-item nav-issues-toggle">
+      <span>Issues</span><span id="navIssuesArrow" style="font-size:12px;opacity:0.7;">▼</span>
+    </button>
+    <div id="navSubmenu" class="nav-submenu">
+      <a href="/issues/domestic.html" class="nav-item">Domestic Policy</a>
+<a href="/issues/foreign.html" class="nav-item">Foreign Policy</a>
+<a href="/accountability-framework.html" class="nav-item">Accountability Framework</a>
+
+    </div>
+    <a href="/seeing-the-budget.html" class="nav-item active">Seeing the Budget</a>
+<a href="/tax-dollars.html" class="nav-item">Your Tax Dollars at Work</a>
+<a href="/humor.html" class="nav-item">Humor</a>
+<a href="/endorsements.html" class="nav-item">Endorsements</a>
+<a href="/thinking-aloud.html" class="nav-item">Thinking Aloud</a>
+<a href="/meet-fred-francis.html" class="nav-item">Meet Fred Francis</a>
+<a href="/sitemap.html" class="nav-item">Sitemap</a>
+<a href="/contact.html" class="nav-item">Contact</a>
+
+  </div>
+</nav>
+<main>
+<div class="simple-hero">
+  <div class="simple-hero-inner">
+    <h1 class="issue-title">Seeing the Budget</h1>
+    <p class="simple-subtitle">Working prototypes of the budget transparency tools we intend to build.</p>
+  </div>
+</div>
+<div class="content-wrap" style="max-width:860px;">
+  <div class="prototype-banner">PROTOTYPE &mdash; We can actually start here and now.&nbsp; These pages demonstrate the concept.&nbsp; We will start drawing live data from government APIs in a few days, with automatic updates each month.</div>
+
+  <h2 class="budget-section-head">The National Budget</h2>
+  <p class="budget-source-note">Illustrative data based on FY2025.&nbsp; Sources: CBO, OMB, USASpending.gov, Bipartisan Policy Center</p>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-label">Total Spending</div><div class="stat-value" style="color:var(--red);">$6.75T</div></div>
+    <div class="stat-card"><div class="stat-label">Total Revenue</div><div class="stat-value" style="color:var(--blue);">$5.00T</div></div>
+    <div class="stat-card"><div class="stat-label">Deficit</div><div class="stat-value" style="color:var(--red);">$1.75T</div></div>
+  </div>
+
+  <h3 class="budget-sub-head red-underline">Where the Money Goes</h3>
+  <div class="chart-card"><div class="pie-wrap">
+  <svg width="300" height="300" viewBox="0 0 300 300" class="pie-svg"><path d="M 150.0 150.0 L 150.00 8.00 A 142.0 142.0 0 0 1 288.86 120.28 Z" fill="#002868" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 288.86 120.28 A 142.0 142.0 0 0 1 264.06 234.58 Z" fill="#BF0A30" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 264.06 234.58 A 142.0 142.0 0 0 1 165.83 291.12 Z" fill="#DAA520" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 165.83 291.12 A 142.0 142.0 0 0 1 57.11 257.41 Z" fill="#2E7D32" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 57.11 257.41 A 142.0 142.0 0 0 1 13.70 189.84 Z" fill="#E65100" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 13.70 189.84 A 142.0 142.0 0 0 1 8.00 150.59 Z" fill="#6A1B9A" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 8.00 150.59 A 142.0 142.0 0 0 1 12.44 114.75 Z" fill="#00838F" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 12.44 114.75 A 142.0 142.0 0 0 1 18.59 96.19 Z" fill="#AD1457" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 18.59 96.19 A 142.0 142.0 0 0 1 22.49 87.51 Z" fill="#4527A0" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 22.49 87.51 A 142.0 142.0 0 0 1 150.00 8.00 Z" fill="#33691E" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><text x="208.0" y="78.2" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">22%</text><text x="240.2" y="169.6" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">14%</text><text x="196.0" y="230.0" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">13%</text><text x="122.7" y="238.2" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">13%</text><text x="72.3" y="199.9" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">9%</text><text x="101.2" y="71.7" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">18%</text></svg>
+  <div class="pie-legend"><div class="pie-legend-row"><div class="pie-swatch" style="background:#002868;"></div><span class="pie-legend-label">Social Security</span><span class="pie-legend-value">$1,461B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#BF0A30;"></div><span class="pie-legend-label">Medicare</span><span class="pie-legend-value">$912B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#DAA520;"></div><span class="pie-legend-label">Interest on Debt</span><span class="pie-legend-value">$882B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#2E7D32;"></div><span class="pie-legend-label">National Defense</span><span class="pie-legend-value">$886B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#E65100;"></div><span class="pie-legend-label">Medicaid / CHIP</span><span class="pie-legend-value">$616B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#6A1B9A;"></div><span class="pie-legend-label">Veterans Affairs</span><span class="pie-legend-value">$301B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#00838F;"></div><span class="pie-legend-label">Education</span><span class="pie-legend-value">$274B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#AD1457;"></div><span class="pie-legend-label">Transportation</span><span class="pie-legend-value">$148B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#4527A0;"></div><span class="pie-legend-label">Foreign Aid</span><span class="pie-legend-value">$72B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#33691E;"></div><span class="pie-legend-label">All Other</span><span class="pie-legend-value">$1,198B</span></div></div>
+</div></div>
+
+  <h3 class="budget-sub-head gold-underline">Where the Money Comes From</h3>
+  <div class="chart-card"><div class="pie-wrap">
+  <svg width="300" height="300" viewBox="0 0 300 300" class="pie-svg"><path d="M 150.0 150.0 L 150.00 8.00 A 142.0 142.0 0 0 1 162.12 291.48 Z" fill="#002868" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 162.12 291.48 A 142.0 142.0 0 0 1 20.18 92.46 Z" fill="#BF0A30" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 20.18 92.46 A 142.0 142.0 0 0 1 66.82 34.91 Z" fill="#DAA520" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 66.82 34.91 A 142.0 142.0 0 0 1 98.89 17.52 Z" fill="#2E7D32" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 98.89 17.52 A 142.0 142.0 0 0 1 150.00 8.00 Z" fill="#E65100" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><text x="242.2" y="146.1" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">49%</text><text x="74.9" y="203.6" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">33%</text><text x="78.3" y="91.9" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">8%</text><text x="133.1" y="59.3" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">6%</text></svg>
+  <div class="pie-legend"><div class="pie-legend-row"><div class="pie-swatch" style="background:#002868;"></div><span class="pie-legend-label">Individual Income Tax</span><span class="pie-legend-value">$2,432B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#BF0A30;"></div><span class="pie-legend-label">Payroll Taxes</span><span class="pie-legend-value">$1,650B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#DAA520;"></div><span class="pie-legend-label">Corporate Income Tax</span><span class="pie-legend-value">$420B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#2E7D32;"></div><span class="pie-legend-label">Customs Duties</span><span class="pie-legend-value">$205B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#E65100;"></div><span class="pie-legend-label">Other Revenue</span><span class="pie-legend-value">$293B</span></div></div>
+</div></div>
+
+  <p class="budget-footnote">A production version would allow drilling into any category for detailed sub-breakdowns, limited only by available data and personnel.&nbsp; Constraints will always be explicitly stated.</p>
+
+  <div class="budget-divider"></div>
+
+  <h2 class="budget-section-head">Foreign Aid Spending &mdash; 1.0% of the National Budget</h2>
+  <p class="budget-source-note">Illustrative data based on FY2024.&nbsp; Sources: Pew Research, USASpending.gov, ForeignAssistance.gov</p>
+  <p class="budget-lead">Total foreign aid: <strong>$71.9 billion</strong> &mdash; approximately <strong>1.0%</strong> of total federal spending.</p>
+
+  <h3 class="budget-sub-head red-underline">Aid by Recipient Country</h3>
+  <div class="chart-card"><div class="pie-wrap">
+  <svg width="300" height="300" viewBox="0 0 300 300" class="pie-svg"><path d="M 150.0 150.0 L 150.00 8.00 A 142.0 142.0 0 0 1 288.56 118.93 Z" fill="#002868" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 288.56 118.93 A 142.0 142.0 0 0 1 291.65 160.02 Z" fill="#BF0A30" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 291.65 160.02 A 142.0 142.0 0 0 1 288.28 182.30 Z" fill="#DAA520" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 288.28 182.30 A 142.0 142.0 0 0 1 281.90 202.60 Z" fill="#2E7D32" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 281.90 202.60 A 142.0 142.0 0 0 1 273.18 220.64 Z" fill="#E65100" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 273.18 220.64 A 142.0 142.0 0 0 1 262.78 236.28 Z" fill="#6A1B9A" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 262.78 236.28 A 142.0 142.0 0 0 1 252.17 248.62 Z" fill="#00838F" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 252.17 248.62 A 142.0 142.0 0 0 1 241.17 258.87 Z" fill="#AD1457" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 241.17 258.87 A 142.0 142.0 0 0 1 230.19 267.19 Z" fill="#4527A0" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 230.19 267.19 A 142.0 142.0 0 1 1 150.00 8.00 Z" fill="#33691E" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><text x="207.7" y="77.9" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">21%</text><text x="242.0" y="143.1" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">5%</text><text x="61.8" y="177.3" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">60%</text></svg>
+  <div class="pie-legend"><div class="pie-legend-row"><div class="pie-swatch" style="background:#002868;"></div><span class="pie-legend-label">Ukraine</span><span class="pie-legend-value">$15.3B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#BF0A30;"></div><span class="pie-legend-label">Israel</span><span class="pie-legend-value">$3.3B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#DAA520;"></div><span class="pie-legend-label">Ethiopia</span><span class="pie-legend-value">$1.8B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#2E7D32;"></div><span class="pie-legend-label">Jordan</span><span class="pie-legend-value">$1.7B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#E65100;"></div><span class="pie-legend-label">Afghanistan</span><span class="pie-legend-value">$1.6B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#6A1B9A;"></div><span class="pie-legend-label">Egypt</span><span class="pie-legend-value">$1.5B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#00838F;"></div><span class="pie-legend-label">Somalia</span><span class="pie-legend-value">$1.3B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#AD1457;"></div><span class="pie-legend-label">Kenya</span><span class="pie-legend-value">$1.2B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#4527A0;"></div><span class="pie-legend-label">Nigeria</span><span class="pie-legend-value">$1.1B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#33691E;"></div><span class="pie-legend-label">All Others</span><span class="pie-legend-value">$42.4B</span></div></div>
+</div></div>
+
+  <h3 class="budget-sub-head gold-underline">Aid by Category</h3>
+  <div class="chart-card"><div class="pie-wrap">
+  <svg width="300" height="300" viewBox="0 0 300 300" class="pie-svg"><path d="M 150.0 150.0 L 150.00 8.00 A 142.0 142.0 0 0 1 238.99 260.66 Z" fill="#002868" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 238.99 260.66 A 142.0 142.0 0 0 1 35.38 233.82 Z" fill="#BF0A30" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 35.38 233.82 A 142.0 142.0 0 0 1 46.04 53.27 Z" fill="#DAA520" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 46.04 53.27 A 142.0 142.0 0 0 1 113.20 12.85 Z" fill="#2E7D32" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><path d="M 150.0 150.0 L 113.20 12.85 A 142.0 142.0 0 0 1 150.00 8.00 Z" fill="#E65100" stroke="rgba(255,255,255,0.75)" stroke-width="2"/><text x="237.1" y="119.3" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">39%</text><text x="137.9" y="241.5" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">26%</text><text x="57.9" y="144.6" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">22%</text><text x="102.4" y="70.9" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">9%</text></svg>
+  <div class="pie-legend"><div class="pie-legend-row"><div class="pie-swatch" style="background:#002868;"></div><span class="pie-legend-label">Economic Development</span><span class="pie-legend-value">$28.2B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#BF0A30;"></div><span class="pie-legend-label">Military &amp; Security</span><span class="pie-legend-value">$18.5B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#DAA520;"></div><span class="pie-legend-label">Humanitarian</span><span class="pie-legend-value">$15.8B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#2E7D32;"></div><span class="pie-legend-label">Health (Global)</span><span class="pie-legend-value">$6.4B</span></div><div class="pie-legend-row"><div class="pie-swatch" style="background:#E65100;"></div><span class="pie-legend-label">Other / Multilateral</span><span class="pie-legend-value">$3.0B</span></div></div>
+</div></div>
+</div>
+</main>
+<div class="contact-btn-wrap"><a href="/contact.html" class="contact-btn">CONTACT THE CAMPAIGN</a></div>
+<div class="red-stripe"></div>
+<footer class="site-footer">
+  <div class="inner">
+    <p class="paid-for">Paid for by Fred Francis.&nbsp; Not authorized by any candidate&rsquo;s committee.</p>
+    <p class="copyright">© 2026 FredFrancis2028.&nbsp; All rights reserved.</p>
+  </div>
+</footer>
+<script src="/assets/site.js"></script>
+<script>initNav();</script>
+</body>
+</html>

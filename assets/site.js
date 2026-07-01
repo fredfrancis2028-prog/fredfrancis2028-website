@@ -88,3 +88,17 @@ function initCommentForm(issueId){
     });
   });
 }
+
+// Generic tab switching (used by Endorsements page)
+function initTabs(){
+  var buttons = document.querySelectorAll('[data-tab-btn]');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = btn.getAttribute('data-tab-btn');
+      document.querySelectorAll('[data-tab-btn]').forEach(function(b){ b.classList.remove('active'); });
+      document.querySelectorAll('[data-tab-panel]').forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelector('[data-tab-panel="' + target + '"]').classList.add('active');
+    });
+  });
+}

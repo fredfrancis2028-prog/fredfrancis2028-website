@@ -215,3 +215,47 @@ footer.site-footer .copyright{margin-bottom:0;}
 .quote-card p.quote-text{font-family:var(--serif); font-style:italic; color:var(--slate); line-height:1.5; margin:0;}
 .quote-card p.quote-attr{font-family:var(--sans); font-size:12px; font-weight:700; margin:10px 0 0 0;}
 .quote-footnote{font-family:var(--sans); font-size:14px; color:var(--gray); text-align:center; margin-top:32px; font-style:italic;}
+
+/* ---- Endorsements page ---- */
+.endorse-tabs{display:flex; gap:8px; margin-bottom:28px;}
+.endorse-tab-btn{flex:1; padding:12px; font-family:var(--sans); font-size:15px; font-weight:700; border:none; border-radius:4px; cursor:pointer; background:rgba(0,40,104,0.1); color:var(--blue);}
+.endorse-tab-btn.active{background:var(--blue); color:var(--white);}
+.endorse-panel{display:none;}
+.endorse-panel.active{display:block;}
+.endorse-list{display:flex; flex-direction:column; gap:12px;}
+.endorse-card{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-left:4px solid var(--gold); border-radius:4px; padding:16px 20px;}
+.endorse-card h3{font-family:var(--serif); font-size:17px; font-weight:700; color:var(--blue); margin:0 0 6px 0;}
+.endorse-card p{font-family:var(--sans); font-size:14px; color:var(--slate); line-height:1.5; margin:0;}
+.endorse-empty{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-radius:6px; padding:40px 24px; text-align:center;}
+.endorse-empty p.headline{font-family:var(--serif); font-size:20px; color:var(--blue); margin-bottom:12px;}
+.endorse-empty p.body{font-family:var(--sans); font-size:15px; color:var(--gray); line-height:1.6; margin:0;}
+
+/* ---- Seeing the Budget page ---- */
+.prototype-banner{background:var(--red); color:var(--white); font-family:var(--sans); font-size:13px; font-weight:700; text-align:center; padding:10px; border-radius:4px; margin-bottom:32px;}
+.budget-section-head{font-family:var(--serif); font-size:clamp(1.3rem,3.5vw,1.8rem); color:var(--blue); margin-bottom:8px;}
+.budget-source-note{font-family:var(--sans); font-size:13px; color:var(--gray); margin-bottom:20px; font-style:italic;}
+.budget-lead{font-family:var(--sans); font-size:14px; color:var(--slate); margin-bottom:20px;}
+.stat-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:14px; margin-bottom:28px;}
+.stat-card{background:rgba(255,255,255,0.75); padding:16px; border-radius:6px; text-align:center; border:2px solid var(--border);}
+.stat-label{font-family:var(--sans); font-size:11px; font-weight:600; color:var(--gray); text-transform:uppercase; letter-spacing:0.08em;}
+.stat-value{font-family:var(--serif); font-size:28px; font-weight:700; margin:6px 0;}
+.budget-sub-head{font-family:var(--serif); font-size:18px; color:var(--blue); margin-bottom:14px; padding-bottom:6px; border-bottom:3px solid;}
+.budget-sub-head.red-underline{border-bottom-color:var(--red);}
+.budget-sub-head.gold-underline{border-bottom-color:var(--gold);}
+.chart-card{background:rgba(255,255,255,0.75); padding:24px; border-radius:6px; border:1px solid var(--border); margin-bottom:28px;}
+.budget-footnote{font-family:var(--sans); font-size:13px; color:var(--gray); font-style:italic; text-align:center; margin-bottom:48px;}
+.budget-divider{border-top:3px solid var(--blue); padding-top:32px; margin-bottom:8px;}
+
+.pie-wrap{display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:center;}
+.pie-svg{max-width:100%;}
+.pie-legend{display:flex; flex-direction:column; gap:6px; min-width:200px;}
+.pie-legend-row{display:flex; align-items:center; gap:8px; font-family:Arial,sans-serif; font-size:13px; color:#1A1A2E;}
+.pie-swatch{width:14px; height:14px; border-radius:3px; flex-shrink:0;}
+.pie-legend-label{font-weight:600;}
+.pie-legend-value{color:#666; margin-left:auto; white-space:nowrap;}
+
+.bar-chart{display:flex; flex-direction:column; gap:8px;}
+.bar-label-row{display:flex; justify-content:space-between; font-family:var(--sans); font-size:13px; color:var(--slate); margin-bottom:3px;}
+.bar-label{font-weight:600;}
+.bar-track{background:rgba(0,0,0,0.08); border-radius:3px; height:22px; overflow:hidden;}
+.bar-fill{height:100%; border-radius:3px;}
