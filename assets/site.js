@@ -1,0 +1,90 @@
+// Nav menu toggle
+function initNav(){
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('navMenu');
+  var issuesToggle = document.getElementById('navIssuesToggle');
+  var submenu = document.getElementById('navSubmenu');
+  var issuesArrow = document.getElementById('navIssuesArrow');
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      toggle.textContent = open ? '✕' : '☰';
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if(!open){ submenu.classList.remove('open'); issuesArrow.textContent='▼'; }
+    });
+  }
+  if(issuesToggle){
+    issuesToggle.addEventListener('click', function(){
+      var open = submenu.classList.toggle('open');
+      issuesArrow.textContent = open ? '▲' : '▼';
+    });
+  }
+}
+
+// Comment form submission (posts to the live Google Apps Script endpoint, no-cors)
+var COMMENT_ENDPOINT = "https://script.google.com/macros/s/AKfycbw3SZ_0PwaMoL046HK9589piUfm9iwevJOceXGlMmzGGxfSYvjX31yEkKNS3UERGGKqIA/exec";
+
+function initCommentForm(issueId){
+  var form = document.getElementById('commentForm');
+  if(!form) return;
+  var emailInput = form.querySelector('[name="email"]');
+  var notifyWrap = document.getElementById('notifyWrap');
+  var notifyCheckbox = form.querySelector('[name="notify"]');
+  var yesBtn = document.getElementById('cfYes');
+  var noBtn = document.getElementById('cfNo');
+  var postPublic = null;
+  var errorEl = document.getElementById('cfError');
+  var successEl = document.getElementById('cfSuccess');
+  var submitBtn = document.getElementById('cfSubmit');
+  var commentInput = form.querySelector('[name="comment"]');
+
+  emailInput.addEventListener('input', function(){
+    if(emailInput.value.trim()){ notifyWrap.classList.add('show'); }
+    else { notifyWrap.classList.remove('show'); notifyCheckbox.checked = false; }
+  });
+
+  function selectYesNo(val){
+    postPublic = val;
+    yesBtn.classList.toggle('selected', val === true);
+    noBtn.classList.toggle('selected', val === false);
+  }
+  yesBtn.addEventListener('click', function(){ selectYesNo(true); });
+  noBtn.addEventListener('click', function(){ selectYesNo(false); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorEl.textContent = '';
+    if(!commentInput.value.trim()){
+      errorEl.textContent = 'Please enter a comment.';
+      return;
+    }
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+    var payload = {
+      issueId: issueId,
+      name: form.querySelector('[name="name"]').value.trim() || 'Anonymous',
+      email: emailInput.value.trim() || null,
+      notify: notifyCheckbox.checked,
+      region: form.querySelector('[name="region"]').value || null,
+      lineOfWork: form.querySelector('[name="work"]').value.trim() || null,
+      mayPost: postPublic === true ? 'Yes' : postPublic === false ? 'No' : '',
+      comment: commentInput.value.trim()
+    };
+    fetch(COMMENT_ENDPOINT, {
+      method: 'POST', mode: 'no-cors',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload)
+    }).then(function(){
+      form.reset();
+      notifyWrap.classList.remove('show');
+      selectYesNo(null);
+      successEl.classList.add('show');
+      setTimeout(function(){ successEl.classList.remove('show'); }, 4000);
+    }).catch(function(){
+      errorEl.textContent = 'Something went wrong — please try again.';
+    }).finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Comment';
+    });
+  });
+}
