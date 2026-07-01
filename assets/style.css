@@ -161,3 +161,57 @@ footer.site-footer .copyright{margin-bottom:0;}
 .sitemap-list li{padding:6px 0;}
 .sitemap-list a{font-family:var(--sans); font-size:15px; color:var(--blue); text-decoration:none;}
 .sitemap-list a:hover{text-decoration:underline;}
+
+/* ---- Simple content page (bio, accountability, thinking-aloud, tax-dollars) ---- */
+.simple-hero{position:relative; overflow:hidden; padding:44px 20px 36px;}
+.simple-hero::before{content:""; position:absolute; inset:0; background-image:url('/assets/flag-bg.jpg'); background-size:cover; background-position:center; filter:brightness(0.3);}
+.simple-hero::after{content:""; position:absolute; inset:0; background:linear-gradient(170deg, rgba(0,40,104,0.82) 0%, rgba(0,24,69,0.9) 100%);}
+.simple-hero-inner{max-width:780px; margin:0 auto; position:relative; z-index:1; color:var(--white);}
+.simple-subtitle{font-family:var(--sans); font-size:15px; color:var(--goldLight); margin-top:8px;}
+.bio-body{font-family:var(--sans); font-size:16.5px; line-height:1.75; color:var(--slate);}
+.bio-body p{margin-bottom:16px;}
+.bio-closer{font-family:var(--sans); font-size:17px; line-height:1.75; color:var(--blue); font-weight:700; font-style:italic; margin-top:8px;}
+
+/* Contact page */
+.contact-card{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-radius:8px; padding:36px 32px; text-align:center;}
+.contact-card p{font-family:var(--serif); font-size:18px; font-style:italic; color:var(--slate); line-height:1.8; margin-bottom:20px;}
+.contact-card .email-main{color:var(--gold); font-weight:700; font-size:20px;}
+.contact-pills{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:24px;}
+.contact-pill{font-family:var(--sans); font-size:14px; font-weight:600; color:var(--blue); background:rgba(0,40,104,0.08); padding:6px 14px; border-radius:20px;}
+.contact-note{font-family:var(--serif); font-size:16px; font-style:italic; color:var(--gray); line-height:1.8;}
+
+/* Accountability framework cards */
+.framework-card{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-left:4px solid var(--blue); border-radius:4px; padding:18px 22px;}
+.framework-card h3{font-family:var(--serif); font-size:19px; font-weight:700; color:var(--blue); margin:0 0 8px 0;}
+.framework-card p{font-family:var(--sans); font-size:15.5px; line-height:1.7; color:var(--slate); margin:0;}
+.framework-list{display:flex; flex-direction:column; gap:18px;}
+
+/* Thinking Aloud entries */
+.entry-card{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-left:4px solid var(--blue); border-radius:4px; padding:24px 28px; margin-bottom:20px;}
+.entry-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:14px;}
+.entry-head h2{font-family:var(--serif); font-size:20px; font-weight:700; color:var(--blue); margin:0;}
+.entry-date{font-family:var(--sans); font-size:13px; color:var(--gray); font-style:italic;}
+.entry-card p{font-family:var(--sans); font-size:16px; line-height:1.75; color:var(--slate); margin-bottom:14px;}
+.entry-card p:last-child{margin-bottom:0;}
+
+/* Tax Dollars page */
+.did-you-know{background:#1B8C3A; color:var(--white); border-radius:8px; padding:20px 24px; margin-bottom:28px; box-shadow:0 3px 12px rgba(27,140,58,0.3);}
+.did-you-know h3{font-family:var(--serif); font-size:20px; font-weight:700; margin-bottom:10px; color:#fff;}
+.did-you-know p{font-family:var(--sans); font-size:15px; line-height:1.7; margin:0;}
+.tax-item-list{display:flex; flex-direction:column; gap:12px;}
+.tax-item{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-radius:4px; padding:16px 20px;}
+.tax-item.c0{border-left:4px solid var(--blue);}
+.tax-item.c1{border-left:4px solid var(--red);}
+.tax-item.c2{border-left:4px solid var(--gold);}
+.tax-item-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:6px;}
+.tax-item-head h3{font-family:var(--serif); font-size:17px; font-weight:700; color:var(--blue); margin:0;}
+.tax-item-year{font-family:var(--sans); font-size:12px; font-weight:600; color:var(--gray); background:rgba(0,40,104,0.08); padding:2px 10px; border-radius:3px;}
+.tax-item p{font-family:var(--sans); font-size:14px; color:var(--slate); line-height:1.6; margin:0;}
+.tax-footnote{font-family:var(--sans); font-size:14px; color:var(--gray); text-align:center; margin-top:28px; font-style:italic;}
+
+/* ---- Humor page ---- */
+.quote-wrap{display:flex; flex-wrap:wrap; gap:16px; justify-content:center; align-items:flex-start;}
+.quote-card{background:rgba(255,255,255,0.85); border-radius:20px; box-shadow:0 3px 12px rgba(0,0,0,0.1); flex:0 1 auto;}
+.quote-card p.quote-text{font-family:var(--serif); font-style:italic; color:var(--slate); line-height:1.5; margin:0;}
+.quote-card p.quote-attr{font-family:var(--sans); font-size:12px; font-weight:700; margin:10px 0 0 0;}
+.quote-footnote{font-family:var(--sans); font-size:14px; color:var(--gray); text-align:center; margin-top:32px; font-style:italic;}
