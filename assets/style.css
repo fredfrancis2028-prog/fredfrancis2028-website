@@ -111,3 +111,53 @@ footer.site-footer{background:var(--blueDark); color:rgba(255,255,255,0.7); font
 footer.site-footer .inner{max-width:780px; margin:0 auto;}
 footer.site-footer .paid-for{margin-bottom:4px; color:var(--gold); font-weight:700; font-size:14px;}
 footer.site-footer .copyright{margin-bottom:0;}
+
+/* ---- Homepage hero ---- */
+.hero{position:relative; overflow:hidden; min-height:420px; display:flex; align-items:center; justify-content:center;}
+.hero::before{content:""; position:absolute; inset:0; background-image:url('/assets/flag-bg.jpg'); background-size:cover; background-position:center;}
+.hero::after{content:""; position:absolute; inset:0; background:linear-gradient(170deg, rgba(0,40,104,0.72) 0%, rgba(0,24,69,0.82) 100%);}
+.hero-inner{position:relative; z-index:1; text-align:center; color:var(--white); padding:64px 24px 56px; max-width:800px; margin:0 auto;}
+.hero-title{font-family:var(--serif); font-size:clamp(2.4rem, 7vw, 4.2rem); font-weight:700; margin:0 0 8px; line-height:1.1; text-shadow:0 3px 12px rgba(0,0,0,0.4);}
+.hero-subtitle{font-family:var(--sans); font-size:clamp(0.9rem, 2.5vw, 1.1rem); font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--white); margin:0 0 14px; opacity:0.9;}
+.hero-tagline{font-family:var(--serif); font-size:clamp(1.4rem, 4vw, 2rem); font-weight:700; margin:0 0 10px; line-height:1.45; color:var(--goldLight); text-shadow:0 1px 6px rgba(0,0,0,0.3);}
+.hero-rule{width:60px; height:3px; background:var(--red); margin:0 auto 32px; border-radius:2px;}
+.hero-cta{background:var(--red); color:var(--white); font-family:var(--sans); font-size:17px; font-weight:700; padding:15px 42px; border:none; border-radius:4px; cursor:pointer; letter-spacing:0.04em; box-shadow:0 4px 16px rgba(191,10,48,0.4); text-decoration:none; display:inline-block;}
+.hero-cta:hover{background:var(--redDark);}
+
+/* ---- Mission ---- */
+.mission{background:rgba(255,255,255,0.70); padding:56px 20px;}
+.mission-inner{max-width:780px; margin:0 auto;}
+.mission-head{font-family:var(--serif); font-size:clamp(1.5rem, 4vw, 2.1rem); color:var(--blue); margin:0 0 8px; text-align:center;}
+.mission-rule{width:50px; height:3px; background:var(--red); margin:0 auto 24px; border-radius:2px;}
+.mission-note{font-family:var(--sans); font-size:15px; line-height:1.75; color:var(--slate); margin-top:20px; padding:16px 20px; background:rgba(0,40,104,0.06); border-left:4px solid var(--blue); border-radius:4px;}
+.mission-note strong{color:var(--blue);}
+
+/* ---- Liberty Bell section ---- */
+.bell-section{background:var(--blue); overflow:hidden;}
+.bell-inner{max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center;}
+.bell-img-wrap{flex:1 1 340px; min-width:280px; padding:36px 28px; display:flex; flex-direction:column; align-items:center;}
+.bell-img{width:100%; max-width:420px; border-radius:6px; box-shadow:0 8px 32px rgba(0,0,0,0.4); border:3px solid var(--gold);}
+.bell-caption{font-family:var(--sans); font-size:11px; color:rgba(255,255,255,0.5); margin-top:8px; font-style:italic;}
+.bell-text{flex:1 1 340px; padding:40px 28px; color:var(--white);}
+.bell-head{font-family:var(--serif); font-size:clamp(1.4rem, 4vw, 2rem); margin-bottom:16px; color:var(--goldLight);}
+.bell-p{font-family:var(--sans); font-size:16px; line-height:1.75; color:rgba(255,255,255,0.68); margin-bottom:14px;}
+
+/* ---- Category page ---- */
+.category-hero{position:relative; overflow:hidden; padding:44px 20px 36px;}
+.category-hero::before{content:""; position:absolute; inset:0; background-image:url('/assets/flag-bg.jpg'); background-size:cover; background-position:center; filter:brightness(0.3);}
+.category-hero::after{content:""; position:absolute; inset:0; background:linear-gradient(170deg, rgba(0,40,104,0.82) 0%, rgba(0,24,69,0.9) 100%);}
+.category-hero-inner{max-width:780px; margin:0 auto; position:relative; z-index:1; color:var(--white);}
+.category-summary{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-radius:6px; padding:28px 24px; margin-bottom:28px;}
+.issue-card-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px;}
+.issue-card{background:rgba(255,255,255,0.75); border:2px solid var(--border); border-left:5px solid var(--red); border-radius:5px; padding:22px 20px; text-align:left; cursor:pointer; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px; text-decoration:none; color:inherit;}
+.issue-card:hover{border-left-color:var(--blue); transform:translateY(-2px);}
+.issue-card-icon{font-size:28px;}
+.issue-card-title{font-family:var(--serif); font-size:17px; font-weight:700; color:var(--blue); margin:0;}
+.issue-card-short{font-family:var(--sans); font-size:14px; color:var(--gray); line-height:1.55; margin:0; flex:1;}
+.issue-card-link{font-family:var(--sans); font-size:13px; font-weight:700; color:var(--red); margin-top:4px;}
+
+/* ---- Sitemap page ---- */
+.sitemap-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2px;}
+.sitemap-list li{padding:6px 0;}
+.sitemap-list a{font-family:var(--sans); font-size:15px; color:var(--blue); text-decoration:none;}
+.sitemap-list a:hover{text-decoration:underline;}
