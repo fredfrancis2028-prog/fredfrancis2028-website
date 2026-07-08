@@ -102,3 +102,37 @@ function initTabs(){
     });
   });
 }
+
+// Video modal (used by Speeches pages) - opens an embedded video full-screen-capable
+// player in a pop-up overlay; click backdrop, the close button, or Escape to dismiss.
+function initVideoModal(){
+  var overlay = document.getElementById('videoModalOverlay');
+  if(!overlay) return;
+  var body = document.getElementById('videoModalBody');
+  var closeBtn = document.getElementById('videoModalClose');
+  var buttons = document.querySelectorAll('.watch-video-btn');
+
+  function openModal(src){
+    if(!src) return;
+    body.innerHTML = '<iframe src="' + src + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0"></iframe>';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    body.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal(btn.getAttribute('data-video-src'));
+    });
+  });
+  if(closeBtn){ closeBtn.addEventListener('click', closeModal); }
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay){ closeModal(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')){ closeModal(); }
+  });
+}
