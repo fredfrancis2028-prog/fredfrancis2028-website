@@ -96,6 +96,82 @@ function initCommentForm(issueId){
   });
 }
 
+// Priority ranking widget (1-20 slider, average fetched from the same
+// Google Apps Script endpoint used for comments).  One ranking per browser
+// per issue, tracked in localStorage -- not bulletproof against a cleared
+// cache, but reasonable for this use case.
+function initPriorityRanking(issueId){
+  var wrap = document.getElementById('priorityRank');
+  if(!wrap) return;
+  var slider = document.getElementById('priorityRankSlider');
+  var valueEl = document.getElementById('priorityRankValue');
+  var submitBtn = document.getElementById('priorityRankSubmit');
+  var thanksEl = document.getElementById('priorityRankThanks');
+  var thanksValueEl = document.getElementById('priorityRankThanksValue');
+  var avgEl = document.getElementById('priorityRankAvg');
+  var countEl = document.getElementById('priorityRankCount');
+  var storageKey = 'rank_' + issueId;
+
+  function renderAverage(count, average){
+    if(count > 0 && average !== null){
+      avgEl.textContent = average.toFixed(1);
+      countEl.textContent = '(' + count + ' ranking' + (count === 1 ? '' : 's') + ' so far)';
+    } else {
+      avgEl.textContent = '11';
+      countEl.textContent = '(starting point -- no rankings yet)';
+    }
+  }
+
+  function fetchAverage(){
+    fetch(COMMENT_ENDPOINT + '?action=avg&issueId=' + encodeURIComponent(issueId))
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if(data && data.success){ renderAverage(data.count, data.average); }
+      })
+      .catch(function(){ /* leave the default "11" display in place */ });
+  }
+
+  function lockAsSubmitted(rank){
+    slider.disabled = true;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Ranking Submitted';
+    thanksValueEl.textContent = rank;
+    thanksEl.classList.add('show');
+  }
+
+  var already = localStorage.getItem(storageKey);
+  if(already){
+    slider.value = already;
+    valueEl.textContent = already;
+    lockAsSubmitted(already);
+  }
+
+  slider.addEventListener('input', function(){
+    valueEl.textContent = slider.value;
+  });
+
+  submitBtn.addEventListener('click', function(){
+    if(localStorage.getItem(storageKey)) return;
+    var rank = parseInt(slider.value, 10);
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+    fetch(COMMENT_ENDPOINT, {
+      method: 'POST', mode: 'no-cors',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify({ action: 'rank', issueId: issueId, rank: rank })
+    }).then(function(){
+      localStorage.setItem(storageKey, String(rank));
+      lockAsSubmitted(rank);
+      fetchAverage();
+    }).catch(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit My Ranking';
+    });
+  });
+
+  fetchAverage();
+}
+
 // Generic tab switching (used by Endorsements page)
 function initTabs(){
   var buttons = document.querySelectorAll('[data-tab-btn]');

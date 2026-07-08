@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NATO Alliance:  Strengthening Through Clarity — Fred Francis 2028</title>
 <meta name="description" content="Support NATO with explicit, mutually agreeable terms — strengthening interoperability right down to the factory floor.">
-<link rel="stylesheet" href="/assets/style.css?v=7">
+<link rel="stylesheet" href="/assets/style.css?v=8">
 <link rel="alternate" type="application/rss+xml" title="Fred Francis 2028 Updates" href="/rss.xml">
 </head>
 <body>
@@ -40,6 +40,17 @@
     </div>
   </div>
   <div class="content-wrap">
+    <div class="priority-rank-wrap" id="priorityRank">
+      <h3 class="priority-rank-head">Priority Ranking</h3>
+      <p class="priority-rank-desc">Rank how urgently you think this issue should be addressed, from 1 (highest priority) to 20 (lowest).&nbsp; All issues start at 11.</p>
+      <div class="priority-rank-controls">
+        <input type="range" min="1" max="20" value="11" id="priorityRankSlider" class="priority-rank-slider" aria-label="Priority ranking, 1 to 20">
+        <span id="priorityRankValue" class="priority-rank-value">11</span>
+      </div>
+      <button type="button" id="priorityRankSubmit" class="priority-rank-submit">Submit My Ranking</button>
+      <p id="priorityRankThanks" class="priority-rank-thanks" role="status">Thanks — you ranked this issue <strong id="priorityRankThanksValue"></strong>.</p>
+      <p class="priority-rank-avg">Average ranking so far: <strong id="priorityRankAvg">11</strong> <span id="priorityRankCount">(starting point -- no rankings yet)</span></p>
+    </div>
     <section class="block">
       <h2 class="section-head">The Problem</h2>
       <p class="body-p">The NATO alliance has been the bedrock of Western security for over seventy years.  But longevity is not a substitute for clarity.  As threats evolve and member nations’ economies and capabilities diverge, the alliance needs explicit, mutually agreeable terms of engagement — not assumptions inherited from the Cold War.</p>
@@ -115,7 +126,7 @@
     <p class="copyright">© 2026 FredFrancis2028, Inc.&nbsp; All rights reserved</p>
   </div>
 </footer>
-<script src="/assets/site.js?v=3"></script>
-<script>initNav(); initCommentForm("nato");</script>
+<script src="/assets/site.js?v=4"></script>
+<script>initNav(); initPriorityRanking("nato"); initCommentForm("nato");</script>
 </body>
 </html>

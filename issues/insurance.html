@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reduce Homeowner’s / Rental Insurance Costs — Fred Francis 2028</title>
 <meta name="description" content="Backstop insurers with a national reserve fund and replace outdated risk models with industrial-grade analysis.">
-<link rel="stylesheet" href="/assets/style.css?v=7">
+<link rel="stylesheet" href="/assets/style.css?v=8">
 <link rel="alternate" type="application/rss+xml" title="Fred Francis 2028 Updates" href="/rss.xml">
 </head>
 <body>
@@ -40,6 +40,17 @@
     </div>
   </div>
   <div class="content-wrap">
+    <div class="priority-rank-wrap" id="priorityRank">
+      <h3 class="priority-rank-head">Priority Ranking</h3>
+      <p class="priority-rank-desc">Rank how urgently you think this issue should be addressed, from 1 (highest priority) to 20 (lowest).&nbsp; All issues start at 11.</p>
+      <div class="priority-rank-controls">
+        <input type="range" min="1" max="20" value="11" id="priorityRankSlider" class="priority-rank-slider" aria-label="Priority ranking, 1 to 20">
+        <span id="priorityRankValue" class="priority-rank-value">11</span>
+      </div>
+      <button type="button" id="priorityRankSubmit" class="priority-rank-submit">Submit My Ranking</button>
+      <p id="priorityRankThanks" class="priority-rank-thanks" role="status">Thanks — you ranked this issue <strong id="priorityRankThanksValue"></strong>.</p>
+      <p class="priority-rank-avg">Average ranking so far: <strong id="priorityRankAvg">11</strong> <span id="priorityRankCount">(starting point -- no rankings yet)</span></p>
+    </div>
     <section class="block">
       <h2 class="section-head">The Problem</h2>
       <p class="body-p">Homeowners insurance premiums are rising dramatically across the country.  The drivers are well-known: increasing climate risk, outdated risk assessment models, and insurance companies that pass costs directly to consumers while protecting profit margins. [1]</p>
@@ -117,7 +128,7 @@
     <p class="copyright">© 2026 FredFrancis2028, Inc.&nbsp; All rights reserved</p>
   </div>
 </footer>
-<script src="/assets/site.js?v=3"></script>
-<script>initNav(); initCommentForm("insurance");</script>
+<script src="/assets/site.js?v=4"></script>
+<script>initNav(); initPriorityRanking("insurance"); initCommentForm("insurance");</script>
 </body>
 </html>
