@@ -1,3 +1,9 @@
+/* DEV NOTE (for AI/human editors): this site preserves the "two spaces after a
+   sentence" typing convention in prose text by writing "sentence.&nbsp; Next
+   sentence" in the HTML -- a literal &nbsp; entity followed by a normal space --
+   instead of two plain spaces, which HTML collapses to one when rendered.
+   This file doesn't contain that prose itself, but if you're adding CSS to
+   support new prose content elsewhere, keep that convention in mind. */
 :root{
   --blue:#002868; --blueDark:#001845; --blueRoyal:#003494;
   --red:#BF0A30; --redDark:#9B0826; --white:#FFFFFF;

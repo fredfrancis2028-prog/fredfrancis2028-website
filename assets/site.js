@@ -1,3 +1,10 @@
+// DEV NOTE (for AI/human editors): this site preserves the "two spaces after a
+// sentence" typing convention in prose text by writing "sentence.&nbsp; Next
+// sentence" in the HTML -- a literal &nbsp; entity followed by a normal space --
+// instead of two plain spaces, which HTML collapses to one when rendered.
+// This file doesn't generate that prose itself, but keep it in mind if you add
+// any JS that writes user-facing text into the page.
+
 // Nav menu toggle
 function initNav(){
   var toggle = document.getElementById('navToggle');
