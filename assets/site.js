@@ -29,7 +29,7 @@ function initNav(){
 }
 
 // Comment form submission (posts to the live Google Apps Script endpoint, no-cors)
-var COMMENT_ENDPOINT = "https://script.google.com/macros/s/AKfycbw3SZ_0PwaMoL046HK9589piUfm9iwevJOceXGlMmzGGxfSYvjX31yEkKNS3UERGGKqIA/exec";
+var COMMENT_ENDPOINT = "https://script.google.com/macros/s/AKfycbzQPrKBRSVamuF9Ddn2JLYtxnWl3GxihUS4XujNWstAVvAM8qIPc45DdQuXUkTKO85XfA/exec";
 
 function initCommentForm(issueId){
   var form = document.getElementById('commentForm');
