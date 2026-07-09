@@ -202,6 +202,8 @@ footer.site-footer .copyright{margin-bottom:0;}
 .simple-hero::before{content:""; position:absolute; inset:0; background-image:url('/assets/flag-bg.jpg'); background-size:cover; background-position:center; filter:brightness(0.3);}
 .simple-hero::after{content:""; position:absolute; inset:0; background:linear-gradient(170deg, rgba(0,40,104,0.82) 0%, rgba(0,24,69,0.9) 100%);}
 .simple-hero-inner{max-width:780px; margin:0 auto; position:relative; z-index:1; color:var(--white);}
+.issues-hero{text-align:center;}
+.issues-hero-subtitle{font-family:var(--serif); font-size:clamp(1.1rem, 3vw, 1.5rem); font-weight:700; color:var(--goldLight); margin:8px 0 0; line-height:1.2;}
 .simple-subtitle{font-family:var(--sans); font-size:15px; color:var(--goldLight); margin-top:8px;}
 .bio-body{font-family:var(--sans); font-size:16.5px; line-height:1.75; color:var(--slate);}
 .bio-body p{margin-bottom:16px;}
