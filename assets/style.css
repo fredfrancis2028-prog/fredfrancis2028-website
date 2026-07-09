@@ -211,6 +211,8 @@ footer.site-footer .copyright{margin-bottom:0;}
 .nav-menu.sitemap-nav .sitemap-list a{color:var(--white); font-size:10pt; font-weight:700; padding:4px 6px;}
 .nav-menu.sitemap-nav .sitemap-list.indent-1 a, .nav-menu.sitemap-nav .sitemap-list.indent-2 a{color:var(--goldLight); font-weight:400;}
 .nav-menu.sitemap-nav .sitemap-list a.active{background:rgba(255,255,255,0.15); border-radius:3px;}
+.tree-toggle{background:none; border:none; cursor:pointer; color:var(--goldLight); font-size:10px; padding:2px 8px; vertical-align:middle;}
+.sitemap-list.tree-collapsed{display:none;}
 
 /* ---- Simple content page (bio, accountability, thinking-aloud, tax-dollars) ---- */
 .simple-hero{position:relative; overflow:hidden; padding:44px 20px 36px;}

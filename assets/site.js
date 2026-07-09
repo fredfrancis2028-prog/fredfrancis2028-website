@@ -26,6 +26,18 @@ function initNav(){
       issuesArrow.textContent = open ? '▲' : '▼';
     });
   }
+  // Collapsible Issues sub-lists inside the hamburger tree (Domestic/Foreign
+  // Policy's individual issues stay hidden until their arrow is clicked --
+  // saves vertical space, since most visitors don't need every issue listed
+  // inline every time they open the menu).
+  var treeToggles = document.querySelectorAll('.tree-toggle');
+  treeToggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var sublist = btn.nextElementSibling;
+      var collapsed = sublist.classList.toggle('tree-collapsed');
+      btn.textContent = collapsed ? '▶' : '▼';
+    });
+  });
 }
 
 // Comment form submission (posts to the live Google Apps Script endpoint, no-cors)
