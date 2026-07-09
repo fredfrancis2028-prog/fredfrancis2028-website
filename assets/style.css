@@ -191,11 +191,21 @@ footer.site-footer .copyright{margin-bottom:0;}
 /* ---- Sitemap page ---- */
 .sitemap-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2px;}
 .sitemap-list li{padding:6px 0;}
-.sitemap-list a{font-family:var(--sans); font-size:15px; color:var(--blue); text-decoration:none;}
+.sitemap-list a{font-family:var(--sans); font-size:10pt; font-weight:700; color:var(--blue); text-decoration:none;}
 .sitemap-list a:hover{text-decoration:underline;}
 .sitemap-list.indent-1{padding-left:24px; margin-top:2px;}
 .sitemap-list.indent-2{padding-left:48px; margin-top:2px;}
-.sitemap-category-label{font-family:var(--sans); font-size:15px; font-weight:700; color:var(--slate); padding:6px 0; display:block;}
+.sitemap-list.indent-1 a, .sitemap-list.indent-2 a{font-weight:400;}
+
+/* Hamburger version of the same tree: light text for the dark background,
+   plus a visible highlight for whichever page is currently open.  Selectors
+   here are deliberately more specific than the base ".nav-menu a" rule
+   above (same font-size/weight properties, equal specificity) so this
+   doesn't depend on which rule happens to come later in the file. */
+.nav-menu.sitemap-nav{max-height:70vh; overflow-y:auto;}
+.nav-menu.sitemap-nav .sitemap-list a{color:var(--white); font-size:10pt; font-weight:700; padding:4px 6px;}
+.nav-menu.sitemap-nav .sitemap-list.indent-1 a, .nav-menu.sitemap-nav .sitemap-list.indent-2 a{color:var(--goldLight); font-weight:400;}
+.nav-menu.sitemap-nav .sitemap-list a.active{background:rgba(255,255,255,0.15); border-radius:3px;}
 
 /* ---- Simple content page (bio, accountability, thinking-aloud, tax-dollars) ---- */
 .simple-hero{position:relative; overflow:hidden; padding:44px 20px 36px;}
