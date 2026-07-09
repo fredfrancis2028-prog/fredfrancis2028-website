@@ -178,7 +178,7 @@ footer.site-footer .copyright{margin-bottom:0;}
 .category-hero{position:relative; overflow:hidden; padding:44px 20px 36px;}
 .category-hero::before{content:""; position:absolute; inset:0; background-image:url('/assets/flag-bg.jpg'); background-size:cover; background-position:center; filter:brightness(0.3);}
 .category-hero::after{content:""; position:absolute; inset:0; background:linear-gradient(170deg, rgba(0,40,104,0.82) 0%, rgba(0,24,69,0.9) 100%);}
-.category-hero-inner{max-width:780px; margin:0 auto; position:relative; z-index:1; color:var(--white);}
+.category-hero-inner{max-width:780px; margin:0 auto; position:relative; z-index:1; color:var(--white); text-align:center;}
 .category-summary{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-radius:6px; padding:28px 24px; margin-bottom:28px;}
 .issue-card-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px;}
 .issue-card{background:rgba(255,255,255,0.75); border:2px solid var(--border); border-left:5px solid var(--red); border-radius:5px; padding:22px 20px; text-align:left; cursor:pointer; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px; text-decoration:none; color:inherit;}
@@ -202,7 +202,12 @@ footer.site-footer .copyright{margin-bottom:0;}
    here are deliberately more specific than the base ".nav-menu a" rule
    above (same font-size/weight properties, equal specificity) so this
    doesn't depend on which rule happens to come later in the file. */
-.nav-menu.sitemap-nav{max-height:70vh; overflow-y:auto;}
+.nav-menu.sitemap-nav{max-height:70vh; overflow-y:auto; overscroll-behavior:contain; direction:rtl;}
+.nav-menu.sitemap-nav > ul{direction:ltr;} /* undo the rtl flip for the actual content; only the scrollbar position is affected by direction:rtl on the parent */
+.nav-menu.sitemap-nav{scrollbar-width:thin; scrollbar-color:var(--gold) rgba(255,255,255,0.1);}
+.nav-menu.sitemap-nav::-webkit-scrollbar{width:10px;}
+.nav-menu.sitemap-nav::-webkit-scrollbar-track{background:rgba(255,255,255,0.1); border-radius:4px;}
+.nav-menu.sitemap-nav::-webkit-scrollbar-thumb{background:var(--gold); border-radius:4px;}
 .nav-menu.sitemap-nav .sitemap-list a{color:var(--white); font-size:10pt; font-weight:700; padding:4px 6px;}
 .nav-menu.sitemap-nav .sitemap-list.indent-1 a, .nav-menu.sitemap-nav .sitemap-list.indent-2 a{color:var(--goldLight); font-weight:400;}
 .nav-menu.sitemap-nav .sitemap-list a.active{background:rgba(255,255,255,0.15); border-radius:3px;}
@@ -211,9 +216,9 @@ footer.site-footer .copyright{margin-bottom:0;}
 .simple-hero{position:relative; overflow:hidden; padding:44px 20px 36px;}
 .simple-hero::before{content:""; position:absolute; inset:0; background-image:url('/assets/flag-bg.jpg'); background-size:cover; background-position:center; filter:brightness(0.3);}
 .simple-hero::after{content:""; position:absolute; inset:0; background:linear-gradient(170deg, rgba(0,40,104,0.82) 0%, rgba(0,24,69,0.9) 100%);}
-.simple-hero-inner{max-width:780px; margin:0 auto; position:relative; z-index:1; color:var(--white);}
-.issues-hero{text-align:center;}
-.issues-hero-subtitle{font-family:var(--serif); font-size:clamp(1.1rem, 3vw, 1.5rem); font-weight:700; color:var(--goldLight); margin:8px 0 0; line-height:1.2;}
+.simple-hero-inner{max-width:780px; margin:0 auto; position:relative; z-index:1; color:var(--white); text-align:center;}
+.issues-hero{text-align:center;} /* redundant now that simple-hero-inner is centered by default; harmless, left in place */
+.issues-hero-subtitle{font-family:var(--serif); font-size:clamp(1.4rem, 4vw, 2rem); font-weight:700; color:var(--goldLight); margin:8px 0 0; line-height:1.2;}
 .simple-subtitle{font-family:var(--sans); font-size:15px; color:var(--goldLight); margin-top:8px;}
 .bio-body{font-family:var(--sans); font-size:16.5px; line-height:1.75; color:var(--slate);}
 .bio-body p{margin-bottom:16px;}
