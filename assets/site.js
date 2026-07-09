@@ -31,6 +31,18 @@ function initNav(){
 // Comment form submission (posts to the live Google Apps Script endpoint, no-cors)
 var COMMENT_ENDPOINT = "https://script.google.com/macros/s/AKfycbzQPrKBRSVamuF9Ddn2JLYtxnWl3GxihUS4XujNWstAVvAM8qIPc45DdQuXUkTKO85XfA/exec";
 
+// Persistent anonymous visitor ID (localStorage) -- lets the spreadsheet show
+// that multiple rows came from the same visitor over time, without any login.
+function _getVisitorId(){
+  var key = 'visitorId';
+  var id = localStorage.getItem(key);
+  if(!id){
+    id = 'v_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+    localStorage.setItem(key, id);
+  }
+  return id;
+}
+
 function initCommentForm(issueId){
   var form = document.getElementById('commentForm');
   if(!form) return;
@@ -44,6 +56,41 @@ function initCommentForm(issueId){
   var successEl = document.getElementById('cfSuccess');
   var submitBtn = document.getElementById('cfSubmit');
   var commentInput = form.querySelector('[name="comment"]');
+
+  // Priority-ranking slider (present on issue pages only; speeches have no
+  // slider, so all of this is skipped gracefully if the elements aren't there)
+  var rankSlider = document.getElementById('cfRankSlider');
+  var rankValueEl = document.getElementById('cfRankValue');
+  var rankAvgEl = document.getElementById('cfRankAvg');
+  var rankCountEl = document.getElementById('cfRankCount');
+
+  function renderAverage(count, average){
+    if(!rankAvgEl) return;
+    if(count > 0 && average !== null){
+      rankAvgEl.textContent = average.toFixed(1);
+      rankCountEl.textContent = '(' + count + ' ranking' + (count === 1 ? '' : 's') + ' so far)';
+    } else {
+      rankAvgEl.textContent = '11';
+      rankCountEl.textContent = '(starting point -- no rankings yet)';
+    }
+  }
+
+  function fetchAverage(){
+    if(!rankAvgEl) return;
+    fetch(COMMENT_ENDPOINT + '?action=avg&issueId=' + encodeURIComponent(issueId))
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if(data && data.success){ renderAverage(data.count, data.average); }
+      })
+      .catch(function(){ /* leave the default "11" display in place */ });
+  }
+
+  if(rankSlider){
+    rankSlider.addEventListener('input', function(){
+      rankValueEl.textContent = rankSlider.value;
+    });
+    fetchAverage();
+  }
 
   emailInput.addEventListener('input', function(){
     if(emailInput.value.trim()){ notifyWrap.classList.add('show'); }
@@ -69,6 +116,8 @@ function initCommentForm(issueId){
     submitBtn.textContent = 'Submitting…';
     var payload = {
       issueId: issueId,
+      visitorId: _getVisitorId(),
+      rank: rankSlider ? parseInt(rankSlider.value, 10) : undefined,
       name: form.querySelector('[name="name"]').value.trim() || 'Anonymous',
       email: emailInput.value.trim() || null,
       notify: notifyCheckbox.checked,
@@ -87,6 +136,11 @@ function initCommentForm(issueId){
       selectYesNo(null);
       successEl.classList.add('show');
       setTimeout(function(){ successEl.classList.remove('show'); }, 4000);
+      if(rankSlider){
+        rankSlider.value = 11;
+        rankValueEl.textContent = '11';
+        fetchAverage();
+      }
     }).catch(function(){
       errorEl.textContent = 'Something went wrong — please try again.';
     }).finally(function(){
@@ -94,82 +148,6 @@ function initCommentForm(issueId){
       submitBtn.textContent = 'Submit Comment';
     });
   });
-}
-
-// Priority ranking widget (1-20 slider, average fetched from the same
-// Google Apps Script endpoint used for comments).  One ranking per browser
-// per issue, tracked in localStorage -- not bulletproof against a cleared
-// cache, but reasonable for this use case.
-function initPriorityRanking(issueId){
-  var wrap = document.getElementById('priorityRank');
-  if(!wrap) return;
-  var slider = document.getElementById('priorityRankSlider');
-  var valueEl = document.getElementById('priorityRankValue');
-  var submitBtn = document.getElementById('priorityRankSubmit');
-  var thanksEl = document.getElementById('priorityRankThanks');
-  var thanksValueEl = document.getElementById('priorityRankThanksValue');
-  var avgEl = document.getElementById('priorityRankAvg');
-  var countEl = document.getElementById('priorityRankCount');
-  var storageKey = 'rank_' + issueId;
-
-  function renderAverage(count, average){
-    if(count > 0 && average !== null){
-      avgEl.textContent = average.toFixed(1);
-      countEl.textContent = '(' + count + ' ranking' + (count === 1 ? '' : 's') + ' so far)';
-    } else {
-      avgEl.textContent = '11';
-      countEl.textContent = '(starting point -- no rankings yet)';
-    }
-  }
-
-  function fetchAverage(){
-    fetch(COMMENT_ENDPOINT + '?action=avg&issueId=' + encodeURIComponent(issueId))
-      .then(function(res){ return res.json(); })
-      .then(function(data){
-        if(data && data.success){ renderAverage(data.count, data.average); }
-      })
-      .catch(function(){ /* leave the default "11" display in place */ });
-  }
-
-  function lockAsSubmitted(rank){
-    slider.disabled = true;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Ranking Submitted';
-    thanksValueEl.textContent = rank;
-    thanksEl.classList.add('show');
-  }
-
-  var already = localStorage.getItem(storageKey);
-  if(already){
-    slider.value = already;
-    valueEl.textContent = already;
-    lockAsSubmitted(already);
-  }
-
-  slider.addEventListener('input', function(){
-    valueEl.textContent = slider.value;
-  });
-
-  submitBtn.addEventListener('click', function(){
-    if(localStorage.getItem(storageKey)) return;
-    var rank = parseInt(slider.value, 10);
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting…';
-    fetch(COMMENT_ENDPOINT, {
-      method: 'POST', mode: 'no-cors',
-      headers: {'Content-Type': 'text/plain;charset=utf-8'},
-      body: JSON.stringify({ action: 'rank', issueId: issueId, rank: rank })
-    }).then(function(){
-      localStorage.setItem(storageKey, String(rank));
-      lockAsSubmitted(rank);
-      fetchAverage();
-    }).catch(function(){
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Submit My Ranking';
-    });
-  });
-
-  fetchAverage();
 }
 
 // Generic tab switching (used by Endorsements page)

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>National Budget Transparency — Fred Francis 2028</title>
 <meta name="description" content="Create a persistent public website providing detailed oversight of the entire federal budget, subdivided to whatever level the public desires.">
-<link rel="stylesheet" href="/assets/style.css?v=8">
+<link rel="stylesheet" href="/assets/style.css?v=9">
 <link rel="alternate" type="application/rss+xml" title="Fred Francis 2028 Updates" href="/rss.xml">
 </head>
 <body>
@@ -40,17 +40,6 @@
     </div>
   </div>
   <div class="content-wrap">
-    <div class="priority-rank-wrap" id="priorityRank">
-      <h3 class="priority-rank-head">Priority Ranking</h3>
-      <p class="priority-rank-desc">Rank how urgently you think this issue should be addressed, from 1 (highest priority) to 20 (lowest).&nbsp; All issues start at 11.</p>
-      <div class="priority-rank-controls">
-        <input type="range" min="1" max="20" value="11" id="priorityRankSlider" class="priority-rank-slider" aria-label="Priority ranking, 1 to 20">
-        <span id="priorityRankValue" class="priority-rank-value">11</span>
-      </div>
-      <button type="button" id="priorityRankSubmit" class="priority-rank-submit">Submit My Ranking</button>
-      <p id="priorityRankThanks" class="priority-rank-thanks" role="status">Thanks — you ranked this issue <strong id="priorityRankThanksValue"></strong>.</p>
-      <p class="priority-rank-avg">Average ranking so far: <strong id="priorityRankAvg">11</strong> <span id="priorityRankCount">(starting point -- no rankings yet)</span></p>
-    </div>
     <section class="block">
       <h2 class="section-head">The Problem</h2>
       <p class="body-p">The federal budget is the single largest expression of national priorities, yet it remains effectively opaque to the citizens who fund it.  Summary figures are available, but detailed breakdowns — where the money actually goes, in terms ordinary people can understand — require expertise and effort that most Americans cannot reasonably be expected to invest.</p>
@@ -85,6 +74,15 @@
   <p class="cf-sub">All fields optional except your comment.&nbsp; Anonymous submissions welcome.</p>
   <div id="cfSuccess" class="cf-success" role="status">✓ Thank you — your comment has been received.</div>
   <form id="commentForm">
+    <div class="cf-rank-wrap">
+      <label class="cf-label">How urgently should this be addressed? <span class="opt">(1 = highest priority, 20 = lowest priority)</span></label>
+      <div class="cf-rank-controls">
+        <input type="range" min="1" max="20" value="11" id="cfRankSlider" class="cf-rank-slider" aria-label="Priority ranking, 1 to 20">
+        <span id="cfRankValue" class="cf-rank-value">11</span>
+      </div>
+      <p class="cf-rank-note">Moving this slider doesn&rsquo;t submit anything by itself &mdash; click <strong>Submit Comment</strong> below to send it.</p>
+      <p class="cf-rank-avg">Average ranking so far: <strong id="cfRankAvg" class="cf-rank-avg-value">11</strong> <span id="cfRankCount" class="cf-rank-count">(starting point -- no rankings yet)</span></p>
+    </div>
     <div class="cf-grid">
       <div><label class="cf-label">Name <span class="opt">(optional)</span></label><input type="text" name="name" class="cf-input" placeholder="Your name"></div>
       <div><label class="cf-label">Email <span class="opt">(optional)</span></label><input type="email" name="email" class="cf-input" placeholder="your@email.com"></div>
@@ -120,7 +118,7 @@
     <p class="copyright">© 2026 FredFrancis2028, Inc.&nbsp; All rights reserved</p>
   </div>
 </footer>
-<script src="/assets/site.js?v=5"></script>
-<script>initNav(); initPriorityRanking("national-budget"); initCommentForm("national-budget");</script>
+<script src="/assets/site.js?v=6"></script>
+<script>initNav(); initCommentForm("national-budget");</script>
 </body>
 </html>
