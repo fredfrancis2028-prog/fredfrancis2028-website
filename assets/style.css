@@ -280,6 +280,10 @@ footer.site-footer .copyright{margin-bottom:0;}
 .endorse-card{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-left:4px solid var(--gold); border-radius:4px; padding:16px 20px;}
 .endorse-card h3{font-family:var(--serif); font-size:17px; font-weight:700; color:var(--blue); margin:0 0 6px 0;}
 .endorse-card p{font-family:var(--sans); font-size:14px; color:var(--slate); line-height:1.5; margin:0;}
+.volunteer-quote{background:rgba(255,255,255,0.7); border-left:4px solid var(--red); border-radius:6px; padding:26px 28px; margin-bottom:28px;}
+.volunteer-quote-text{font-family:var(--serif); font-size:20px; font-style:italic; color:var(--slate); line-height:1.5; margin:0 0 16px;}
+.volunteer-quote-attr{font-family:var(--sans); font-size:13px; color:var(--gray); line-height:1.6; margin:0;}
+
 .endorse-empty{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-radius:6px; padding:40px 24px; text-align:center;}
 .endorse-empty p.headline{font-family:var(--serif); font-size:20px; color:var(--blue); margin-bottom:12px;}
 .endorse-empty p.body{font-family:var(--sans); font-size:15px; color:var(--gray); line-height:1.6; margin:0;}
