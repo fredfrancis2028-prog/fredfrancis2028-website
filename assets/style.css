@@ -167,11 +167,11 @@ footer.site-footer .copyright{margin-bottom:0;}
 /* ---- Liberty Bell section ---- */
 .bell-section{background:var(--blue); overflow:hidden;}
 .bell-inner{max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center;}
-.bell-img-wrap{flex:1 1 340px; min-width:280px; padding:36px 28px; display:flex; flex-direction:column; align-items:center;}
+.bell-img-wrap{flex:1 1 340px; min-width:280px; padding:18px 14px 36px; display:flex; flex-direction:column; align-items:center;}
 .bell-img{width:100%; max-width:420px; border-radius:6px; box-shadow:0 8px 32px rgba(0,0,0,0.4); border:3px solid var(--gold);}
 .bell-caption{font-family:var(--sans); font-size:11px; color:rgba(255,255,255,0.5); margin-top:8px; font-style:italic;}
 .bell-text{flex:1 1 340px; padding:40px 28px; color:var(--white);}
-.bell-head{font-family:var(--serif); font-size:clamp(1.63rem, 4.67vw, 2.33rem); margin-bottom:16px; color:var(--goldLight);}
+.bell-head{font-family:var(--serif); font-size:clamp(1.63rem, 4.67vw, 2.33rem); margin-bottom:16px; color:var(--goldLight); text-align:center;}
 .bell-p{font-family:var(--sans); font-size:14pt; line-height:1.75; color:var(--goldLight); margin-bottom:14px;}
 
 /* ---- Category page ---- */
