@@ -1,8 +1,14 @@
-name: Notify Discord on campaign update
+name: Announce campaign update
+# Fires only when updates.json changes -- that file IS the "this is worth
+# announcing" signal. Routine content/CSS/JS edits that don't touch it
+# trigger nothing here, by design.
 
 on:
   push:
     branches: [main]
+
+permissions:
+  contents: write  # needed to commit the sitemap.xml lastmod update back
 
 jobs:
   notify:
@@ -27,3 +33,16 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python3 scripts/post_discord_update.py
+
+      - name: Ping IndexNow (Bing/Yandex/Seznam/Naver) + update sitemap lastmod
+        if: steps.check.outputs.changed == 'true'
+        run: python3 scripts/indexnow_ping.py
+
+      - name: Commit updated sitemap.xml, if changed
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "sitemap-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add sitemap.xml
+          git diff --cached --quiet || git commit -m "chore: update sitemap lastmod [skip ci]"
+          git push
