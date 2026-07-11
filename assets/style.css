@@ -222,7 +222,7 @@ footer.site-footer .copyright{margin-bottom:0;}
 .issues-hero{text-align:center;} /* redundant now that simple-hero-inner is centered by default; harmless, left in place */
 .issues-hero-subtitle{font-family:var(--serif); font-size:clamp(1.4rem, 4vw, 2rem); font-weight:700; color:var(--goldLight); margin:8px 0 0; line-height:1.2;}
 .simple-subtitle{font-family:var(--sans); font-size:19px; color:var(--goldLight); margin-top:8px;}
-.bio-body{font-family:var(--sans); font-size:16.5px; line-height:1.75; color:var(--slate);}
+.bio-body{font-family:var(--sans); font-size:14pt; line-height:1.75; color:var(--slate);}
 .bio-body p{margin-bottom:16px;}
 .bio-closer{font-family:var(--sans); font-size:17px; line-height:1.75; color:var(--blue); font-weight:700; font-style:italic; margin-top:8px;}
 
@@ -237,7 +237,7 @@ footer.site-footer .copyright{margin-bottom:0;}
 /* Accountability framework cards */
 .framework-card{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-left:4px solid var(--blue); border-radius:4px; padding:18px 22px;}
 .framework-card h3{font-family:var(--serif); font-size:19px; font-weight:700; color:var(--blue); margin:0 0 8px 0;}
-.framework-card p{font-family:var(--sans); font-size:15.5px; line-height:1.7; color:var(--slate); margin:0;}
+.framework-card p{font-family:var(--sans); font-size:14pt; line-height:1.7; color:var(--slate); margin:0;}
 .framework-list{display:flex; flex-direction:column; gap:18px;}
 
 /* Thinking Aloud entries */
