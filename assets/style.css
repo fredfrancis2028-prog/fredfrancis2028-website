@@ -157,7 +157,7 @@ footer.site-footer .copyright{margin-bottom:0;}
 
 /* ---- Mission ---- */
 .mission{background:rgba(255,255,255,0.70); padding:56px 20px;}
-.mission-inner{max-width:780px; margin:0 auto;}
+.mission-inner{max-width:700px; margin:0 auto;}
 .mission-head{font-family:var(--serif); font-size:clamp(1.5rem, 4vw, 2.1rem); color:var(--blue); margin:0 0 8px; text-align:center;}
 .mission-rule{width:50px; height:3px; background:var(--red); margin:0 auto 24px; border-radius:2px;}
 .mission-note{font-family:var(--sans); font-size:15px; line-height:1.75; color:var(--slate); margin-top:20px; padding:16px 20px; background:rgba(0,40,104,0.06); border-left:4px solid var(--blue); border-radius:4px;}
