@@ -35,6 +35,11 @@ if not items:
 
 latest = items[-1]
 url = latest["link"]
+# Cloudflare Pages 308-redirects .html URLs to extensionless equivalents.
+# Bing refuses to index redirects, so always use the canonical (extensionless)
+# form for both the IndexNow ping and the sitemap lastmod update.
+if url.endswith(".html"):
+    url = url[:-5]
 print(f"Announcing: {url}")
 
 # --- 1. Update sitemap.xml lastmod for this URL, line-based (matches the
