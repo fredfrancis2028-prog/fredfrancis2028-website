@@ -149,7 +149,7 @@ footer.site-footer .copyright{margin-bottom:0;}
 .hero-inner{position:relative; z-index:1; text-align:center; color:var(--white); padding:64px 24px 56px; max-width:800px; margin:0 auto;}
 .hero-title{font-family:var(--serif); font-size:clamp(2.4rem, 7vw, 4.2rem); font-weight:700; margin:0 0 8px; line-height:1.1; text-shadow:0 3px 12px rgba(0,0,0,0.4);}
 .hero-subtitle{font-family:var(--sans); font-size:clamp(0.9rem, 2.5vw, 1.1rem); font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--white); margin:0 0 14px; opacity:0.9;}
-.hero-tagline{font-family:var(--serif); font-size:clamp(1.4rem, 4vw, 2rem); font-weight:700; margin:0 0 10px; line-height:1.45; color:var(--goldLight); text-shadow:0 1px 6px rgba(0,0,0,0.3);}
+.hero-tagline{font-family:var(--serif); font-size:clamp(1.6rem, 4.5vw, 2.4rem); font-weight:700; margin:0 0 10px; line-height:1.45; color:var(--goldLight); text-shadow:0 1px 6px rgba(0,0,0,0.3);}
 .hero-rule{width:60px; height:3px; background:var(--red); margin:0 auto 32px; border-radius:2px;}
 .hero-cta{background:var(--red); color:var(--white); font-family:var(--sans); font-size:17px; font-weight:700; padding:15px 42px; border:none; border-radius:4px; cursor:pointer; letter-spacing:0.04em; box-shadow:0 4px 16px rgba(191,10,48,0.4); text-decoration:none; display:inline-block;}
 .hero-cta:hover{background:var(--redDark);}
