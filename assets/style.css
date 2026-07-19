@@ -168,6 +168,9 @@ footer.site-footer .copyright{margin-bottom:0;}
 .mission-portrait-wrap{padding:40px 24px 32px; display:flex; justify-content:center;}
 .mission-portrait{width:100%; max-width:374px; border-radius:6px; box-shadow:0 8px 32px rgba(0,40,104,0.2); border:3px solid var(--blue);}
 @media(max-width:700px){
+  .mission-flex{padding:40px 20px;}
+  .bell-text{padding:40px 20px;}
+  .hero-inner{padding:64px 20px 56px;}
   .mission-portrait-wrap{padding:24px 20px 32px;}
   .mission-portrait{max-width:72vw;}
 }
