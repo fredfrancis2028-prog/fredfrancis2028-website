@@ -22,5 +22,11 @@
     "link": "https://fredfrancis2028.com/issues/ai-standards",
     "description": "The AI issue page now incorporates the White House's June 2026 National Security Presidential Memorandum on AI in the national security enterprise, and real-world findings from the 101st Airborne Division's year-long AI integration effort -- including where AI works and where it doesn't.",
     "pubDate": "Sun, 13 Jul 2026 20:00:00 GMT"
+  },
+  {
+    "title": "New issue: AI Disinformation -- Securing the Instruments of Truth",
+    "link": "https://fredfrancis2028.com/issues/disinformation",
+    "description": "The real disinformation threat is not the fakes we can see -- it is the corruption of the AI systems we rely on to tell real from fake.  Training data provenance requirements for federal procurement, adversarial red-team protocols, a public model-integrity registry modeled on the CVE database, and allied coordination -- grounded in the 2026 Iran conflict evidence and peer-reviewed research.",
+    "pubDate": "Fri, 18 Jul 2026 00:00:00 GMT"
   }
 ]

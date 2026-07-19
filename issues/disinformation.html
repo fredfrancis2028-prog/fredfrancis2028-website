@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- DEV NOTE (for AI/human editors): this site preserves the "two spaces after a sentence" typing convention by writing "sentence.&nbsp; Next sentence" -- a literal &nbsp; entity followed by a normal space -- instead of two plain spaces, which HTML collapses to one when rendered.  When editing or adding prose anywhere in this file, match that pattern (period, then &nbsp;, then a space) rather than typing two plain spaces. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Disinformation:&nbsp; Securing the Instruments of Truth &mdash; Fred Francis 2028</title>
+<meta name="description" content="The real disinformation threat isn't the fakes we can see -- it's the corruption of the AI systems we rely on to tell real from fake.  Proposals for training data provenance, adversarial red-teaming, and a public model-integrity reporting system.">
+<link rel="stylesheet" href="/assets/style.css?v=21">
+<link rel="alternate" type="application/rss+xml" title="Fred Francis 2028 Updates" href="/rss.xml">
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-row">
+    <a href="/index.html" class="nav-home-btn">HOME</a>
+    <div class="nav-title">Fred Francis 2028</div>
+    <button id="navToggle" class="nav-toggle" aria-label="Open menu">☰</button>
+  <div id="navMenu" class="nav-menu sitemap-nav">
+    <ul class="sitemap-list">
+      <li><a href="/index.html" class="nav-item">Home</a>
+      </li>
+      <li><a href="/meet-fred-francis.html" class="nav-item">Where I'm From</a>
+      </li>
+      <li><a href="/thinking-aloud.html" class="nav-item">Some of My Thoughts</a>
+      </li>
+      <li><a href="/speeches.html" class="nav-item">Speeches</a>
+    <ul class="sitemap-list indent-1">
+        <li><a href="/speeches/250th-anniversary-address.html" class="nav-item">The 250th Anniversary Address</a>
+        </li>
+        <li><a href="/speeches/reclaiming-the-unfinished-promise.html" class="nav-item">Reclaiming the Unfinished Promise: A Call to Action</a>
+        </li>
+    </ul>
+      </li>
+      <li><a href="/accountability-framework.html" class="nav-item">Issues</a>
+    <ul class="sitemap-list indent-1">
+        <li><a href="/issues/domestic.html" class="nav-item">Domestic Policy</a><button type="button" class="tree-toggle" aria-label="Expand Domestic Policy">▶</button>
+    <ul class="sitemap-list indent-2 tree-collapsed">
+          <li><a href="/issues/healthcare.html" class="nav-item">Put Doctors Back in Charge</a>
+          </li>
+          <li><a href="/issues/epstein.html" class="nav-item">Full Disclosure of Epstein Materials</a>
+          </li>
+          <li><a href="/issues/national-budget.html" class="nav-item">Show Us Where the Money Goes</a>
+          </li>
+          <li><a href="/issues/trades.html" class="nav-item">Rebuild America's Skilled Workforce</a>
+          </li>
+          <li><a href="/issues/insurance.html" class="nav-item">Reduce Homeowner's / Rental Insurance Costs</a>
+          </li>
+          <li><a href="/issues/utilities.html" class="nav-item">Reduce Utility Rates</a>
+          </li>
+    </ul>
+        </li>
+        <li><a href="/issues/foreign.html" class="nav-item">Foreign Policy</a><button type="button" class="tree-toggle" aria-label="Expand Foreign Policy">▶</button>
+    <ul class="sitemap-list indent-2 tree-collapsed">
+          <li><a href="/issues/china.html" class="nav-item">China Policy:  Competition, Rules, and Mutual Respect</a>
+          </li>
+          <li><a href="/issues/foreign-aid.html" class="nav-item">Foreign Aid Budget Transparency</a>
+          </li>
+          <li><a href="/issues/nato.html" class="nav-item">NATO Alliance:  Strengthening Through Clarity</a>
+          </li>
+    </ul>
+        </li>
+        <li><a href="/issues/governance.html" class="nav-item">Governance</a><button type="button" class="tree-toggle" aria-label="Expand Governance">▼</button>
+    <ul class="sitemap-list indent-2">
+          <li><a href="/issues/civil-service.html" class="nav-item">Let Federal Workers Cut Red Tape!</a>
+          </li>
+          <li><a href="/issues/ai-standards.html" class="nav-item">AI:  Learning to Manage a Novel, Useful Tool</a>
+          </li>
+          <li><a href="/issues/disinformation.html" class="nav-item active">AI Disinformation:  Securing the Instruments of Truth</a>
+          </li>
+    </ul>
+        </li>
+    </ul>
+      </li>
+      <li><a href="/volunteers.html" class="nav-item">Volunteers</a>
+      </li>
+      <li><a href="/tax-dollars.html" class="nav-item">Our Tax Dollars at Work</a>
+      </li>
+      <li><a href="/humor.html" class="nav-item">Humor</a>
+      </li>
+      <li><a href="/endorsements.html" class="nav-item">Endorsements</a>
+      </li>
+      <li><a href="/contact.html" class="nav-item">Contact</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="red-stripe"></div>
+</nav>
+<main>
+  <div class="issue-hero">
+    <div class="issue-hero-inner">
+      <h1 class="issue-title">AI Disinformation:&nbsp; Securing the Instruments of Truth</h1>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <section class="block">
+      <h2 class="section-head">The Problem</h2>
+      <p class="body-p">Adversaries are poisoning the AI models that defense analysts, intelligence platforms, journalists, and policymakers rely on to sort real from fake. [3]&nbsp; Not generating fakes for human audiences &mdash; that threat is real, but it is the one we already see.&nbsp; The deeper threat is upstream: corrupting the systems we trust to tell us what is true.&nbsp; If the instruments we use to evaluate truth have themselves been compromised, then every detection tool built on top of them is a gauge attached to a broken sensor.&nbsp; It may give confident readings, but those readings cannot be trusted.</p>
+      <p class="body-p">This is not theoretical.&nbsp; In 2024, Nicholas Carlini and colleagues at Google demonstrated that poisoning web-scale training datasets is immediately practical and inexpensive.&nbsp; Their research showed that for as little as $60, an attacker could have poisoned 0.01% of LAION-400M or COYO-700M, two widely used open training datasets, by purchasing expired domains that host dataset shards or by injecting edits into sources like Wikipedia just before scheduled crawls. [4]&nbsp; By 2025, training data poisoning had moved from academic demonstration to real-world deployment: researchers documented cases where hidden prompts in GitHub code comments poisoned a fine-tuned model (DeepSeek&rsquo;s DeepThink-R1), web-seeded text manipulated Qwen 2.5&rsquo;s search-augmented outputs, and Grok 4&rsquo;s training data was saturated with jailbreak prompts posted on X to the point where a single short command could strip all its safety guardrails. [5]</p>
+      <p class="body-p">The Intelligence Advanced Research Projects Activity (IARPA) has studied this class of threat since 2019 through its Trojans in Artificial Intelligence (TrojAI) program, producing over 150 publications on detecting poisoned models before deployment. [6][7]&nbsp; The research is there.&nbsp; What is missing is the translation of that research into operational practice, procurement requirements, and red-team exercises across the broader defense and intelligence ecosystem.</p>
+
+      <h2 class="section-head">What We&rsquo;re Doing Instead</h2>
+      <p class="body-p">The United States is getting better at catching deepfakes &mdash; and that matters, but it is not the same problem.&nbsp; DARPA&rsquo;s Semantic Forensics (SemaFor) program developed hundreds of detection analytics across multiple media types before concluding and transitioning to the Digital Safety Research Institute in late 2024. [1]&nbsp; In December 2024, the Defense Innovation Unit awarded a $2.4 million, two-year prototype contract to Hive AI for deepfake detection of video, image, and audio content. [2]&nbsp; These investments are necessary.&nbsp; They are also aimed at the downstream symptom &mdash; finding fakes after they are generated &mdash; rather than the upstream cause: ensuring the models we rely on to make those determinations have not themselves been compromised.</p>
+
+      <h2 class="section-head">We Already Saw What Happens When These Systems Fail</h2>
+      <p class="body-p">During the 2026 Iran conflict, AI-generated disinformation was deployed at scale during active combat operations, and it worked.&nbsp; An AI-generated video depicting the aircraft carrier USS <em>Abraham Lincoln</em> on fire was circulated online by an account claiming to be part of the Iranian press.&nbsp; President Trump was initially taken in by the video before being informed by a U.S. general that the carrier was intact and undamaged. [8]&nbsp; An AI-generated video falsely depicting the Burj Khalifa in Dubai on fire was viewed tens of millions of times. [9]&nbsp; The state-linked Tehran Times published an AI-generated photograph of damage to the U.S. Navy&rsquo;s Fifth Fleet headquarters in Bahrain that depicted a greater degree of destruction than had actually occurred. [9][10]</p>
+      <p class="body-p">The platform-level response was reactive and limited.&nbsp; X identified a Pakistani individual who had hacked 31 accounts and repurposed them to distribute AI-generated war videos under names like &ldquo;Iran War Monitor.&rdquo; [11]&nbsp; One AI-generated video of an Iranian aircraft confronting a U.S. naval vessel was viewed over seven million times and received more than 15,000 likes before being flagged. [12]&nbsp; X announced a 90-day demonetization policy for accounts sharing undisclosed AI-generated conflict imagery, but this was a response to the flood, not a defense against it. [13]</p>
+      <p class="body-p">The most alarming failures, however, were not in human judgment.&nbsp; They were in the AI verification tools themselves.&nbsp; BBC Verify reported that X&rsquo;s own AI chatbot, Grok, was falsely identifying AI-generated videos and photos as genuine. [9]&nbsp; The Guardian found that Google&rsquo;s Gemini was doing the same thing: when presented with an authentic photograph of a mass burial of victims of the Minab school attack, Gemini falsely described it as depicting the burial of earthquake victims in Turkey in 2023; Grok claimed it showed a mass burial of COVID-19 victims in Jakarta in 2021. [10]&nbsp; The AI systems people turned to for verification were themselves producing false confirmations.</p>
+      <p class="body-p">That is the upstream corruption problem made concrete.&nbsp; It is no longer sufficient to ask &ldquo;is this image real?&rdquo;&nbsp; We must also ask: &ldquo;can we trust the system telling us whether it&rsquo;s real?&rdquo;</p>
+    </section>
+    <section class="block">
+      <h2 class="section-head">The Gap in Current Policy</h2>
+      <p class="body-p">On June 5, 2026, the White House issued National Security Presidential Memorandum NSPM-11, directing accelerated AI adoption across the national security enterprise. [14]&nbsp; Its four pillars &mdash; Adoption, Adaptation, Assurance, and Accountability &mdash; establish a significant framework, and its Section 4(c) specifically names distillation attacks as a security concern.&nbsp; That is a meaningful acknowledgment that AI systems are not only tools but targets.</p>
+      <p class="body-p">But NSPM-11 does not address training data integrity for the broader commercial model ecosystem that defense analysts actually use every day.&nbsp; In March 2026, the Pentagon disclosed plans to set up secure environments where AI companies could train military-specific model versions on classified data. [15]&nbsp; That effort covers government-controlled models in government-controlled environments.&nbsp; It does not cover Claude, GPT, Gemini, Grok, or any of the other commercial models that analysts, intelligence officers, journalists, and policymakers routinely use to process information, evaluate sources, and support decisions.&nbsp; The broader ecosystem remains unaddressed.</p>
+      <p class="body-p">Current AI red-team exercises compound the gap.&nbsp; They test whether models produce harmful content when prompted &mdash; can you make it say something dangerous?&nbsp; They do not test whether models have already been influenced by adversarial training data &mdash; has someone already made it believe something false?&nbsp; The first question is about misuse.&nbsp; The second is about corruption.&nbsp; We are testing extensively for one and barely at all for the other.</p>
+    </section>
+    <section class="block">
+      <h2 class="section-head gold">What I Propose</h2>
+      <p class="body-p">The detection work the Pentagon has funded is valuable and should continue.&nbsp; What I am proposing is to extend the defense to the layer where the real vulnerability now lives: the integrity of the models themselves.</p>
+      <p class="body-p"><strong>Mandatory training data provenance documentation for any AI model used in federal procurement.</strong>&nbsp; If we cannot verify what a model was trained on, we should not trust its outputs where accuracy matters.&nbsp; I propose extending NSPM-11&rsquo;s Assurance pillar to require, as a condition of federal procurement, that any AI model supplier document the provenance of its training data: what sources were used, how they were curated, what adversarial content screening was performed, and what ongoing monitoring is in place for post-training data integrity.&nbsp; This does not require suppliers to disclose proprietary model architectures or weights.&nbsp; It requires them to account for the data their models learned from, which is a fundamentally different question.</p>
+      <p class="body-p"><strong>Red-team protocols that specifically test for training data poisoning.</strong>&nbsp; IARPA&rsquo;s TrojAI program has spent six years developing detection methods for exactly this class of attack and has produced over 150 publications. [6][7]&nbsp; That research should be translated into operational red-team protocols required for any AI system deployed in a defense or intelligence context.&nbsp; Current red-team exercises ask: &ldquo;can we make this model produce harmful outputs?&rdquo;&nbsp; The new protocols should also ask: &ldquo;has this model already been trained on adversarial data that biases its outputs in ways its operators cannot see?&rdquo;</p>
+      <p class="body-p"><strong>A public model-integrity reporting mechanism analogous to the CVE database for software vulnerabilities.</strong>&nbsp; The cybersecurity community already maintains the Common Vulnerabilities and Exposures (CVE) system, a standardized, publicly accessible database that identifies and catalogs known vulnerabilities in software so that organizations can assess their exposure and prioritize remediation.&nbsp; No equivalent exists for AI model integrity.&nbsp; I propose creating one: a federally maintained, publicly accessible registry where documented instances of training data poisoning, adversarial manipulation, or systematic output bias in widely used AI models can be reported, cataloged, and tracked.&nbsp; This would give every organization using AI &mdash; not just the Pentagon, but newsrooms, courts, hospitals, financial institutions, and election security offices &mdash; a standardized way to evaluate whether the models they depend on have known integrity issues.</p>
+      <p class="body-p"><strong>Allied coordination on training data integrity standards.</strong>&nbsp; This is not a problem the United States can solve alone.&nbsp; The commercial AI models in question are trained on globally sourced data and deployed worldwide.&nbsp; I propose establishing bilateral and multilateral working groups with allied nations to develop shared training data integrity standards for AI models used in defense and intelligence contexts.&nbsp; Several allies are already moving in this direction: Israel&rsquo;s AI defense infrastructure buildout, including joint projects with U.S. defense firms, has been characterized as taking a provenance-first approach to model development, [3] and the research base for this work is international.&nbsp; Coordination, rather than redundant national efforts, will produce better standards faster.</p>
+    </section>
+    <section class="block">
+      <h2 class="section-head">The Democratic Dimension</h2>
+      <p class="body-p">This is not only a Pentagon problem.&nbsp; If adversaries can poison the models that journalists use to verify sources, that analysts use to evaluate intelligence, that courts use to process evidence, and that citizens use to evaluate the information on which they cast their votes, then the entire epistemic infrastructure of democratic decision-making is compromised.&nbsp; The 2026 Iran conflict demonstrated this at wartime speed, but the same vulnerability exists in peacetime: a subtly poisoned model does not announce itself with a dramatic failure.&nbsp; It simply nudges outputs in a direction its operators never chose and may never notice.</p>
+      <p class="body-p">Detection tools are the fire alarm.&nbsp; Training data integrity is the building code.&nbsp; We need both, and right now we are investing heavily in the first while barely acknowledging the second.</p>
+    </section>
+    <section class="block">
+      <h2 class="section-head">What I Don&rsquo;t Know</h2>
+      <p class="body-p">I don&rsquo;t know the right institutional home for the model-integrity registry I&rsquo;m proposing.&nbsp; NIST maintains the National Vulnerability Database and has the institutional culture for this work, but the scope here extends into national security territory that may require a joint structure with the intelligence community.&nbsp; I&rsquo;d rather get the function right than the org chart.</p>
+      <p class="body-p">I don&rsquo;t know how far training data provenance requirements can practically extend into the commercial model ecosystem without creating compliance burdens that drive smaller AI companies out of federal procurement entirely, concentrating the market further among a handful of large providers.&nbsp; That tradeoff needs to be studied, not assumed away.</p>
+      <p class="body-p">I don&rsquo;t know whether the allied coordination I&rsquo;m proposing is better pursued through existing structures (NATO, Five Eyes, bilateral defense agreements) or through a new purpose-built arrangement.&nbsp; The answer likely depends on classification levels and on which allies are willing to move first.</p>
+      <p class="body-p">I use AI extensively &mdash; at work, for research, for this campaign, and in building this very page.&nbsp; I am not approaching this from fear of the technology.&nbsp; I am approaching it from an engineer&rsquo;s understanding that any system whose inputs can be corrupted cannot be trusted, no matter how sophisticated its outputs appear.&nbsp; The answer is not to stop using AI.&nbsp; The answer is to secure the foundation it runs on.</p>
+      <h3 class="refs-head">References</h3>
+      <div class="refs-block">
+        <p class="ref-line">[1] DARPA, &ldquo;Semantic Forensics (SemaFor)&rdquo; program page, <a href="https://www.darpa.mil/research/programs/semantic-forensics" target="_blank" rel="noopener noreferrer">darpa.mil</a>; DARPA, &ldquo;Furthering Deepfake Defenses&rdquo; (Mar. 2025), <a href="https://www.darpa.mil/news/2025/furthering-deepfake-defenses" target="_blank" rel="noopener noreferrer">darpa.mil</a>.&nbsp; Program concluded Sept. 2024; technology transition to Digital Safety Research Institute (DSRI) ongoing.</p>
+        <p class="ref-line">[2] &ldquo;Hive Secures DoD Contract for Deepfake Detection, Pioneering AI Defense Against Emerging Threats,&rdquo; Business Wire (Dec. 5, 2024); &ldquo;The US Department of Defense is investing in deepfake detection,&rdquo; <em>MIT Technology Review</em> (Dec. 5, 2024), <a href="https://www.technologyreview.com/2024/12/05/1107961/the-us-department-of-defense-is-investing-in-deepfake-detection/" target="_blank" rel="noopener noreferrer">technologyreview.com</a>.</p>
+        <p class="ref-line">[3] &ldquo;The AI disinformation gap the Pentagon may be missing,&rdquo; <em>Breaking Defense</em> (July 2026), <a href="https://breakingdefense.com/2026/07/the-ai-disinformation-gap-the-pentagon-may-be-missing/" target="_blank" rel="noopener noreferrer">breakingdefense.com</a>.</p>
+        <p class="ref-line">[4] N. Carlini, M. Jagielski, C. A. Choquette-Choo, D. Paleka, W. Pearce, H. Anderson, A. Terzis, K. Thomas, and F. Tram&egrave;r, &ldquo;Poisoning Web-Scale Training Datasets Is Practical,&rdquo; <em>2024 IEEE Symposium on Security and Privacy (SP)</em>, pp. 407&ndash;425, 2024.</p>
+        <p class="ref-line">[5] Lakera, &ldquo;Introduction to Data Poisoning: A 2026 Perspective,&rdquo; <a href="https://www.lakera.ai/blog/training-data-poisoning" target="_blank" rel="noopener noreferrer">lakera.ai</a> (2026).&nbsp; Documents real-world training data poisoning incidents in 2025 including DeepSeek DeepThink-R1, Qwen 2.5, and Grok 4.</p>
+        <p class="ref-line">[6] IARPA, &ldquo;Trojans in Artificial Intelligence (TrojAI)&rdquo; program page, <a href="https://www.iarpa.gov/research-programs/trojai" target="_blank" rel="noopener noreferrer">iarpa.gov</a>.</p>
+        <p class="ref-line">[7] &ldquo;Intelligence Community AI Cybersecurity Program Achieves &lsquo;Massive Scientific Impact,&rsquo;&rdquo; AFCEA <em>SIGNAL Media</em> (Mar. 2025), <a href="https://www.afcea.org/signal-media/emerging-edge/intelligence-community-ai-cybersecurity-program-achieves-massive" target="_blank" rel="noopener noreferrer">afcea.org</a>.&nbsp; Reports 150+ publications from the TrojAI program.</p>
+        <p class="ref-line">[8] &ldquo;The deepfake video that fooled Donald Trump,&rdquo; <em>The Independent</em> (Mar. 18, 2026).&nbsp; Cited via Wikipedia, &ldquo;Misinformation during the 2026 Iran war.&rdquo;</p>
+        <p class="ref-line">[9] T. Copeland, &ldquo;AI-generated Iran war videos surge as creators use new tech to cash in,&rdquo; <em>BBC Verify</em> (Mar. 7, 2026), <a href="https://www.bbc.co.uk/news/articles/ckg8wvz427vo" target="_blank" rel="noopener noreferrer">bbc.co.uk</a>.</p>
+        <p class="ref-line">[10] T. McClure, &ldquo;A photo of Iran&rsquo;s bombed schoolgirl graveyard went viral.&nbsp; Why did AI say it wasn&rsquo;t real?,&rdquo; <em>The Guardian</em> (Mar. 17, 2026), <a href="https://www.theguardian.com/global-development/2026/mar/17/atrocity-ai-slop-verify-facts-iran-minab-graves" target="_blank" rel="noopener noreferrer">theguardian.com</a>.</p>
+        <p class="ref-line">[11] A. Singh, &ldquo;X Exposes Pakistan Man Using 31 Accounts To Post AI Videos Amid US-Israel-Iran Conflict,&rdquo; <em>NDTV World</em> (Mar. 5, 2026), <a href="https://www.ndtv.com/world-news/pakistan-man-hacked-31-accounts-to-spread-ai-videos-amid-us-israel-iran-conflict-11171177" target="_blank" rel="noopener noreferrer">ndtv.com</a>.</p>
+        <p class="ref-line">[12] L. Carter and M. Workman, &ldquo;Can you believe your eyes?&nbsp; War in the age of AI,&rdquo; <em>ABC News</em> (Mar. 4, 2026), <a href="https://www.abc.net.au/news/2026-03-05/abc-verify-misinformation-iran-israel-war/106415388" target="_blank" rel="noopener noreferrer">abc.net.au</a>.</p>
+        <p class="ref-line">[13] L. Tress, &ldquo;X cracks down on AI-generated war footage as Iran misinformation runs rampant,&rdquo; <em>The Times of Israel</em> (Mar. 4, 2026), <a href="https://www.timesofisrael.com/x-cracks-down-on-ai-generated-war-footage-as-iran-misinformation-runs-rampant/" target="_blank" rel="noopener noreferrer">timesofisrael.com</a>.</p>
+        <p class="ref-line">[14] The White House, National Security Presidential Memorandum/NSPM-11, &ldquo;Artificial Intelligence in the National Security Enterprise&rdquo; (June 5, 2026), <a href="https://www.whitehouse.gov/presidential-actions/2026/06/national-security-presidential-memorandum-nspm-11/" target="_blank" rel="noopener noreferrer">whitehouse.gov</a>.</p>
+        <p class="ref-line">[15] &ldquo;The Pentagon is making plans for AI companies to train on classified data, defense official says,&rdquo; <em>MIT Technology Review</em> (Mar. 17, 2026), <a href="https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/" target="_blank" rel="noopener noreferrer">technologyreview.com</a>.</p>
+      </div>
+    </section>
+    <section class="block">
+      <h2 class="section-head blue">How We&rsquo;ll Know It&rsquo;s Working</h2>
+      <div class="metrics-list">
+        <div class="metric-box filled"><div class="metric-label">Goals</div><p class="metric-value">A federal procurement requirement for training data provenance documentation from any AI model supplier; operational red-team protocols that test for training data poisoning alongside existing safety and bias testing; and a publicly accessible model-integrity registry modeled on the CVE database.</p></div>
+        <div class="metric-box filled"><div class="metric-label">Metrics</div><p class="metric-value">Percentage of federally procured AI models for which training data provenance documentation has been submitted and reviewed; number of adversarial training data tests conducted in defense and intelligence red-team exercises annually; number of model-integrity reports filed, cataloged, and resolved in the public registry.</p></div>
+        <div class="metric-box filled"><div class="metric-label">Review</div><p class="metric-value">Annual public reporting to Congress on the state of AI model integrity across the federal procurement ecosystem, including identified vulnerabilities, remediation actions, and unresolved gaps.</p></div>
+        <div class="metric-box filled"><div class="metric-label">Severability</div><p class="metric-value">Each proposal &mdash; provenance requirements, red-team protocols, the model-integrity registry, and allied coordination &mdash; can be implemented independently.&nbsp; None depends on the others to function.</p></div>
+        <div class="metric-box filled"><div class="metric-label">Sunset</div><p class="metric-value">Subject to periodic review and revision as the threat landscape and AI technology evolve.&nbsp; The model-integrity registry, like the CVE database, should be designed as permanent infrastructure, not a time-limited program.</p></div>
+      </div>
+    </section>
+    <div class="comment-form">
+  <h3>Share Your Voice</h3>
+  <p class="cf-invite">Tell me what you think.&nbsp; Tell me what I&rsquo;m missing.&nbsp; Tell me where I&rsquo;m wrong.&nbsp; I will listen and update the website accordingly, and add my thoughts on those ideas.</p>
+  <p class="cf-sub">All fields optional except your comment.&nbsp; Anonymous submissions welcome.</p>
+  <div id="cfSuccess" class="cf-success" role="status">&#10003; Thank you &mdash; your comment has been received.</div>
+  <form id="commentForm">
+    <div class="cf-rank-wrap">
+      <label class="cf-label">How urgently should this be addressed? <span class="opt">(1 = highest priority, 20 = lowest priority)</span></label>
+      <div class="cf-rank-controls">
+        <input type="range" min="1" max="20" value="11" id="cfRankSlider" class="cf-rank-slider" aria-label="Priority ranking, 1 to 20">
+        <span id="cfRankValue" class="cf-rank-value">11</span>
+      </div>
+      <p class="cf-rank-note">Moving this slider doesn&rsquo;t submit anything by itself &mdash; click <strong>Submit Comment</strong> below to send it.</p>
+      <p class="cf-rank-avg">Average ranking so far: <strong id="cfRankAvg" class="cf-rank-avg-value">11</strong> <span id="cfRankCount" class="cf-rank-count">(starting point -- no rankings yet)</span></p>
+    </div>
+    <div class="cf-grid">
+      <div><label class="cf-label">Name <span class="opt">(optional)</span></label><input type="text" name="name" class="cf-input" placeholder="Your name"></div>
+      <div><label class="cf-label">Email <span class="opt">(optional)</span></label><input type="email" name="email" class="cf-input" placeholder="your@email.com"></div>
+    </div>
+    <label id="notifyWrap" class="cf-notify"><input type="checkbox" name="notify"> Notify me about responses to my comment</label>
+    <div class="cf-grid" style="margin-top:14px;">
+      <div><label class="cf-label">Region <span class="opt">(optional)</span></label>
+        <select name="region" class="cf-select"><option value="">Select region</option><option value="Northeast">Northeast</option><option value="Southeast">Southeast</option><option value="Midwest">Midwest</option><option value="Southwest">Southwest</option><option value="Pacific Northwest">Pacific Northwest</option><option value="West">West</option></select>
+      </div>
+      <div><label class="cf-label">Line of work <span class="opt">(optional)</span></label><input type="text" name="work" class="cf-input" placeholder="e.g.&nbsp; Teacher, Nurse, Carpenter"></div>
+    </div>
+    <div class="cf-yesno">
+      <span class="q">May we post your comment for others to see and review?</span>
+      <div class="cf-yesno-btns">
+        <button type="button" id="cfYes" class="cf-yn-btn">Yes</button>
+        <button type="button" id="cfNo" class="cf-yn-btn">No</button>
+      </div>
+    </div>
+    <div style="margin-top:14px;">
+      <label class="cf-label">Your Comment <span style="color:var(--red);font-weight:700;">*</span></label>
+      <textarea name="comment" class="cf-textarea" rows="5" placeholder="What do you think?&nbsp; What are we missing?&nbsp; Where are we wrong?" required></textarea>
+    </div>
+    <p id="cfError" class="cf-error" role="alert"></p>
+    <button type="submit" id="cfSubmit" class="cf-submit">Submit Comment</button>
+  </form>
+</div>
+  </div>
+</main>
+<div class="contact-btn-wrap"><a href="/contact.html" class="contact-btn">CONTACT THE CAMPAIGN</a></div>
+<div class="red-stripe"></div>
+<footer class="site-footer">
+  <div class="inner">
+    <p class="copyright">&copy; 2026 FredFrancis2028, Inc.&nbsp; All rights reserved</p>
+  </div>
+</footer>
+<script src="/assets/site.js?v=7"></script>
+<script>initNav(); initCommentForm("disinformation");</script>
+</body>
+</html>
