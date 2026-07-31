@@ -138,6 +138,7 @@ label.cf-label .opt{font-weight:400; color:#888;}
 /* ---- Contact button / footer ---- */
 .contact-btn-wrap{text-align:center; padding:28px 20px 8px;}
 .contact-btn{background:var(--gold); color:var(--blueDark); font-family:var(--sans); font-size:15px; font-weight:700; padding:12px 32px; border:none; border-radius:4px; cursor:pointer; letter-spacing:0.03em; box-shadow:0 3px 10px rgba(0,0,0,0.15); text-decoration:none; display:inline-block;}
+.contact-btn:hover, .contact-btn:visited, .contact-btn:active, .contact-btn:focus{text-decoration:none; color:var(--blueDark);}
 footer.site-footer{background:var(--blueDark); color:rgba(255,255,255,0.7); font-family:var(--sans); font-size:13px; text-align:center; padding:24px 20px; line-height:1.6; border-top:3px solid var(--gold);}
 footer.site-footer .inner{max-width:780px; margin:0 auto;}
 footer.site-footer .paid-for{margin-bottom:4px; color:var(--gold); font-weight:700; font-size:14px;}
