@@ -40,5 +40,11 @@
         "link": "https://fredfrancis2028.com/volunteers",
         "description": "Schema.org structured data added to every page, Open Graph and Twitter Card meta tags for social sharing, favicons, canonical URLs, sitemap improvements, volunteer positions posted, and Wikipedia links added to all Endorsements entries.",
         "pubDate": "Wed, 30 Jul 2026 00:00:00 GMT"
+    },
+    {
+        "title": "Accessibility, design fixes, and endorsements update",
+        "link": "https://fredfrancis2028.com/endorsements",
+        "description": "Accessibility improvements site-wide: skip-to-content links, keyboard focus indicators, and ARIA labels.  Issue card design fixed for cross-browser compatibility.  Endorsements updated to respect federal election law restrictions on 501(c)(3) organizations, with an explanatory note added.  Punctuation normalized across all 30 pages.",
+        "pubDate": "Mon, 03 Aug 2026 00:00:00 GMT"
     }
 ]
