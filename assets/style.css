@@ -58,6 +58,7 @@ a:link, a:visited, a:hover, a:active, a:focus{text-decoration:none;}
 /* ---- Content ---- */
 main{flex:1;}
 .content-wrap{max-width:780px; margin:0 auto; padding:40px 20px 60px; background:rgba(255,252,245,0.68);}
+.content-wrap h2+p, .content-wrap h3+p{margin-top:6px;}
 .content-wrap.plain{background:none;}
 section.block{margin-bottom:32px;}
 h2.section-head{font-family:var(--serif); font-size:22px; color:var(--blue); margin-bottom:14px; padding-bottom:8px; border-bottom:3px solid var(--red);}
