@@ -444,6 +444,15 @@ def main():
         shutil.copytree(SRC_ASSETS, DIST_ASSETS)
         print(f"  Copied assets to {DIST_ASSETS}")
 
+    # Copy root-level static files (sitemap, rss, robots, etc.)
+    STATIC_DIR = os.path.join(SRC, "static")
+    if os.path.exists(STATIC_DIR):
+        for fname in os.listdir(STATIC_DIR):
+            src_file = os.path.join(STATIC_DIR, fname)
+            if os.path.isfile(src_file):
+                shutil.copy2(src_file, os.path.join(DIST, fname))
+        print(f"  Copied static files to {DIST}")
+
     # Build pages
     pages_built = []
     for dirpath, dirnames, filenames in os.walk(PAGES):

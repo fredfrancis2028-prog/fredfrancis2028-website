@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Fred Francis 2028 Campaign Updates</title>
+  <link>https://fredfrancis2028.com/</link>
+  <description>Latest news and updates from the Fred Francis 2028 presidential campaign.</description>
+  <language>en-us</language>
+  <atom:link href="https://fredfrancis2028.com/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Campaign website rebuilt and relaunched</title>
+    <link>https://fredfrancis2028.com/</link>
+    <description>The Fred Francis 2028 campaign site has been rebuilt as a fast, fully indexable website with real pages for every issue, an accountability framework, and a way to make your voice heard on every proposal.</description>
+    <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+    <guid>https://fredfrancis2028.com/#01-Jul-2026-00:00:00-GMT</guid>
+  </item>
+  <item>
+    <title>New issue: AI -- Learning to Manage a Novel, Useful Tool</title>
+    <link>https://fredfrancis2028.com/issues/ai-standards</link>
+    <description>A federally coordinated research effort -- NIST, NASA, DARPA, and the NTSB, working with industry standards bodies like ASME, IEEE, and JEDEC -- to characterize non-deterministic AI and make real applicability recommendations, built on existing federal precedent rather than starting from scratch.</description>
+    <pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate>
+    <guid>https://fredfrancis2028.com/issues/ai-standards#12-Jul-2026-00:00:00-GMT</guid>
+  </item>
+  <item>
+    <title>Meet the candidate</title>
+    <link>https://fredfrancis2028.com/</link>
+    <description>Fred Francis now has a face on the front page.  Come see who's running.</description>
+    <pubDate>Sun, 12 Jul 2026 19:00:00 GMT</pubDate>
+    <guid>https://fredfrancis2028.com/#12-Jul-2026-19:00:00-GMT</guid>
+  </item>
+  <item>
+    <title>AI Issue updated: NSPM-11 and 101st Airborne field results</title>
+    <link>https://fredfrancis2028.com/issues/ai-standards</link>
+    <description>The AI issue page now incorporates the White House's June 2026 National Security Presidential Memorandum on AI in the national security enterprise, and real-world findings from the 101st Airborne Division's year-long AI integration effort -- including where AI works and where it doesn't.</description>
+    <pubDate>Sun, 13 Jul 2026 20:00:00 GMT</pubDate>
+    <guid>https://fredfrancis2028.com/issues/ai-standards#13-Jul-2026-20:00:00-GMT</guid>
+  </item>
+  <item>
+    <title>New issue: AI Disinformation -- Securing the Instruments of Truth</title>
+    <link>https://fredfrancis2028.com/issues/disinformation</link>
+    <description>The real disinformation threat is not the fakes we can see -- it is the corruption of the AI systems we rely on to tell real from fake.  Training data provenance requirements for federal procurement, adversarial red-team protocols, a public model-integrity registry modeled on the CVE database, and allied coordination -- grounded in the 2026 Iran conflict evidence and peer-reviewed research.</description>
+    <pubDate>Fri, 18 Jul 2026 00:00:00 GMT</pubDate>
+    <guid>https://fredfrancis2028.com/issues/disinformation#18-Jul-2026-00:00:00-GMT</guid>
+  </item>
+  <item>
+    <title>Speeches page updated with candidate portrait</title>
+    <link>https://fredfrancis2028.com/speeches</link>
+    <description>The Speeches page now features a portrait of Fred Francis -- putting a face to the words.</description>
+    <pubDate>Mon, 21 Jul 2026 08:00:00 GMT</pubDate>
+    <guid>https://fredfrancis2028.com/speeches#21-Jul-2026-08:00:00-GMT</guid>
+  </item>
+  <item>
+    <title>Site-wide SEO and discoverability overhaul</title>
+    <link>https://fredfrancis2028.com/volunteers</link>
+    <description>Schema.org structured data added to every page, Open Graph and Twitter Card meta tags for social sharing, favicons, canonical URLs, sitemap improvements, volunteer positions posted, and Wikipedia links added to all Endorsements entries.</description>
+    <pubDate>Wed, 30 Jul 2026 00:00:00 GMT</pubDate>
+    <guid>https://fredfrancis2028.com/volunteers#30-Jul-2026-00:00:00-GMT</guid>
+  </item>
+  <item>
+    <title>Accessibility, design fixes, and endorsements update</title>
+    <link>https://fredfrancis2028.com/endorsements</link>
+    <description>Accessibility improvements site-wide: skip-to-content links, keyboard focus indicators, and ARIA labels.  Issue card design fixed for cross-browser compatibility.  Endorsements updated to respect federal election law restrictions on 501(c)(3) organizations, with an explanatory note added.  Punctuation normalized across all 30 pages.</description>
+    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://fredfrancis2028.com/endorsements#03-Aug-2026-00:00:00-GMT</guid>
+  </item>
+</channel>
+</rss>
