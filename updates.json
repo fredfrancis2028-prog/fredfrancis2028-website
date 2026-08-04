@@ -46,5 +46,11 @@
         "link": "https://fredfrancis2028.com/endorsements",
         "description": "Accessibility improvements site-wide: skip-to-content links, keyboard focus indicators, and ARIA labels.  Issue card design fixed for cross-browser compatibility.  Endorsements updated to respect federal election law restrictions on 501(c)(3) organizations, with an explanatory note added.  Punctuation normalized across all 30 pages.",
         "pubDate": "Mon, 03 Aug 2026 00:00:00 GMT"
+    },
+    {
+        "title": "New issue: Right to Repair",
+        "link": "https://fredfrancis2028.com/issues/right-to-repair",
+        "description": "A federal mandate requiring every product sold in America to be designed for end-user maintenance, with parts available for a minimum of ten years.  If we can design aircraft carriers to be maintained by teenagers, there is no honest objection to requiring that consumer products be repairable.",
+        "pubDate": "Mon, 03 Aug 2026 20:00:00 GMT"
     }
 ]
