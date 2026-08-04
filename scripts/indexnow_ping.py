@@ -24,9 +24,9 @@ import urllib.request
 INDEXNOW_KEY = "0654dc34fa14a19a9bcef414709bb1ab"
 HOST = "fredfrancis2028.com"
 KEY_LOCATION = f"https://{HOST}/{INDEXNOW_KEY}.txt"
-SITEMAP_PATH = "sitemap.xml"
+SITEMAP_PATH = "src/static/sitemap.xml"
 
-with open("updates.json") as f:
+with open("src/static/updates.json") as f:
     items = json.load(f)
 
 if not items:

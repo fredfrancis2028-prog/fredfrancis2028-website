@@ -10,7 +10,7 @@ import os
 import sys
 import urllib.request
 
-with open('updates.json') as f:
+with open('src/static/updates.json') as f:
     items = json.load(f)
 
 if not items:
