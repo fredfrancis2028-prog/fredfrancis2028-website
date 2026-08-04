@@ -1,0 +1,17 @@
+{{extends:base}}
+
+{{define:schema}}
+{{slot:page_schema}}
+{{enddefine}}
+
+{{define:content}}
+{{slot:body}}
+{{enddefine}}
+
+{{define:post_footer}}
+{{slot:page_post_footer}}
+{{enddefine}}
+
+{{define:scripts}}
+<script>{{init_scripts}}</script>
+{{enddefine}}

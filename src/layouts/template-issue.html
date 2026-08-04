@@ -1,0 +1,90 @@
+{{extends:base}}
+
+{{define:schema}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{schema_title}} | {{site_name}}",
+  "url": "{{site_url}}/issues/{{page_slug}}.html",
+  "description": "{{schema_description}}",
+  "isPartOf": {
+    "@id": "{{site_url}}/#website"
+  },
+  "publisher": {
+    "@id": "{{site_url}}/#campaign"
+  },
+  "inLanguage": "en-US",
+  "author": {
+    "@id": "{{site_url}}/#candidate"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "{{schema_about}}"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{site_url}}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Issues",
+      "item": "{{site_url}}/accountability-framework.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{breadcrumb_category}}",
+      "item": "{{site_url}}/issues/{{breadcrumb_category_slug}}.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "{{schema_title}}",
+      "item": "{{site_url}}/issues/{{page_slug}}.html"
+    }
+  ]
+}
+</script>
+{{enddefine}}
+
+{{define:meta}}
+<link rel="canonical" href="{{site_url}}/issues/{{page_slug}}">
+<meta property="og:title" content="{{title}} | {{site_name}}">
+<meta property="og:description" content="{{og_description}}">
+<meta property="og:image" content="{{og_image}}">
+<meta property="og:url" content="{{site_url}}/issues/{{page_slug}}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="{{site_name}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}} | {{site_name}}">
+<meta name="twitter:description" content="{{og_description}}">
+<meta name="twitter:image" content="{{og_image}}">
+{{enddefine}}
+
+{{define:content}}
+  <div class="issue-hero">
+    <div class="issue-hero-inner">
+      <a href="{{back_link}}" class="back-btn">← {{back_label}}</a>
+      <h1 class="issue-title">{{hero_title}}</h1>
+    </div>
+  </div>
+  <div class="content-wrap">
+{{slot:body}}
+    {{component:comment-form}}
+  </div>
+{{enddefine}}
+
+{{define:scripts}}
+<script>initNav(); initCommentForm("{{page_slug}}");</script>
+{{enddefine}}

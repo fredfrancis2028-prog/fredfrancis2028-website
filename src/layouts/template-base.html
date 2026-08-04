@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+{{partial:dev-note}}
+{{partial:head}}
+<title>{{title_tag}}</title>
+<meta name="description" content="{{description}}">
+<link rel="stylesheet" href="/assets/{{css_file}}.css?v={{css_version}}">
+<link rel="alternate" type="application/rss+xml" title="Fred Francis 2028 Updates" href="/rss.xml">
+{{slot:schema}}
+{{slot:meta}}
+{{partial:favicons}}
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+{{partial:nav}}
+<main id="main-content">
+{{slot:content}}
+</main>
+{{partial:footer}}
+{{slot:post_footer}}
+<script src="/assets/site.js?v={{js_version}}"></script>
+{{slot:scripts}}
+</body>
+</html>
