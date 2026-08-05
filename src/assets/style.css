@@ -248,7 +248,7 @@ footer.site-footer .footer-links a:hover{color:#fff; text-decoration-color:#fff;
 .simple-subtitle{font-family:var(--sans); font-size:19px; color:var(--goldLight); margin-top:8px;}
 .bio-body{font-family:var(--sans); font-size:14pt; line-height:1.75; color:var(--slate);}
 .bio-body p{margin-bottom:16px;}
-.bio-closer{font-family:var(--sans); font-size:17px; line-height:1.75; color:var(--goldLight); -webkit-text-stroke:2px var(--blue); paint-order:stroke fill; font-weight:700; font-style:italic; margin-top:8px;}
+.bio-closer{font-family:var(--sans); font-size:17px; line-height:1.75; color:var(--goldLight); -webkit-text-stroke:3px var(--blue); paint-order:stroke fill; letter-spacing:2px; font-weight:700; font-style:italic; margin-top:8px;}
 
 /* Contact page */
 .contact-card{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-radius:8px; padding:36px 32px; text-align:center;}
