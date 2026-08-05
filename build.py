@@ -453,6 +453,13 @@ def main():
                 shutil.copy2(src_file, os.path.join(DIST, fname))
         print(f"  Copied static files to {DIST}")
 
+    # Copy whitepapers (PDFs linked from issue pages)
+    WHITEPAPERS_SRC = os.path.join(ROOT, "whitepapers")
+    WHITEPAPERS_DIST = os.path.join(DIST, "whitepapers")
+    if os.path.exists(WHITEPAPERS_SRC):
+        shutil.copytree(WHITEPAPERS_SRC, WHITEPAPERS_DIST)
+        print(f"  Copied whitepapers to {WHITEPAPERS_DIST}")
+
     # Build pages
     pages_built = []
     for dirpath, dirnames, filenames in os.walk(PAGES):
