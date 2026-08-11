@@ -156,6 +156,9 @@ footer.site-footer .copyright{margin-bottom:0;}
 footer.site-footer .footer-links{margin-bottom:8px; font-size:13px;}
 footer.site-footer .footer-links a{color:rgba(255,255,255,0.85); text-decoration:underline; text-decoration-color:rgba(255,255,255,0.4);}
 footer.site-footer .footer-links a:hover{color:#fff; text-decoration-color:#fff;}
+footer.site-footer .social-links{margin-bottom:8px; font-size:13px;}
+footer.site-footer .social-links a{color:rgba(255,255,255,0.85); text-decoration:underline; text-decoration-color:rgba(255,255,255,0.4);}
+footer.site-footer .social-links a:hover{color:#fff; text-decoration-color:#fff;}
 
 /* ---- Homepage hero ---- */
 .hero{position:relative; overflow:hidden; min-height:420px; display:flex; align-items:center; justify-content:center;}
