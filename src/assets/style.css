@@ -354,3 +354,15 @@ footer.site-footer .social-links a:hover{color:#fff; text-decoration-color:#fff;
 .reference-list li{margin-bottom:10px;}
 .reference-list a{color:var(--blue); word-break:break-word;}
 .reference-list a:hover{color:var(--gold);}
+
+/* ---- At a Glance / Deeper Dive issue layer ---- */
+.at-a-glance{position:relative; overflow:hidden;}
+.new-banner{position:absolute; top:20px; left:-34px; width:130px; text-align:center; transform:rotate(-45deg); background:var(--blue); color:#fff; font-family:var(--sans); font-size:13px; font-weight:700; padding:4px 0; letter-spacing:0.04em; z-index:2;}
+.at-a-glance .section-head{margin-left:2rem;}
+.deeper-dive{margin-top:8px;}
+.deeper-dive-toggle{cursor:pointer; list-style:none; padding:14px 18px; background:rgba(0,40,104,0.05); border-left:4px solid var(--gold); border-radius:0;}
+.deeper-dive-toggle::-webkit-details-marker{display:none;}
+.deeper-dive-toggle .dive-head{font-family:var(--serif); font-size:18px; font-weight:700; color:var(--blue); margin:0; display:inline;}
+.deeper-dive-toggle .dive-desc{display:block; font-family:var(--sans); font-size:13px; color:var(--gray); margin-top:5px; font-style:italic;}
+.deeper-dive-toggle .dive-arrow{float:right; font-size:18px; color:var(--gold);}
+.deeper-dive[open] .dive-arrow{transform:rotate(90deg);}
