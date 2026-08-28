@@ -55,3 +55,104 @@ navy `--blue` / `--blueDark` / `--blueRoyal`, red `--red` / `--redDark`, gold
 `--sans` (Arial/Helvetica -- body text, UI). Always reference these
 variables rather than hardcoding a hex value or font stack inline.
 
+---
+
+## Issue page architecture
+
+Every issue page follows a three-layer reading structure, ordered from
+fastest to deepest.  All three layers are on the same page; the voter
+chooses how far to go.
+
+1. **Key Points** -- five bullets, maximum two sentences each, every
+   claim cited.  CSS class `key-points` (red square markers, serif
+   font, bordered list items).  A "New!" banner (`new-banner` div)
+   sits between the `section-head` and the `ul` when the content is
+   recently added or revised.  Thirty-second read.
+
+2. **The Issue at a Glance** (Donna Layer) -- plain-language narrative
+   summary of the issue, proposals, and core numbers.  No jargon.
+   CSS class `at-a-glance` on the `section.block`.  Two-to-three
+   minute read.
+
+3. **A Deeper Dive** -- collapsible `<details class="deeper-dive">`
+   containing the full Problem section (with citations and research
+   paper links), What We Propose, and the complete Accountability
+   Framework (Goals, Metrics, Review, Severability, Sunset).  The
+   CTA text is "Click to read the full Issue".  Twenty-plus minute
+   read.
+
+Reference implementation: `issues/healthcare.html` and `issues/nafta.html`.
+
+## Research papers section
+
+When an issue has one or more research papers, they are presented in a
+`div.research-papers` container inside the Deeper Dive section, between
+the Problem narrative and the references.  Each paper is an anchor block
+with class `research-paper-link` containing:
+
+```html
+<a href="/whitepapers/filename.pdf" class="research-paper-link">
+  <strong>Paper Title</strong>
+  <span class="research-paper-meta">Type &middot; Date</span>
+  <span class="research-paper-desc">One-line description.</span>
+</a>
+```
+
+Styled with blue border, red left accent, gold hover.  Scales to any
+number of papers per issue.  Zero JavaScript.  PDFs live in `/whitepapers/`.
+
+## Revision notes and archived pages
+
+When an issue page is revised substantively, the current version gets a
+`p.revision-note` at the top (blue background, blue left border) that
+states what changed and links to the archived original.  The archived
+page lives at the same path with `-v1` appended (e.g. `healthcare-v1`).
+It is NOT added to the nav, sitemap.xml, or sitemap.html.  The archived
+page gets a brief note at the top linking back to the current version.
+
+## Writing conventions
+
+These apply to all prose on the site, in both issue pages and research
+papers.
+
+- **Two spaces after sentences.**  Rendered as `&nbsp;` + space in HTML.
+  (See top of this README for full explanation.)
+
+- **No em dashes.**  Use semicolons where the em dash connects
+  independent clauses, colons where it introduces a restatement or
+  amplification, and commas where it brackets a parenthetical.
+  Em dashes are widely perceived as characteristic of AI-generated
+  text; avoiding them is a deliberate style choice.
+
+- **That / which.**  "That" introduces restrictive (defining) clauses
+  with no comma.  "Which" introduces non-restrictive (descriptive)
+  clauses with a comma.  Example: "the documentation requirements
+  that Meaningful Use criteria imposed" (restrictive); "the HITECH
+  Act, which drove EHR adoption" (non-restrictive).
+
+- **Comma bracketing.**  Subordinate clauses and parenthetical phrases
+  get commas on both sides, not just the second.  Example: "The
+  administrative burden, documented at the physician-practice level
+  in Sections 3 and 4, aggregates to a staggering system-wide cost."
+
+- **Hyphenation.**  "Pre-empted" not "preempted."  Standard compound
+  modifiers: "evidence-based," "cost-containment," "out-of-network."
+
+- **Voice.**  We/us pronouns in all campaign-facing content.  "I" is
+  reserved for personal accountability statements only.  No named
+  political figures in speech body or issue page body.
+
+- **Accessible language.**  "The number of doctors per patient" not
+  "per capita physician supply."  Technical terms are acceptable in
+  research papers but the issue page layers (Key Points, Donna Layer)
+  should use the language people actually use.
+
+- **Citations.**  Every factual claim on every issue page must carry an
+  inline reference number linking to the references section.  If a
+  claim cannot be cited, mark it `[uncited/unverified]`.  Never
+  present an unsourced claim bare.
+
+- **$43B / $18B pattern.**  When a subset is part of a total, make the
+  relationship unambiguous: "of that $43 billion, $18 billion went
+  to..." not "and $18 billion" which reads as additive.
+
