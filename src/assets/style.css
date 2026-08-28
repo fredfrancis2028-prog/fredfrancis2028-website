@@ -367,3 +367,13 @@ footer.site-footer .social-links a:hover{color:#fff; text-decoration-color:#fff;
 .deeper-dive-toggle .dive-desc{display:block; font-family:var(--sans); font-size:14px; color:var(--gray); margin-top:4px; font-style:italic;}
 .deeper-dive-toggle .dive-arrow{float:right; font-size:18px; color:var(--gold);}
 .deeper-dive[open] .dive-arrow{transform:rotate(90deg);}
+/* Research papers section (replicable across issue pages) */
+.research-papers{display:flex; flex-direction:column; gap:1rem; margin:2rem 0;}
+.research-paper-link{display:block; padding:1.25rem 1.5rem; border:2px solid var(--blue); border-left:5px solid var(--red); background:rgba(255,255,255,0.85); text-decoration:none; color:#1a1a1a; transition:border-color 0.2s ease, box-shadow 0.2s ease;}
+.research-paper-link:hover,.research-paper-link:focus{border-color:var(--gold); box-shadow:0 2px 8px rgba(0,40,104,0.15); outline:none;}
+.research-paper-link strong{display:block; font-family:var(--serif); font-size:1.15rem; color:var(--blue); margin-bottom:0.3rem;}
+.research-paper-meta{display:block; font-family:var(--sans); font-size:0.85rem; color:var(--red); font-weight:600; margin-bottom:0.4rem; text-transform:uppercase; letter-spacing:0.03em;}
+.research-paper-desc{display:block; font-family:var(--serif); font-size:0.95rem; color:var(--gray); line-height:1.5;}
+@media(max-width:600px){.research-paper-link{padding:1rem 1.15rem;} .research-paper-link strong{font-size:1.05rem;}}
+/* Revision note */
+.revision-note{background:var(--lightBlue); border-left:4px solid var(--blue); padding:14px 18px; margin-bottom:24px; font-family:var(--serif); font-size:15px; line-height:1.6;}
