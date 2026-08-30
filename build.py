@@ -460,6 +460,9 @@ def build_page(page_path, config, nav_badges=None):
     # Clean up: remove empty description meta tag (e.g., 404 page has no description)
     assembled = assembled.replace('<meta name="description" content="">\n', '')
 
+    # Clean up: remove empty body class attribute
+    assembled = assembled.replace('<body class="">', '<body>')
+
     # Write output
     out_path = os.path.join(DIST, rel_path)
     write_file(out_path, assembled)
