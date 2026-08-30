@@ -1,9 +1,9 @@
 ---
 layout: generic
 title: Contact the Campaign
-description: Get in touch with the Fred Francis 2028 campaign.
+description: Get in touch with the Fred Francis 2028 campaign.&nbsp; Volunteer signup, freeform comments, and direct email.
 nav_active: /contact
-init_scripts: initNav();
+init_scripts: initNav(); initContactForms();
 ---
 
 {{define:page_schema}}
@@ -45,23 +45,287 @@ init_scripts: initNav();
 </script>
 <link rel="canonical" href="https://fredfrancis2028.com/contact">
 <meta property="og:title" content="Contact the Campaign | Fred Francis 2028">
-<meta property="og:description" content="Get in touch with the Fred Francis 2028 campaign.">
+<meta property="og:description" content="Get in touch with the Fred Francis 2028 campaign. Volunteer signup, freeform comments, and direct email.">
 <meta property="og:image" content="https://fredfrancis2028.com/assets/portrait-formal.jpg">
 <meta property="og:url" content="https://fredfrancis2028.com/contact">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Fred Francis 2028">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact the Campaign | Fred Francis 2028">
-<meta name="twitter:description" content="Get in touch with the Fred Francis 2028 campaign.">
+<meta name="twitter:description" content="Get in touch with the Fred Francis 2028 campaign. Volunteer signup, freeform comments, and direct email.">
 <meta name="twitter:image" content="https://fredfrancis2028.com/assets/portrait-formal.jpg">
 {{enddefine}}
 
 <div class="simple-hero"><div class="simple-hero-inner"><h1 class="issue-title">Contact the Campaign</h1></div></div>
 <div class="content-wrap" style="max-width:700px;">
-  <div class="contact-card">
-    <p>For now, we can be reached by email at<br><span class="email-main">[anything]@fredfrancis2028.com</span></p>
-    <p>If you classify your message in the address, it makes it <em>much</em> easier for us to organize and respond.&nbsp; For example:</p>
-    <div class="contact-pills"><span class="contact-pill">volunteer@fredfrancis2028.com</span><span class="contact-pill">press@fredfrancis2028.com</span><span class="contact-pill">info@fredfrancis2028.com</span><span class="contact-pill">ideas@fredfrancis2028.com</span><span class="contact-pill">hello@fredfrancis2028.com</span></div>
-    <p class="contact-note">Categorizing on your end helps us get back to you faster.&nbsp; We&rsquo;ll give this a try for now and revise as needed.</p>
+
+  <!-- EMAIL SECTION -->
+  <div class="email-section">
+    <p>You are always welcome to email us directly at:</p>
+    <p class="email-main">contact@fredfrancis2028.com</p>
   </div>
+
+  <hr class="gold-rule">
+
+  <!-- SECTION 1: VOLUNTEER SIGNUP -->
+  <div id="volunteer-form-area">
+
+  <h2 class="form-section-head">Volunteer With Us</h2>
+  <p class="form-section-intro">This campaign runs on people, not money.&nbsp; If you want to help, fill out the form below and a real person will write back.&nbsp; No autoresponder, no email funnel.</p>
+
+  <div class="form-group">
+    <label class="field-label" for="vf-name">Full Name</label>
+    <input type="text" id="vf-name" name="name" required autocomplete="name">
+  </div>
+
+  <div class="form-group">
+    <label class="field-label" for="vf-email">Email Address</label>
+    <input type="email" id="vf-email" name="email" required autocomplete="email">
+  </div>
+
+  <div class="form-group">
+    <label class="field-label" for="vf-phone">Phone Number <span class="optional">(optional)</span></label>
+    <input type="tel" id="vf-phone" name="phone" autocomplete="tel">
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label class="field-label" for="vf-state">State</label>
+      <select id="vf-state" name="state" required>
+        <option value="">Select your state</option>
+        <option value="AL">Alabama</option><option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option><option value="AR">Arkansas</option>
+        <option value="CA">California</option><option value="CO">Colorado</option>
+        <option value="CT">Connecticut</option><option value="DE">Delaware</option>
+        <option value="DC">District of Columbia</option>
+        <option value="FL">Florida</option><option value="GA">Georgia</option>
+        <option value="HI">Hawaii</option><option value="ID">Idaho</option>
+        <option value="IL">Illinois</option><option value="IN">Indiana</option>
+        <option value="IA">Iowa</option><option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option><option value="LA">Louisiana</option>
+        <option value="ME">Maine</option><option value="MD">Maryland</option>
+        <option value="MA">Massachusetts</option><option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option><option value="MS">Mississippi</option>
+        <option value="MO">Missouri</option><option value="MT">Montana</option>
+        <option value="NE">Nebraska</option><option value="NV">Nevada</option>
+        <option value="NH">New Hampshire</option><option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option><option value="NY">New York</option>
+        <option value="NC">North Carolina</option><option value="ND">North Dakota</option>
+        <option value="OH">Ohio</option><option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option><option value="PA">Pennsylvania</option>
+        <option value="RI">Rhode Island</option><option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option><option value="TN">Tennessee</option>
+        <option value="TX">Texas</option><option value="UT">Utah</option>
+        <option value="VT">Vermont</option><option value="VA">Virginia</option>
+        <option value="WA">Washington</option><option value="WV">West Virginia</option>
+        <option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
+        <option value="AS">American Samoa</option><option value="GU">Guam</option>
+        <option value="MP">Northern Mariana Islands</option>
+        <option value="PR">Puerto Rico</option><option value="VI">U.S. Virgin Islands</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="field-label" for="vf-county">County <span class="optional">(optional)</span></label>
+      <input type="text" id="vf-county" name="county">
+    </div>
+  </div>
+
+  <hr class="gold-rule">
+
+  <div class="form-group">
+    <label class="field-label">Which role(s) interest you? <span class="optional">Check all that apply.</span></label>
+    <div class="checkbox-grid">
+      <label><input type="checkbox" name="roles" value="State / County / Precinct Organizer"> State / County / Precinct Organizer</label>
+      <label><input type="checkbox" name="roles" value="Community Pulse Taker"> Community Pulse Taker</label>
+      <label><input type="checkbox" name="roles" value="Communications"> Communications</label>
+      <label><input type="checkbox" name="roles" value="Writer"> Writer</label>
+      <label><input type="checkbox" name="roles" value="Press Contact"> Press Contact</label>
+      <label><input type="checkbox" name="roles" value="IT / Website"> IT / Website</label>
+      <label><input type="checkbox" name="roles" value="Issues Scout"> Issues Scout</label>
+      <label><input type="checkbox" name="roles" value="Military / Gov't Liaison"> Military / Gov&rsquo;t Liaison</label>
+      <label><input type="checkbox" name="roles" value="Event Scheduler"> Event Scheduler</label>
+      <label><input type="checkbox" name="roles" value="Event Support"> Event Support</label>
+      <label><input type="checkbox" name="roles" value="A/V Roadie"> A/V Roadie</label>
+      <label><input type="checkbox" name="roles" value="Driver"> Driver</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="field-label">Hours per week you can commit:</label>
+    <div class="radio-row">
+      <label><input type="radio" name="hours" value="1-3"> 1&ndash;3 hrs</label>
+      <label><input type="radio" name="hours" value="3-5"> 3&ndash;5 hrs</label>
+      <label><input type="radio" name="hours" value="5-10"> 5&ndash;10 hrs</label>
+      <label><input type="radio" name="hours" value="10+"> 10+ hrs</label>
+      <label><input type="radio" name="hours" value="project-based"> Project-based</label>
+    </div>
+  </div>
+
+  <hr class="gold-rule">
+
+  <div class="form-group">
+    <label class="field-label" for="vf-skills">Relevant Skills or Experience <span class="optional">(brief is fine, but take up to 100 words if you like)</span></label>
+    <textarea id="vf-skills" name="skills" rows="3" placeholder="A sentence or two about what you bring."></textarea>
+  </div>
+
+  <div class="form-group">
+    <label class="field-label">Are you a musician? <span class="optional">(Check all that apply.)</span></label>
+    <div class="checkbox-grid">
+      <label><input type="checkbox" name="musician" value="Instrumentalist"> Instrumentalist</label>
+      <label><input type="checkbox" name="musician" value="Singer"> Singer</label>
+      <label><input type="checkbox" name="musician" value="Composer"> Composer</label>
+      <label><input type="checkbox" name="musician" value="Reads music"> I read music</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="field-label" for="vf-heard">How did you hear about this campaign? <span class="optional">(optional)</span></label>
+    <input type="text" id="vf-heard" name="heard">
+  </div>
+
+  <button type="button" class="form-submit-btn" id="vf-submit" onclick="submitVolunteer()">Sign Up to Volunteer</button>
+
+  </div>
+
+  <hr class="gold-rule">
+
+  <!-- SECTION 2: FREEFORM MESSAGE -->
+  <div id="message-form-area">
+
+  <h2 class="form-section-head">Something Else on Your Mind?</h2>
+  <p class="form-section-intro">Have a question, a suggestion, a correction, or something you just want us to hear?&nbsp; Write it here.</p>
+
+  <div class="form-group">
+    <label class="field-label" for="msg-name">Your Name</label>
+    <input type="text" id="msg-name" name="msg-name" required autocomplete="name">
+  </div>
+
+  <div class="form-group">
+    <label class="field-label" for="msg-email">Your Email</label>
+    <input type="email" id="msg-email" name="msg-email" required autocomplete="email">
+  </div>
+
+  <div class="form-group">
+    <label class="field-label" for="msg-subject">Subject <span class="optional">(optional)</span></label>
+    <input type="text" id="msg-subject" name="msg-subject" placeholder="e.g., Question about healthcare proposal">
+  </div>
+
+  <div class="form-group">
+    <label class="field-label" for="msg-body">Your Message <span class="optional">(500 words max)</span></label>
+    <textarea id="msg-body" name="msg-body" rows="8" required placeholder="What&rsquo;s on your mind?"></textarea>
+    <div class="word-counter" id="word-counter">0 / 500 words</div>
+  </div>
+
+  <button type="button" class="form-submit-btn secondary" id="msg-submit" onclick="submitMessage()">Send Message</button>
+
+  </div>
+
+  <p class="form-note">Your information will only be used for campaign communication.&nbsp; We will not share it with anyone outside the campaign.</p>
+
+  <div class="contact-form-success" id="contact-success">
+    <h3>Thank you.</h3>
+    <p>We received your message and a real person will be in touch.&nbsp; In the meantime, take a look at our <a href="/accountability-framework">Accountability Framework</a> and the <a href="/issues/domestic">issues</a> driving this campaign.</p>
+  </div>
+
 </div>
+
+{{define:page_post_footer}}
+<script>
+function initContactForms() {
+  var msgBody = document.getElementById('msg-body');
+  var counter = document.getElementById('word-counter');
+  if (msgBody && counter) {
+    msgBody.addEventListener('input', function() {
+      var text = this.value.trim();
+      var words = text === '' ? 0 : text.split(/\s+/).length;
+      counter.textContent = words + ' / 500 words';
+      if (words > 500) {
+        counter.classList.add('warn');
+        counter.textContent = words + ' / 500 words \u2014 please shorten your message';
+      } else if (words >= 480) {
+        counter.classList.add('warn');
+      } else {
+        counter.classList.remove('warn');
+      }
+    });
+  }
+}
+
+function submitVolunteer() {
+  var name = document.getElementById('vf-name').value.trim();
+  var email = document.getElementById('vf-email').value.trim();
+  var phone = document.getElementById('vf-phone').value.trim();
+  var state = document.getElementById('vf-state').value;
+  var county = document.getElementById('vf-county').value.trim();
+
+  if (!name || !email || !state) {
+    alert('Please fill in your name, email, and state.');
+    return;
+  }
+
+  var roleBoxes = document.querySelectorAll('input[name="roles"]:checked');
+  var roles = [];
+  for (var i = 0; i < roleBoxes.length; i++) { roles.push(roleBoxes[i].value); }
+
+  var hoursEl = document.querySelector('input[name="hours"]:checked');
+  var hours = hoursEl ? hoursEl.value + ' hrs/week' : 'Not specified';
+
+  var skills = document.getElementById('vf-skills').value.trim();
+
+  var musicBoxes = document.querySelectorAll('input[name="musician"]:checked');
+  var musician = [];
+  for (var j = 0; j < musicBoxes.length; j++) { musician.push(musicBoxes[j].value); }
+
+  var heard = document.getElementById('vf-heard').value.trim();
+
+  var subject = 'Volunteer Signup: ' + name;
+  var body = 'VOLUNTEER SIGNUP\n'
+    + '================\n\n'
+    + 'Name: ' + name + '\n'
+    + 'Email: ' + email + '\n'
+    + 'Phone: ' + (phone || 'Not provided') + '\n'
+    + 'State: ' + state + '\n'
+    + 'County: ' + (county || 'Not provided') + '\n\n'
+    + 'Roles of interest:\n'
+    + (roles.length > 0 ? roles.map(function(r){ return '  - ' + r; }).join('\n') : '  (none selected)') + '\n\n'
+    + 'Hours: ' + hours + '\n\n'
+    + 'Skills/experience:\n'
+    + (skills || '  (not provided)') + '\n\n'
+    + 'Musician:\n'
+    + (musician.length > 0 ? musician.map(function(m){ return '  - ' + m; }).join('\n') : '  No') + '\n\n'
+    + 'How they heard about us:\n'
+    + (heard || '  (not provided)') + '\n';
+
+  window.location.href = 'mailto:volunteers@fredfrancis2028.com'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(body);
+}
+
+function submitMessage() {
+  var name = document.getElementById('msg-name').value.trim();
+  var email = document.getElementById('msg-email').value.trim();
+  var msgSubject = document.getElementById('msg-subject').value.trim();
+  var msgBodyText = document.getElementById('msg-body').value.trim();
+
+  if (!name || !email || !msgBodyText) {
+    alert('Please fill in your name, email, and message.');
+    return;
+  }
+
+  var words = msgBodyText.split(/\s+/).length;
+  if (words > 500) {
+    alert('Your message exceeds 500 words.  Please shorten it before sending.');
+    return;
+  }
+
+  var subject = msgSubject ? msgSubject + ' \u2014 from ' + name : 'Message from ' + name;
+  var body = 'From: ' + name + '\n'
+    + 'Email: ' + email + '\n\n'
+    + msgBodyText + '\n';
+
+  window.location.href = 'mailto:contact@fredfrancis2028.com'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(body);
+}
+</script>
+{{enddefine}}

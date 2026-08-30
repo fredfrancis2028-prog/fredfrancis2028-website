@@ -258,12 +258,39 @@ footer.site-footer .social-links a:hover{color:#fff; text-decoration-color:#fff;
 .bio-closer{font-family:var(--sans); font-size:17px; line-height:1.75; color:var(--goldLight); -webkit-text-stroke:3px var(--blue); paint-order:stroke fill; letter-spacing:2px; font-weight:700; font-style:italic; margin-top:8px;}
 
 /* Contact page */
-.contact-card{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-radius:8px; padding:36px 32px; text-align:center;}
-.contact-card p{font-family:var(--serif); font-size:18px; font-style:italic; color:var(--slate); line-height:1.8; margin-bottom:20px;}
-.contact-card .email-main{color:var(--gold); font-weight:700; font-size:20px;}
-.contact-pills{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:24px;}
-.contact-pill{font-family:var(--sans); font-size:14px; font-weight:600; color:var(--blue); background:rgba(0,40,104,0.08); padding:6px 14px; border-radius:20px;}
-.contact-note{font-family:var(--serif); font-size:16px; font-style:italic; color:var(--gray); line-height:1.8;}
+.email-section{text-align:center; margin-bottom:8px;}
+.email-section p{font-family:var(--serif); font-size:14pt; line-height:1.75; color:var(--slate); margin:0 0 6px;}
+.email-main{font-family:var(--sans); font-weight:700; color:var(--blue); font-size:16pt;}
+.gold-rule{border:none; border-top:2px solid var(--gold); margin:28px 0;}
+.form-section-head{font-family:var(--serif); font-size:22px; color:var(--blue); margin:0 0 6px; padding-bottom:8px; border-bottom:3px solid var(--red);}
+.form-section-intro{font-family:var(--serif); font-size:14pt; line-height:1.75; color:var(--slate); margin-bottom:20px;}
+.form-group{margin-bottom:18px;}
+.form-group label.field-label{display:block; font-family:var(--sans); font-weight:700; font-size:13px; color:var(--blue); margin-bottom:5px;}
+.form-group .optional{font-weight:400; font-style:italic; color:#777; font-size:12px;}
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group textarea, .form-group select{width:100%; padding:10px 12px; font-family:var(--serif); font-size:14pt; border:1px solid #ccc; border-radius:3px; box-sizing:border-box; background:#fff;}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus{border-color:var(--blue); outline:none; box-shadow:0 0 0 2px rgba(0,40,104,0.15);}
+.form-group textarea{resize:vertical; min-height:70px;}
+.form-row{display:flex; gap:16px;}
+.form-row .form-group{flex:1;}
+.checkbox-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px 20px; margin-top:8px;}
+.checkbox-grid label{font-family:var(--sans); font-weight:400; font-size:14px; color:var(--slate); display:flex; align-items:flex-start; gap:8px; cursor:pointer; line-height:1.4;}
+.checkbox-grid input[type="checkbox"]{width:20px; height:20px; min-width:20px; accent-color:var(--blue); margin-top:1px; cursor:pointer;}
+.radio-row{display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:8px;}
+.radio-row label{font-family:var(--sans); font-weight:400; font-size:14px; color:var(--slate); display:flex; align-items:center; gap:6px; cursor:pointer;}
+.radio-row input[type="radio"]{accent-color:var(--blue); width:16px; height:16px;}
+.form-submit-btn{display:block; width:100%; padding:14px; margin-top:24px; background:var(--blue); color:var(--white); font-family:var(--sans); font-size:15px; font-weight:700; letter-spacing:0.04em; border:none; border-radius:4px; cursor:pointer; text-align:center;}
+.form-submit-btn:hover{background:var(--blueDark);}
+.form-submit-btn:disabled{background:#888; cursor:not-allowed;}
+.form-submit-btn.secondary{background:var(--red); margin-top:20px;}
+.form-submit-btn.secondary:hover{background:var(--redDark);}
+.word-counter{font-family:var(--sans); font-size:12px; color:var(--gray); text-align:right; margin-top:4px;}
+.word-counter.warn{color:var(--red); font-weight:700;}
+.form-note{font-family:var(--serif); font-size:12pt; color:#666; text-align:center; margin-top:16px; line-height:1.5; font-style:italic;}
+.contact-form-success{display:none; text-align:center; padding:40px 20px;}
+.contact-form-success h3{color:var(--blue); font-family:var(--serif); font-size:1.4em; margin-bottom:12px;}
+.contact-form-success p{font-family:var(--serif); font-size:14pt; color:var(--slate); line-height:1.6;}
+.contact-form-success a{color:var(--blue); text-decoration:underline;}
+@media(max-width:600px){.form-row{flex-direction:column; gap:0;} .checkbox-grid{grid-template-columns:1fr;} .radio-row{flex-direction:column;}}
 
 /* Accountability framework cards */
 .framework-card{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-left:4px solid var(--blue); border-radius:4px; padding:18px 22px;}
