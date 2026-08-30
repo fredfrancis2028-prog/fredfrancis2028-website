@@ -29,6 +29,7 @@ PARTIALS = os.path.join(SRC, "partials")
 COMPONENTS = os.path.join(SRC, "components")
 SRC_ASSETS = os.path.join(SRC, "assets")
 DIST_ASSETS = os.path.join(DIST, "assets")
+DATA = os.path.join(SRC, "data")
 CONFIG_FILE = os.path.join(ROOT, "build-config.json")
 
 # ---------------------------------------------------------------------------
@@ -330,10 +331,45 @@ def expand_nav_section(html, nav_expand):
     return html
 
 
+def generate_whatsnew_html():
+    """Generate HTML for the What's New section from src/data/whatsnew.json."""
+    whatsnew_file = os.path.join(DATA, "whatsnew.json")
+    if not os.path.exists(whatsnew_file):
+        return ""
+    items = json.loads(read_file(whatsnew_file))
+    if not items:
+        return ""
+    lines = []
+    lines.append('<section class="whatsnew">')
+    lines.append('  <div class="whatsnew-inner">')
+    lines.append('    <h2 class="whatsnew-head">What\u2019s New</h2>')
+    lines.append('    <div class="whatsnew-rule"></div>')
+    lines.append('    <ul class="whatsnew-list">')
+    for item in items:
+        date = item.get("date", "")
+        text = item.get("text", "")
+        link = item.get("link", "")
+        lines.append(f'      <li class="whatsnew-item"><span class="whatsnew-date">{date}</span>'
+                     f' &mdash; <a href="{link}" class="whatsnew-link">{text}</a></li>')
+    lines.append('    </ul>')
+    lines.append('  </div>')
+    lines.append('</section>')
+    return "\n".join(lines)
+
+
+def apply_nav_badges(html, nav_badges):
+    """Add 'nav-updated' class to nav items whose hrefs appear in nav_badges set."""
+    for href in nav_badges:
+        target = f'href="{href}" class="nav-item"'
+        replacement = f'href="{href}" class="nav-item nav-updated"'
+        html = html.replace(target, replacement)
+    return html
+
+
 # ---------------------------------------------------------------------------
 # Page builder
 # ---------------------------------------------------------------------------
-def build_page(page_path, config):
+def build_page(page_path, config, nav_badges=None):
     """Build a single page from its source file."""
     rel_path = os.path.relpath(page_path, PAGES)
     print(f"  Building: {rel_path}")
@@ -363,6 +399,15 @@ def build_page(page_path, config):
             variables["title_tag"] = variables["title"] + " | " + variables.get("site_name", "")
         else:
             variables["title_tag"] = variables.get("site_name", "")
+
+    # Auto-generate last_updated_html from front matter
+    last_updated = variables.get("last_updated", "")
+    if last_updated:
+        variables["last_updated_html"] = (
+            f'<p class="last-updated">Last updated {last_updated}</p>'
+        )
+    else:
+        variables["last_updated_html"] = ""
 
     # Determine layout
     layout_name = variables.get("layout", "base")
@@ -407,6 +452,10 @@ def build_page(page_path, config):
 
     # Expand the relevant nav tree section
     assembled = expand_nav_section(assembled, variables.get("nav_expand", ""))
+
+    # Apply nav badges for recently updated pages
+    if nav_badges:
+        assembled = apply_nav_badges(assembled, nav_badges)
 
     # Clean up: remove empty description meta tag (e.g., 404 page has no description)
     assembled = assembled.replace('<meta name="description" content="">\n', '')
@@ -460,14 +509,31 @@ def main():
         shutil.copytree(WHITEPAPERS_SRC, WHITEPAPERS_DIST)
         print(f"  Copied whitepapers to {WHITEPAPERS_DIST}")
 
-    # Build pages
-    pages_built = []
+    # Generate What's New HTML and inject into config as a variable
+    config["whatsnew"] = generate_whatsnew_html()
+
+    # Pre-scan all pages for recently_updated front matter to build nav badge set
+    nav_badges = set()
+    all_page_paths = []
     for dirpath, dirnames, filenames in os.walk(PAGES):
         for filename in sorted(filenames):
             if filename.endswith(".html"):
                 page_path = os.path.join(dirpath, filename)
-                rel = build_page(page_path, config)
-                pages_built.append(rel)
+                all_page_paths.append(page_path)
+                raw = read_file(page_path)
+                fm, _ = parse_front_matter(raw)
+                if fm.get("recently_updated", "").lower() in ("true", "yes"):
+                    nav_active = fm.get("nav_active", "")
+                    if nav_active:
+                        nav_badges.add(nav_active)
+    if nav_badges:
+        print(f"  Nav badges: {', '.join(sorted(nav_badges))}")
+
+    # Build pages
+    pages_built = []
+    for page_path in all_page_paths:
+        rel = build_page(page_path, config, nav_badges)
+        pages_built.append(rel)
 
     print(f"\nDone. {len(pages_built)} pages built.")
     for p in pages_built:
