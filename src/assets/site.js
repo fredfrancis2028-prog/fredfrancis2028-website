@@ -356,10 +356,3 @@ function initListenButtons(){
 window.addEventListener('beforeunload', function(){
   if('speechSynthesis' in window){ speechSynthesis.cancel(); }
 });
-
-// Auto-init listen buttons on DOM ready
-if(document.readyState === 'loading'){
-  document.addEventListener('DOMContentLoaded', initListenButtons);
-} else {
-  initListenButtons();
-}
