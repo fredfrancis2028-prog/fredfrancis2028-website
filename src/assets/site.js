@@ -179,6 +179,163 @@ function initTabs(){
 // Video modal (used by Speeches pages) - opens an embedded video full-screen-capable
 // player in a pop-up overlay; click backdrop, the close button, or Escape to dismiss.
 function initVideoModal(){
+
+// ---------------------------------------------------------------------------
+// Listen Button — Web Speech API text-to-speech
+// ---------------------------------------------------------------------------
+// Automatically places listen buttons on content pages:
+//   - Issue pages (three-layer): one above Key Points, one inside Deeper Dive
+//   - Other content pages: one at the top of .content-wrap
+//   - Excluded: pages with no .content-wrap, 404, sitemap, contact form
+//
+// Each button reads only the text within its target container, skipping
+// script tags, style tags, and other non-content elements.
+
+function initListenButtons(){
+  if(!('speechSynthesis' in window)) return;  // browser doesn't support TTS
+
+  // Don't add listen buttons to these pages
+  var skip = document.querySelector('.page-contact') ||
+             document.querySelector('.sitemap-page') ||
+             document.title.indexOf('404') !== -1;
+  if(skip) return;
+
+  var wrap = document.querySelector('.content-wrap');
+  if(!wrap) return;
+
+  // Utility: extract readable text from an element, skipping scripts/styles
+  function getReadableText(el){
+    var clone = el.cloneNode(true);
+    // Remove scripts, styles, buttons (including our own listen buttons)
+    var remove = clone.querySelectorAll('script, style, .listen-btn-wrap, .comment-form-section, .share-form');
+    for(var i = 0; i < remove.length; i++){ remove[i].remove(); }
+    // Get text, collapse whitespace
+    var text = clone.textContent || clone.innerText || '';
+    return text.replace(/\s+/g, ' ').trim();
+  }
+
+  // Create a listen button element
+  function createListenBtn(label){
+    var btnWrap = document.createElement('div');
+    btnWrap.className = 'listen-btn-wrap';
+    var btn = document.createElement('button');
+    btn.className = 'listen-btn';
+    btn.setAttribute('aria-label', label);
+    btn.innerHTML = '<span class="listen-icon">&#9654;</span> ' + label;
+    btnWrap.appendChild(btn);
+    return { wrap: btnWrap, btn: btn };
+  }
+
+  // Speak text, toggle button state
+  function attachSpeech(btn, getTextFn){
+    var speaking = false;
+    btn.addEventListener('click', function(){
+      if(speaking){
+        speechSynthesis.cancel();
+        speaking = false;
+        btn.innerHTML = btn.innerHTML.replace('&#9724;', '&#9654;').replace('◼', '►');
+        btn.classList.remove('listening');
+        return;
+      }
+      var text = getTextFn();
+      if(!text) return;
+      // Split into chunks at sentence boundaries (speechSynthesis has length limits)
+      var sentences = text.match(/[^.!?]+[.!?]+[\s]*/g) || [text];
+      var chunks = [];
+      var current = '';
+      for(var i = 0; i < sentences.length; i++){
+        if((current + sentences[i]).length > 200){
+          if(current) chunks.push(current);
+          current = sentences[i];
+        } else {
+          current += sentences[i];
+        }
+      }
+      if(current) chunks.push(current);
+
+      speaking = true;
+      btn.innerHTML = btn.innerHTML.replace('&#9654;', '&#9724;').replace('►', '◼');
+      btn.innerHTML = btn.innerHTML.replace('Listen', 'Stop');
+      btn.classList.add('listening');
+
+      var idx = 0;
+      function speakNext(){
+        if(idx >= chunks.length || !speaking){
+          speaking = false;
+          btn.innerHTML = btn.innerHTML.replace('&#9724;', '&#9654;').replace('◼', '►');
+          btn.innerHTML = btn.innerHTML.replace('Stop', 'Listen');
+          btn.classList.remove('listening');
+          return;
+        }
+        var utterance = new SpeechSynthesisUtterance(chunks[idx]);
+        utterance.rate = 1.0;
+        utterance.onend = function(){ idx++; speakNext(); };
+        utterance.onerror = function(){ speaking = false; btn.classList.remove('listening'); };
+        speechSynthesis.speak(utterance);
+      }
+      speakNext();
+    });
+  }
+
+  // Detect page type
+  var keyPoints = wrap.querySelector('.key-points');
+  var atAGlance = wrap.querySelector('.at-a-glance');
+  var deeperDive = wrap.querySelector('.deeper-dive');
+
+  if(keyPoints && deeperDive){
+    // Issue page: two buttons
+    // Button 1: above key points, reads key-points + at-a-glance
+    var btn1 = createListenBtn('Listen to Summary');
+    var firstChild = wrap.firstChild;
+    // Insert before the first block-level child (often revision-note or key-points parent)
+    var insertBefore = wrap.querySelector('.revision-note') || wrap.querySelector('.block') || keyPoints.parentElement || firstChild;
+    if(insertBefore && insertBefore.parentNode === wrap){
+      wrap.insertBefore(btn1.wrap, insertBefore);
+    } else {
+      wrap.insertBefore(btn1.wrap, firstChild);
+    }
+    attachSpeech(btn1.btn, function(){
+      var text = '';
+      if(keyPoints) text += getReadableText(keyPoints.closest('.block') || keyPoints);
+      if(atAGlance) text += ' ' + getReadableText(atAGlance);
+      return text;
+    });
+
+    // Button 2: inside deeper-dive, after the summary/toggle
+    var btn2 = createListenBtn('Listen to Full Policy');
+    var ddToggle = deeperDive.querySelector('.deeper-dive-toggle');
+    if(ddToggle){
+      ddToggle.insertAdjacentElement('afterend', btn2.wrap);
+    } else {
+      deeperDive.insertBefore(btn2.wrap, deeperDive.firstChild);
+    }
+    attachSpeech(btn2.btn, function(){
+      return getReadableText(deeperDive);
+    });
+
+  } else {
+    // Non-issue page: single button at top of content-wrap
+    var btn = createListenBtn('Listen to This Page');
+    wrap.insertBefore(btn.wrap, wrap.firstChild);
+    attachSpeech(btn.btn, function(){
+      return getReadableText(wrap);
+    });
+  }
+}
+
+// Cancel speech on navigation away
+window.addEventListener('beforeunload', function(){
+  if('speechSynthesis' in window){ speechSynthesis.cancel(); }
+});
+
+// Auto-init listen buttons on DOM ready
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', initListenButtons);
+} else {
+  initListenButtons();
+}
+
+// ---------------------------------------------------------------------------
   var overlay = document.getElementById('videoModalOverlay');
   if(!overlay) return;
   var body = document.getElementById('videoModalBody');

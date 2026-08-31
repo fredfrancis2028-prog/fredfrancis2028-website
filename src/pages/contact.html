@@ -69,21 +69,24 @@ init_scripts: initNav(); initContactForms();
 
   <hr class="gold-rule">
 
+  <!-- SHARED CONTACT FIELDS -->
+  <div class="form-group">
+    <label class="field-label" for="shared-name">Your Name</label>
+    <input type="text" id="shared-name" name="name" required autocomplete="name">
+  </div>
+
+  <div class="form-group">
+    <label class="field-label" for="shared-email">Your Email</label>
+    <input type="email" id="shared-email" name="email" required autocomplete="email">
+  </div>
+
+  <hr class="gold-rule">
+
   <!-- SECTION 1: VOLUNTEER SIGNUP -->
   <div id="volunteer-form-area">
 
   <h2 class="form-section-head">Volunteer With Us</h2>
   <p class="form-section-intro">This campaign runs on people, not money.&nbsp; If you want to help, fill out the form below and a real person will write back.&nbsp; No autoresponder, no email funnel.</p>
-
-  <div class="form-group">
-    <label class="field-label" for="vf-name">Full Name</label>
-    <input type="text" id="vf-name" name="name" required autocomplete="name">
-  </div>
-
-  <div class="form-group">
-    <label class="field-label" for="vf-email">Email Address</label>
-    <input type="email" id="vf-email" name="email" required autocomplete="email">
-  </div>
 
   <div class="form-group">
     <label class="field-label" for="vf-phone">Phone Number <span class="optional">(optional)</span></label>
@@ -199,16 +202,6 @@ init_scripts: initNav(); initContactForms();
   <p class="form-section-intro">Have a question, a suggestion, a correction, or something you just want us to hear?&nbsp; Write it here.</p>
 
   <div class="form-group">
-    <label class="field-label" for="msg-name">Your Name</label>
-    <input type="text" id="msg-name" name="msg-name" required autocomplete="name">
-  </div>
-
-  <div class="form-group">
-    <label class="field-label" for="msg-email">Your Email</label>
-    <input type="email" id="msg-email" name="msg-email" required autocomplete="email">
-  </div>
-
-  <div class="form-group">
     <label class="field-label" for="msg-subject">Subject <span class="optional">(optional)</span></label>
     <input type="text" id="msg-subject" name="msg-subject" placeholder="e.g., Question about healthcare proposal">
   </div>
@@ -255,14 +248,14 @@ function initContactForms() {
 }
 
 function submitVolunteer() {
-  var name = document.getElementById('vf-name').value.trim();
-  var email = document.getElementById('vf-email').value.trim();
+  var name = document.getElementById('shared-name').value.trim();
+  var email = document.getElementById('shared-email').value.trim();
   var phone = document.getElementById('vf-phone').value.trim();
   var state = document.getElementById('vf-state').value;
   var county = document.getElementById('vf-county').value.trim();
 
   if (!name || !email || !state) {
-    alert('Please fill in your name, email, and state.');
+    alert('Please fill in your name, email (at the top of the page), and state.');
     return;
   }
 
@@ -305,13 +298,13 @@ function submitVolunteer() {
 }
 
 function submitMessage() {
-  var name = document.getElementById('msg-name').value.trim();
-  var email = document.getElementById('msg-email').value.trim();
+  var name = document.getElementById('shared-name').value.trim();
+  var email = document.getElementById('shared-email').value.trim();
   var msgSubject = document.getElementById('msg-subject').value.trim();
   var msgBodyText = document.getElementById('msg-body').value.trim();
 
   if (!name || !email || !msgBodyText) {
-    alert('Please fill in your name, email, and message.');
+    alert('Please fill in your name, email (at the top of the page), and message.');
     return;
   }
 

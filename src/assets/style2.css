@@ -177,6 +177,13 @@ footer.site-footer .footer-links a:hover{color:#fff; text-decoration-color:#fff;
 .mission-note{font-family:var(--sans); font-size:14pt; line-height:1.75; color:var(--slate); margin-top:20px; padding:16px 20px; background:rgba(0,40,104,0.06); border-left:4px solid var(--blue); border-radius:4px;}
 .mission-note strong{color:var(--blue);}
 
+/* Listen button (text-to-speech) */
+.listen-btn-wrap{text-align:center; margin:16px 0 20px;}
+.listen-btn{display:inline-flex; align-items:center; gap:6px; font-family:var(--sans); font-size:13px; font-weight:600; color:var(--blue); background:rgba(0,40,104,0.08); border:1px solid rgba(0,40,104,0.2); padding:8px 18px; border-radius:20px; cursor:pointer; letter-spacing:0.02em; transition:background 0.2s, color 0.2s;}
+.listen-btn:hover{background:rgba(0,40,104,0.15);}
+.listen-btn.listening{background:var(--blue); color:var(--white); border-color:var(--blue);}
+.listen-icon{font-size:11px;}
+
 /* ---- What's New section ---- */
 .whatsnew{padding:40px 20px 44px; background:rgba(255,255,255,0.70);}
 .whatsnew-inner{max-width:700px; margin:0 auto;}
