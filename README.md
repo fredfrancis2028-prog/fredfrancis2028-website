@@ -156,3 +156,11 @@ papers.
   relationship unambiguous: "of that $43 billion, $18 billion went
   to..." not "and $18 billion" which reads as additive.
 
+## Document defaults
+
+- **Page size.**  All PDFs, whitepapers, and printable documents default
+  to US Letter (8.5" × 11").  When generating PDFs via pandoc/wkhtmltopdf,
+  use `-V papersize=letter` or equivalent.  When generating via ReportLab,
+  use `from reportlab.lib.pagesizes import letter`.  Do not use A4 unless
+  explicitly requested.
+
