@@ -1,6 +1,7 @@
 ---
 title: "The Health Maintenance Organization Act of 1973"
 subtitle: "How a Cost-Containment Experiment Became the Architecture of Corporate Medicine"
+author: "Fred H. Francis"
 date: "April 29, 2026"
 ---
 

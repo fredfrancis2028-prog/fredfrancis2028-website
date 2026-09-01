@@ -1,7 +1,7 @@
 ---
 title: "The North American Free Trade Agreement: Good for No Worker"
 subtitle: "A Reference Paper for the Fred Francis 2028 Campaign"
-author: "Fred Francis / FredFrancis2028, Inc."
+author: "Fred H. Francis"
 date: "July 2026"
 ---
 

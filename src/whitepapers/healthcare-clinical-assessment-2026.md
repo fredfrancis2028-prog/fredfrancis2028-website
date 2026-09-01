@@ -1,5 +1,8 @@
-# THE ADMINISTRATIVE CAPTURE OF AMERICAN MEDICINE: A CLINICAL ASSESSMENT OF MANAGED CARE'S IMPACT ON MEDICAL PRACTICE, 1973–2025
-
+---
+title: "The Administrative Capture of American Medicine"
+subtitle: "A Clinical Assessment of Managed Care's Impact on Medical Practice, 1973–2025"
+author: "Fred H. Francis"
+date: "August 2026"
 ---
 
 ## 1. Purpose and Scope
