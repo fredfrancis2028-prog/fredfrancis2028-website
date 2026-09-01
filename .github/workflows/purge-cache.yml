@@ -1,0 +1,31 @@
+name: Purge Cloudflare Cache
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge entire Cloudflare cache
+        run: |
+          response=$(curl -s -w "\n%{http_code}" -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}')
+          
+          http_code=$(echo "$response" | tail -1)
+          body=$(echo "$response" | head -n -1)
+          
+          echo "HTTP $http_code"
+          echo "$body" | python3 -c "
+          import json, sys
+          d = json.load(sys.stdin)
+          if d.get('success'):
+              print('Cache purged successfully.')
+          else:
+              print('Purge failed:', d.get('errors', 'unknown error'))
+              sys.exit(1)
+          "
