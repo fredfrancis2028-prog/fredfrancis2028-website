@@ -34,9 +34,9 @@ a:link, a:visited, a:hover, a:active, a:focus{text-decoration:none;}
 /* ---- Nav ---- */
 .nav{background:var(--blue); position:sticky; top:0; z-index:100;}
 .nav-row{max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; position:relative;}
-.nav-home-btn{background:none; border:none; cursor:pointer; color:var(--white); font-family:var(--sans); font-size:14px; font-weight:700; padding:16px 0; letter-spacing:0.03em; text-decoration:none;}
-.nav-title{position:absolute; left:50%; transform:translateX(-50%); pointer-events:none; font-family:var(--serif); font-size:22px; font-weight:700; color:var(--gold); white-space:nowrap;}
-.nav-tagline{position:absolute; left:50%; transform:translateX(-50%); top:38px; pointer-events:none; font-family:var(--sans); font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); white-space:nowrap;}
+.nav-brand{position:absolute; left:50%; transform:translateX(-50%); text-decoration:none; text-align:center; display:block;}
+.nav-title{font-family:var(--serif); font-size:22px; font-weight:700; color:var(--gold); white-space:nowrap; display:block;}
+.nav-tagline{font-family:var(--sans); font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); white-space:nowrap; display:block; margin-top:-2px;}
 body.page-contact .contact-btn-wrap{display:none;}
 .nav-toggle{background:none; border:none; cursor:pointer; color:var(--gold); font-size:26px; padding:10px;}
 .nav-menu{position:absolute; top:calc(100% + 13px); right:0; background:var(--blueDark); padding:8px 16px 14px; border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,0.35); width:max-content; max-width:92vw; z-index:200; display:none;}
