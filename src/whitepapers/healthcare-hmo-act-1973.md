@@ -5,6 +5,26 @@ date: "April 29, 2026"
 ---
 
 
+## Glossary
+
+**Capitation.** A payment model in which a healthcare provider receives a fixed amount per enrolled patient per month, regardless of the volume or cost of services delivered.
+
+**Dual-Choice Mandate.** Section 1310 of the HMO Act, requiring employers with 25 or more employees to offer a federally qualified HMO option alongside traditional insurance if one operated in the area.  Expired in 1995.
+
+**ERISA Pre-emption.** The doctrine under the Employee Retirement Income Security Act of 1974 by which federal law overrides state regulation of employer-sponsored health plans, shielding managed care from state tort liability.
+
+**Fee-for-Service.** The traditional payment model in which providers bill separately for each service, procedure, or encounter delivered.
+
+**Health Maintenance Organization (HMO).** A managed care organization that combines healthcare financing and delivery under a single corporate structure, using capitated payment and utilization controls.
+
+**IPA-Model HMO.** An Independent Practice Association model in which an HMO contracts with a network of independent physicians rather than employing them directly.
+
+**Medical Loss Ratio (MLR).** The percentage of premium revenue that an insurer spends on actual medical care, as opposed to administration, marketing, and profit.
+
+**Prior Authorization.** A requirement that a physician obtain advance approval from an insurer before delivering a prescribed treatment, procedure, or medication.
+
+**Utilization Review.** The process by which insurers evaluate the medical necessity and appropriateness of healthcare services to control costs.
+
 ## Political and Economic Context
 
 By the late 1960s, American healthcare expenditure was accelerating at a rate that alarmed both

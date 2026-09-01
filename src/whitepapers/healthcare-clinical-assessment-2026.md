@@ -10,6 +10,32 @@ Every figure presented here is drawn from published, peer-reviewed literature or
 
 ---
 
+## Glossary
+
+**Capitation.** A payment model in which a healthcare provider receives a fixed amount per enrolled patient per month (Per Member Per Month, or PMPM), regardless of the volume or cost of services actually delivered.
+
+**Electronic Health Record (EHR).** A digital system for recording, storing, and retrieving patient medical information, mandated for widespread adoption by the HITECH Act of 2009.
+
+**ERISA Pre-emption.** The doctrine under the Employee Retirement Income Security Act of 1974 by which federal law overrides state regulation of employer-sponsored health plans, effectively shielding managed care organizations from state-level tort liability.
+
+**Fee-for-Service.** The traditional payment model in which providers bill separately for each service, procedure, or encounter delivered.
+
+**Managed Care.** A system of healthcare delivery that integrates financing and clinical services under corporate management, using utilization controls, network restrictions, and capitated payment to constrain costs.
+
+**Meaningful Use.** A set of federal standards under the HITECH Act defining the minimum requirements for EHR adoption, compliance with which determined eligibility for financial incentives or penalties.
+
+**Medical Loss Ratio (MLR).** The percentage of health insurance premium revenue that an insurer spends on actual medical care, as opposed to administration, marketing, and profit.
+
+**MIPS (Merit-based Incentive Payment System).** A quality-reporting program under MACRA (2015) that adjusts Medicare physician payments based on performance across quality, cost, improvement activities, and promoting interoperability measures.
+
+**Prior Authorization.** A utilization management requirement under which a physician must obtain advance approval from an insurer before delivering a prescribed treatment, procedure, or medication.
+
+**Professional Burnout.** An occupational phenomenon classified by the WHO under ICD-11 (code QD85), characterized by energy depletion or exhaustion, increased mental distance or cynicism toward work, and reduced professional efficacy.
+
+**Utilization Review / Utilization Management.** The process by which insurers evaluate the medical necessity, appropriateness, and efficiency of healthcare services, including prospective review (prior authorization), concurrent review, and retrospective review.
+
+---
+
 ## 2. Structural Realignment of Healthcare Delivery Infrastructure
 
 The HMO Act of 1973 initiated a structural shift in American healthcare delivery by incentivizing the transition from inpatient to outpatient care models and replacing fee-for-service reimbursement with prepaid capitation [1], [2].&nbsp; To evaluate the scale of this transformation, baseline metrics from the mid-1970s are contrasted against the most recent available survey data.
