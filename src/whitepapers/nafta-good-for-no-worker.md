@@ -7,28 +7,6 @@ date: "July 2026"
 
 This document assembles the evidentiary record of the North American Free Trade Agreement (NAFTA), drawing on primary government sources, peer-reviewed economic research, and legal case records.  Every factual claim is traced to a specific, verifiable source.  Where claims could not be independently verified, they are flagged as such.
 
-## Glossary
-
-**Chapter 11 (ISDS).** The chapter of NAFTA establishing Investor-State Dispute Settlement, a binding arbitration mechanism allowing corporate investors to sue national governments for cash damages before international tribunals.
-
-**Fast-Track Authority (Trade Promotion Authority).** A legislative procedure under which Congress agrees in advance to vote on a trade agreement within a fixed timeframe, with no amendments permitted, reducing the required Senate threshold from two-thirds to a simple majority.
-
-**Maquiladora.** A manufacturing facility in Mexico, typically near the U.S. border, that imports materials duty-free for assembly or processing and re-exports the finished product, operating under special tariff provisions.
-
-**NAALC (North American Agreement on Labor Cooperation).** The labor side agreement to NAFTA, which established a consultation process for labor disputes but contained no binding enforcement mechanism and never produced a single enforceable penalty.
-
-**NAAEC (North American Agreement on Environmental Cooperation).** The environmental side agreement to NAFTA, establishing the Commission for Environmental Cooperation but, like the NAALC, lacking binding enforcement authority.
-
-**Rules of Origin.** Provisions specifying the minimum percentage of a product's value that must originate within NAFTA member countries to qualify for tariff-free treatment, designed to prevent transshipment of goods from non-member countries.
-
-**Tariff.** A tax imposed on imported goods, used to protect domestic industries or generate government revenue.
-
-**Trade Adjustment Assistance (TAA).** A federal program providing extended unemployment benefits, retraining, and job search support to workers displaced by foreign trade, including NAFTA-related job losses.
-
-**Trade Deficit.** The amount by which a country's imports exceed its exports in a given period; the inverse of a trade surplus.
-
-**USMCA (United States-Mexico-Canada Agreement).** The 2020 successor agreement to NAFTA, which retained NAFTA's core trade liberalization framework while modifying labor, automotive, and intellectual property provisions.
-
 ## 1. The Publicized Justifications
 
 Proponents of the North American Free Trade Agreement, spanning both the George H.W. Bush and Bill
@@ -859,6 +837,28 @@ law that protects the investments of those who profit from their displacement.
 Hard law for capital. Soft law for labor and environment. That was the structure. The outcomes followed
 from it. Next time, build the structure differently.
 NAFTA: Good for No Worker — Fred Francis 2028
+
+## Glossary
+
+**Chapter 11 (ISDS).** The chapter of NAFTA establishing Investor-State Dispute Settlement, a binding arbitration mechanism allowing corporate investors to sue national governments for cash damages before international tribunals.
+
+**Fast-Track Authority (Trade Promotion Authority).** A legislative procedure under which Congress agrees in advance to vote on a trade agreement within a fixed timeframe, with no amendments permitted, reducing the required Senate threshold from two-thirds to a simple majority.
+
+**Maquiladora.** A manufacturing facility in Mexico, typically near the U.S. border, that imports materials duty-free for assembly or processing and re-exports the finished product, operating under special tariff provisions.
+
+**NAALC (North American Agreement on Labor Cooperation).** The labor side agreement to NAFTA, which established a consultation process for labor disputes but contained no binding enforcement mechanism and never produced a single enforceable penalty.
+
+**NAAEC (North American Agreement on Environmental Cooperation).** The environmental side agreement to NAFTA, establishing the Commission for Environmental Cooperation but, like the NAALC, lacking binding enforcement authority.
+
+**Rules of Origin.** Provisions specifying the minimum percentage of a product's value that must originate within NAFTA member countries to qualify for tariff-free treatment, designed to prevent transshipment of goods from non-member countries.
+
+**Tariff.** A tax imposed on imported goods, used to protect domestic industries or generate government revenue.
+
+**Trade Adjustment Assistance (TAA).** A federal program providing extended unemployment benefits, retraining, and job search support to workers displaced by foreign trade, including NAFTA-related job losses.
+
+**Trade Deficit.** The amount by which a country's imports exceed its exports in a given period; the inverse of a trade surplus.
+
+**USMCA (United States-Mexico-Canada Agreement).** The 2020 successor agreement to NAFTA, which retained NAFTA's core trade liberalization framework while modifying labor, automotive, and intellectual property provisions.
 
 ## References
 
