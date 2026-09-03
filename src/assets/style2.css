@@ -190,9 +190,10 @@ footer.site-footer .footer-links a:hover{color:#fff; text-decoration-color:#fff;
 .whatsnew-head{font-family:var(--serif); font-size:clamp(1.3rem, 3.5vw, 1.8rem); color:var(--blue); margin:0 0 8px; text-align:center;}
 .whatsnew-rule{width:50px; height:3px; background:var(--gold); margin:0 auto 20px; border-radius:2px;}
 .whatsnew-list{list-style:none; padding:0; margin:0;}
-.whatsnew-item{padding:10px 0 10px 4.5em; text-indent:-4.5em; border-bottom:1px solid var(--border); font-family:var(--sans); font-size:16px; font-weight:700; font-style:italic; line-height:1.5; color:var(--slate);}
+.whatsnew-item{display:flex; align-items:flex-start; padding:10px 0; border-bottom:1px solid var(--border); font-family:var(--sans); font-size:16px; font-weight:700; font-style:italic; line-height:1.5; color:var(--slate);}
 .whatsnew-item:last-child{border-bottom:none;}
-.whatsnew-date{font-weight:700; color:var(--blue); white-space:nowrap;}
+.whatsnew-date{flex-shrink:0; white-space:nowrap; color:var(--blue);}
+.whatsnew-text{flex:1;}
 .whatsnew-link{color:var(--red); font-weight:600; text-decoration:none;}
 .whatsnew-link:hover{text-decoration:underline;}
 

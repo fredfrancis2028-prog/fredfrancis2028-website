@@ -349,8 +349,8 @@ def generate_whatsnew_html():
         date = item.get("date", "")
         text = item.get("text", "")
         link = item.get("link", "")
-        lines.append(f'      <li class="whatsnew-item"><span class="whatsnew-date">{date}</span>'
-                     f' &mdash; <a href="{link}" class="whatsnew-link">{text}</a></li>')
+        lines.append(f'      <li class="whatsnew-item"><span class="whatsnew-date">{date} &mdash;&nbsp;</span>'
+                     f'<span class="whatsnew-text"><a href="{link}" class="whatsnew-link">{text}</a></span></li>')
     lines.append('    </ul>')
     lines.append('  </div>')
     lines.append('</section>')
