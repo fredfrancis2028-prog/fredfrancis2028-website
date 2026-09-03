@@ -164,3 +164,83 @@ papers.
   use `from reportlab.lib.pagesizes import letter`.  Do not use A4 unless
   explicitly requested.
 
+## What's New (front page)
+
+The "What's New" section on `index.html` is data-driven from
+`src/data/whatsnew.json`.  The JSON is an array of objects, each with
+`date`, `text`, and `link` keys.  Newest entry first.
+
+```json
+{
+    "date": "August 30, 2026",
+    "text": "Contact page: Volunteer signup form and freeform comments",
+    "link": "/contact"
+}
+```
+
+**`build.py`** reads this file via `generate_whatsnew_html()` and injects
+the rendered HTML into `index.html` at the `{{whatsnew}}` placeholder
+(between the mission section and the Liberty Bell section).
+
+**Styling** (`style2.css`):
+- Section heading: `.whatsnew-head` (serif, navy, centered, gold rule below)
+- Each item uses **flexbox** layout (`.whatsnew-item` with `display:flex`):
+  the date+dash is a fixed-width `flex-shrink:0` span (`.whatsnew-date`),
+  and the text is a `flex:1` span (`.whatsnew-text`).  This ensures wrapped
+  text aligns to the start of the text column, not the date.
+- Text is **bold italic**, 16px, sans-serif.  Links are red (`--red`).
+- Items separated by 1px border-bottom using `--border` color.
+
+**To add an entry:** edit `whatsnew.json`, add the new entry at the top of
+the array, remove the oldest entry if the list exceeds 5 items, and bump
+the `css_version` in `index.html` only if `style2.css` was also changed.
+
+## Nav badges and last-updated timestamps
+
+Issue pages can declare two optional front-matter fields:
+- `recently_updated: true` — adds a gold "Updated" badge next to the
+  page's nav menu entry on all other pages (suppressed on the active page).
+- `last_updated: August 28, 2026` — renders "Last updated August 28, 2026"
+  in the issue hero below the title.
+
+Remove `recently_updated` when the content is no longer "recent."  The
+`last_updated` field is permanent.
+
+## Listen buttons (Web Speech API)
+
+`initListenButtons()` in `site.js` auto-places listen buttons on content
+pages.  On issue pages with the three-layer architecture, two buttons
+appear: "Listen to Summary" (reads Key Points + At-a-Glance) and "Listen
+to Full Policy" (inside the Deeper Dive).  On all other content pages, a
+single "Listen to This Page" button appears top-right.
+
+Excluded pages: contact (via `body.page-contact`), sitemap, 404, and any
+page without a `.content-wrap` element.
+
+The function is called explicitly in both the generic and issue layout
+templates.  It is NOT auto-initialized via DOMContentLoaded.
+
+## Contact page
+
+The contact page (`/contact`) has three sections:
+1. **Talk to Us** — email address (`contact@fredfrancis2028.com`)
+2. **Volunteer With Us** — name/email (shared), phone, state, county,
+   12 role checkboxes, hours radio, skills textarea, musician checkboxes,
+   how-heard field.  Submits via `mailto:volunteers@fredfrancis2028.com`.
+3. **Something Else on Your Mind?** — subject, message (500 word limit
+   with live counter).  Submits via `mailto:contact@fredfrancis2028.com`.
+
+The page uses `body_class: page-contact` in front matter, which
+suppresses the "CONTACT THE CAMPAIGN" footer button via CSS.
+
+## Cloudflare cache purge
+
+A GitHub Action (`.github/workflows/cloudflare-purge.yml`) fires on every
+push to `main` and purges the entire Cloudflare CDN cache.  Requires two
+repository secrets: `CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN`.
+Both are configured as of September 2, 2026.
+
+A `_headers` file (`src/static/_headers`) sets whitepaper PDFs to
+revalidate after 1 hour; CSS/JS assets cache immutably (version strings
+handle invalidation).
+
