@@ -1,5 +1,10 @@
 [
     {
+        "date": "September 4, 2026",
+        "text": "Epstein Files: Full policy rebuild with 25 citations, prosecutorial analysis, and Accountability Framework",
+        "link": "/issues/epstein"
+    },
+    {
         "date": "August 30, 2026",
         "text": "Contact page: Volunteer signup form and freeform comments",
         "link": "/contact"
@@ -18,10 +23,5 @@
         "date": "August 22, 2026",
         "text": "Healthcare: Revised Issue, with a new whitepaper on Managed Care's Impact on Medical Practice",
         "link": "/issues/healthcare"
-    },
-    {
-        "date": "August 15, 2026",
-        "text": "Volunteers page: Full content overhaul and signup information",
-        "link": "/volunteers"
     }
 ]
