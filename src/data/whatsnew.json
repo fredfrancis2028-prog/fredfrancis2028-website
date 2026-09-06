@@ -1,5 +1,10 @@
 [
     {
+        "date": "September 5, 2026",
+        "text": "Campaign Introduction: Watch the speech (video)",
+        "link": "/speeches/campaign-introduction"
+    },
+    {
         "date": "September 4, 2026",
         "text": "Epstein Files: Full policy rebuild with 25 citations, prosecutorial analysis, and Accountability Framework",
         "link": "/issues/epstein"
@@ -18,10 +23,5 @@
         "date": "August 25, 2026",
         "text": "NAFTA: Full research paper with 45 IEEE-cited references",
         "link": "/issues/nafta"
-    },
-    {
-        "date": "August 22, 2026",
-        "text": "Healthcare: Revised Issue, with a new whitepaper on Managed Care's Impact on Medical Practice",
-        "link": "/issues/healthcare"
     }
 ]

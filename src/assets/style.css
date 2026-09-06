@@ -85,6 +85,10 @@ h2.section-head.blue{border-bottom-color:var(--blue);}
 .watch-video-btn{display:inline-block; background:var(--red); color:var(--white); font-family:var(--sans); font-size:15px; font-weight:700; padding:11px 30px; border-radius:4px; border:none; cursor:pointer; letter-spacing:0.04em; box-shadow:0 3px 10px rgba(191,10,48,0.35);}
 .watch-video-btn:hover{background:var(--redDark);}
 .watch-video-coming-soon{display:inline-block; font-family:var(--sans); font-size:14px; font-weight:700; color:#6b6b6b;}
+.video-also-on{margin-top:10px; font-family:var(--sans); font-size:13px; color:var(--gray);}
+.video-also-label{margin-right:6px;}
+.video-also-link{color:var(--blueRoyal); text-decoration:none; font-weight:600; margin:0 4px;}
+.video-also-link:hover{text-decoration:underline; color:var(--red);}
 
 .video-modal-overlay{display:none; position:fixed; inset:0; background:rgba(0,10,30,0.88); z-index:1000; align-items:center; justify-content:center; padding:20px;}
 .video-modal-overlay.open{display:flex;}

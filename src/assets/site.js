@@ -185,14 +185,23 @@ function initVideoModal(){
   var closeBtn = document.getElementById('videoModalClose');
   var buttons = document.querySelectorAll('.watch-video-btn');
 
+  function isDirectVideo(src){
+    return /\.(mp4|webm|ogg)(\?|$)/i.test(src);
+  }
   function openModal(src){
     if(!src) return;
-    body.innerHTML = '<iframe src="' + src + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0"></iframe>';
+    if(isDirectVideo(src)){
+      body.innerHTML = '<video src="' + src + '" controls autoplay playsinline preload="metadata">Your browser does not support the video tag.</video>';
+    } else {
+      body.innerHTML = '<iframe src="' + src + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0"></iframe>';
+    }
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
   function closeModal(){
     overlay.classList.remove('open');
+    var vid = body.querySelector('video');
+    if(vid){ vid.pause(); }
     body.innerHTML = '';
     document.body.style.overflow = '';
   }
