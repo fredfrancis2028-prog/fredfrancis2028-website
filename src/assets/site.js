@@ -255,6 +255,49 @@ function initListenButtons(){
     return { wrap: btnWrap, btn: btn };
   }
 
+  // AudioContext primer — forces audio hardware awake before TTS to prevent
+  // Chrome from clipping the first word of each utterance.
+  var _audioCtx = null;
+  function primeAudio(callback){
+    try {
+      if(!_audioCtx) _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if(_audioCtx.state === 'suspended') _audioCtx.resume();
+      var buf = _audioCtx.createBuffer(1, Math.floor(_audioCtx.sampleRate * 0.25), _audioCtx.sampleRate);
+      var src = _audioCtx.createBufferSource();
+      src.buffer = buf;
+      var gain = _audioCtx.createGain();
+      gain.gain.value = 0.001;
+      src.connect(gain);
+      gain.connect(_audioCtx.destination);
+      src.onended = callback;
+      src.start();
+    } catch(e){ callback(); }
+  }
+
+  // Select a male English voice when available
+  var maleVoice = null;
+  function pickMaleVoice(){
+    var voices = speechSynthesis.getVoices();
+    var en = voices.filter(function(v){ return v.lang.indexOf('en') === 0; });
+    var maleKw = ['male','david','james','mark','guy','daniel','aaron','reed','evan'];
+    var femKw = ['female','woman','zira','jenny','samantha','karen','fiona','victoria','susan','hazel','moira'];
+    function isMale(v){
+      var n = v.name.toLowerCase();
+      for(var i=0;i<femKw.length;i++) if(n.indexOf(femKw[i])!==-1) return false;
+      for(var j=0;j<maleKw.length;j++) if(n.indexOf(maleKw[j])!==-1) return true;
+      return null;
+    }
+    var us = en.filter(function(v){ return v.lang==='en-US'; });
+    maleVoice = us.filter(function(v){ return isMale(v)===true; })[0]
+      || en.filter(function(v){ return isMale(v)===true; })[0]
+      || us.filter(function(v){ return isMale(v)!==false; })[0]
+      || en[0] || null;
+  }
+  pickMaleVoice();
+  if(speechSynthesis.onvoiceschanged !== undefined){
+    speechSynthesis.addEventListener('voiceschanged', pickMaleVoice);
+  }
+
   // Speak text, toggle button state
   function attachSpeech(btn, getTextFn){
     var speaking = false;
@@ -287,6 +330,9 @@ function initListenButtons(){
       btn.innerHTML = btn.innerHTML.replace('Listen', 'Stop');
       btn.classList.add('listening');
 
+      // Resume AudioContext on user gesture (required by autoplay policy)
+      if(_audioCtx && _audioCtx.state === 'suspended') _audioCtx.resume();
+
       var idx = 0;
       function speakNext(){
         if(idx >= chunks.length || !speaking){
@@ -298,9 +344,14 @@ function initListenButtons(){
         }
         var utterance = new SpeechSynthesisUtterance(chunks[idx]);
         utterance.rate = 1.0;
+        if(maleVoice) utterance.voice = maleVoice;
         utterance.onend = function(){ idx++; speakNext(); };
         utterance.onerror = function(){ speaking = false; btn.classList.remove('listening'); };
-        speechSynthesis.speak(utterance);
+        // Prime audio hardware, then speak
+        primeAudio(function(){
+          if(!speaking) return;
+          speechSynthesis.speak(utterance);
+        });
       }
       speakNext();
     });
