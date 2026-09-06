@@ -330,9 +330,6 @@ function initListenButtons(){
       btn.innerHTML = btn.innerHTML.replace('Listen', 'Stop');
       btn.classList.add('listening');
 
-      // Resume AudioContext on user gesture (required by autoplay policy)
-      if(_audioCtx && _audioCtx.state === 'suspended') _audioCtx.resume();
-
       var idx = 0;
       function speakNext(){
         if(idx >= chunks.length || !speaking){
@@ -353,7 +350,25 @@ function initListenButtons(){
           speechSynthesis.speak(utterance);
         });
       }
-      speakNext();
+
+      // Warm up BOTH the TTS engine and AudioContext on this user gesture.
+      // The warmup utterance forces Chrome to fully initialize the speech
+      // synthesizer; AudioContext priming alone doesn't do that outside iframes.
+      // The warmup runs at max speed / near-zero volume so it's inaudible.
+      primeAudio(function(){}); // kick AudioContext open in parallel
+      var warmup = new SpeechSynthesisUtterance('.');
+      warmup.volume = 0.01;
+      warmup.rate = 10;
+      if(maleVoice) warmup.voice = maleVoice;
+      warmup.onend = function(){
+        if(!speaking) return;
+        speakNext();
+      };
+      warmup.onerror = function(){
+        if(!speaking) return;
+        speakNext();
+      };
+      speechSynthesis.speak(warmup);
     });
   }
 
