@@ -71,13 +71,13 @@ init_scripts: initNav(); initContactForms();
 
   <!-- SHARED CONTACT FIELDS -->
   <div class="form-group">
-    <label class="field-label" for="shared-name">Your Name</label>
-    <input type="text" id="shared-name" name="name" required autocomplete="name">
+    <label class="field-label" for="shared-name">Your Name <span class="optional">(required for volunteering; optional for messages)</span></label>
+    <input type="text" id="shared-name" name="name" autocomplete="name">
   </div>
 
   <div class="form-group">
-    <label class="field-label" for="shared-email">Your Email</label>
-    <input type="email" id="shared-email" name="email" required autocomplete="email">
+    <label class="field-label" for="shared-email">Your Email <span class="optional">(required for volunteering; optional for messages)</span></label>
+    <input type="email" id="shared-email" name="email" autocomplete="email">
   </div>
 
   <hr class="gold-rule">
@@ -227,6 +227,8 @@ init_scripts: initNav(); initContactForms();
 
 {{define:page_post_footer}}
 <script>
+/* DEV NOTE: Two spaces after a sentence → &nbsp; + space in prose. */
+
 function initContactForms() {
   var msgBody = document.getElementById('msg-body');
   var counter = document.getElementById('word-counter');
@@ -247,7 +249,49 @@ function initContactForms() {
   }
 }
 
+function setButtonState(btn, state) {
+  if (state === 'sending') {
+    btn.disabled = true;
+    btn.dataset.origText = btn.textContent;
+    btn.textContent = 'Sending\u2026';
+  } else {
+    btn.disabled = false;
+    btn.textContent = btn.dataset.origText || btn.textContent;
+  }
+}
+
+function showSuccess() {
+  var areas = document.querySelectorAll('#volunteer-form-area, #message-form-area, .form-note, .form-section-head, .email-section, .gold-rule, .form-group');
+  for (var i = 0; i < areas.length; i++) { areas[i].style.display = 'none'; }
+  var success = document.getElementById('contact-success');
+  if (success) success.style.display = 'block';
+}
+
+function showError(btn, msg) {
+  setButtonState(btn, 'ready');
+  var existing = btn.parentNode.querySelector('.form-error');
+  if (existing) existing.remove();
+  var el = document.createElement('p');
+  el.className = 'form-error';
+  el.textContent = msg || 'Something went wrong.  Please try again, or email us directly at contact@fredfrancis2028.com.';
+  btn.parentNode.insertBefore(el, btn.nextSibling);
+}
+
+function postToEndpoint(data, btn) {
+  setButtonState(btn, 'sending');
+  fetch(COMMENT_ENDPOINT, {
+    method: 'POST', mode: 'no-cors',
+    headers: {'Content-Type': 'text/plain;charset=utf-8'},
+    body: JSON.stringify(data)
+  }).then(function() {
+    showSuccess();
+  }).catch(function() {
+    showError(btn);
+  });
+}
+
 function submitVolunteer() {
+  var btn = document.getElementById('vf-submit');
   var name = document.getElementById('shared-name').value.trim();
   var email = document.getElementById('shared-email').value.trim();
   var phone = document.getElementById('vf-phone').value.trim();
@@ -274,37 +318,35 @@ function submitVolunteer() {
 
   var heard = document.getElementById('vf-heard').value.trim();
 
-  var subject = 'Volunteer Signup: ' + name;
   var body = 'VOLUNTEER SIGNUP\n'
-    + '================\n\n'
-    + 'Name: ' + name + '\n'
-    + 'Email: ' + email + '\n'
+    + '================\n'
     + 'Phone: ' + (phone || 'Not provided') + '\n'
     + 'State: ' + state + '\n'
-    + 'County: ' + (county || 'Not provided') + '\n\n'
-    + 'Roles of interest:\n'
-    + (roles.length > 0 ? roles.map(function(r){ return '  - ' + r; }).join('\n') : '  (none selected)') + '\n\n'
-    + 'Hours: ' + hours + '\n\n'
-    + 'Skills/experience:\n'
-    + (skills || '  (not provided)') + '\n\n'
-    + 'Musician:\n'
-    + (musician.length > 0 ? musician.map(function(m){ return '  - ' + m; }).join('\n') : '  No') + '\n\n'
-    + 'How they heard about us:\n'
-    + (heard || '  (not provided)') + '\n';
+    + 'County: ' + (county || 'Not provided') + '\n'
+    + 'Roles: ' + (roles.length > 0 ? roles.join(', ') : '(none selected)') + '\n'
+    + 'Hours: ' + hours + '\n'
+    + 'Skills: ' + (skills || '(not provided)') + '\n'
+    + 'Musician: ' + (musician.length > 0 ? musician.join(', ') : 'No') + '\n'
+    + 'How heard: ' + (heard || '(not provided)');
 
-  window.location.href = 'mailto:volunteers@fredfrancis2028.com'
-    + '?subject=' + encodeURIComponent(subject)
-    + '&body=' + encodeURIComponent(body);
+  postToEndpoint({
+    issueId: 'volunteer-signup',
+    visitorId: _getVisitorId(),
+    name: name,
+    email: email,
+    comment: body
+  }, btn);
 }
 
 function submitMessage() {
+  var btn = document.getElementById('msg-submit');
   var name = document.getElementById('shared-name').value.trim();
   var email = document.getElementById('shared-email').value.trim();
   var msgSubject = document.getElementById('msg-subject').value.trim();
   var msgBodyText = document.getElementById('msg-body').value.trim();
 
-  if (!name || !email || !msgBodyText) {
-    alert('Please fill in your name, email (at the top of the page), and message.');
+  if (!msgBodyText) {
+    alert('Please write a message before sending.');
     return;
   }
 
@@ -314,14 +356,15 @@ function submitMessage() {
     return;
   }
 
-  var subject = msgSubject ? msgSubject + ' \u2014 from ' + name : 'Message from ' + name;
-  var body = 'From: ' + name + '\n'
-    + 'Email: ' + email + '\n\n'
-    + msgBodyText + '\n';
+  var body = (msgSubject ? 'Subject: ' + msgSubject + '\n\n' : '') + msgBodyText;
 
-  window.location.href = 'mailto:contact@fredfrancis2028.com'
-    + '?subject=' + encodeURIComponent(subject)
-    + '&body=' + encodeURIComponent(body);
+  postToEndpoint({
+    issueId: 'contact-message',
+    visitorId: _getVisitorId(),
+    name: name || 'Anonymous',
+    email: email || null,
+    comment: body
+  }, btn);
 }
 </script>
 {{enddefine}}

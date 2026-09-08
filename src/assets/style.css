@@ -296,6 +296,7 @@ footer.site-footer .social-links a:hover{color:#fff; text-decoration-color:#fff;
 .form-submit-btn:disabled{background:#888; cursor:not-allowed;}
 .form-submit-btn.secondary{background:var(--red); margin-top:20px;}
 .form-submit-btn.secondary:hover{background:var(--redDark);}
+.form-error{color:var(--red); font-family:var(--sans); font-size:13px; margin-top:10px; padding:10px 14px; background:#fff0f0; border:1px solid var(--red); border-radius:4px;}
 .word-counter{font-family:var(--sans); font-size:12px; color:var(--gray); text-align:right; margin-top:4px;}
 .word-counter.warn{color:var(--red); font-weight:700;}
 .form-note{font-family:var(--serif); font-size:12pt; color:#666; text-align:center; margin-top:16px; line-height:1.5; font-style:italic;}
