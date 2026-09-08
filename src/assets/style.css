@@ -72,7 +72,7 @@ h2.section-head.gold{border-bottom-color:var(--gold);}
 h2.section-head.blue{border-bottom-color:var(--blue);}
 .body-p{font-family:var(--sans); font-size:14pt; line-height:1.75; color:var(--slate); margin-bottom:14px;}
 .speech-byline{font-family:var(--sans); font-size:14px; font-weight:700; font-style:italic; color:var(--gray); margin-bottom:20px;}
-.speech-last-updated{font-family:var(--sans); font-size:15px; font-weight:700; color:var(--white); text-align:center; margin:8px 0 0 0; padding:0;}
+.speech-last-updated{font-family:var(--sans); font-size:15px; font-weight:700; color:var(--white); text-align:center; margin:0; padding:10px 0; background:rgba(0,20,60,0.5);}
 .speech-subhead{font-family:var(--serif); font-size:19px; font-weight:700; color:var(--blue); margin:26px 0 12px 0; padding-bottom:6px; border-bottom:2px solid var(--gold);}
 .body-list{margin:0 0 14px 0; padding-left:22px;}
 .body-list li{font-family:var(--sans); font-size:14pt; line-height:1.75; color:var(--slate); margin-bottom:10px;}
