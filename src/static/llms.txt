@@ -1,0 +1,48 @@
+# Fred Francis 2028
+
+> Official campaign website for Fred Francis, Democratic candidate for President in 2028. A technical writer and manufacturing engineer from Orange County, California, running on transparency, accountability, and citizen-verifiable policy proposals with real citations.
+
+Every policy proposal on this site follows a structured accountability framework: stated goals, measurable metrics, scheduled review, severability clauses, and sunset provisions. The campaign endorses organizations rather than seeking endorsements, and publishes all policy reasoning with citations so voters can check the work.
+
+## About the Candidate
+
+- [Where I'm From](https://fredfrancis2028.com/meet-fred-francis): Background, professional experience, and why Fred Francis is running for President.
+- [Campaign Introduction](https://fredfrancis2028.com/speeches/campaign-introduction): Fred Francis introduces his campaign — transparency, accountability, and the American tradition of solving problems together.
+- [Accountability Framework](https://fredfrancis2028.com/accountability-framework): How every policy proposal is structured: Goals, Metrics, Review, Severability, and Sunset provisions.
+
+## Domestic Policy
+
+- [Put Doctors Back in Charge](https://fredfrancis2028.com/issues/healthcare): Comprehensive reform of managed care — let doctors make medical decisions, not insurance algorithms.
+- [Show Us Where the Money Goes](https://fredfrancis2028.com/issues/national-budget): A persistent public website providing detailed oversight of the entire federal budget.
+- [Reduce Homeowner's / Rental Insurance Costs](https://fredfrancis2028.com/issues/insurance): National reserve fund and industrial-grade risk models to replace outdated actuarial practices.
+- [Reduce Utility Rates](https://fredfrancis2028.com/issues/utilities): Open rate-setting proceedings to the public and close the residential-industrial pricing gap.
+- [Right to Repair](https://fredfrancis2028.com/issues/right-to-repair): Federal mandate that every product sold in America must be repairable by the person who bought it.
+- [Rebuild America's Skilled Workforce](https://fredfrancis2028.com/issues/trades): Restore skilled trades through verified investment in apprenticeship and training infrastructure.
+- [Let Federal Workers Cut Red Tape](https://fredfrancis2028.com/issues/civil-service): Replace rigid process-only bureaucracy with outcome-based Mission Contracts.
+- [Honor the Promise to Our Veterans](https://fredfrancis2028.com/issues/veterans): Veterans volunteered to put their lives on the line — what they ask in return is little enough.
+
+## Foreign Policy
+
+- [China Policy: Competition, Rules, and Mutual Respect](https://fredfrancis2028.com/issues/china): Clear-eyed engagement built on enforceable rules and mutual respect.
+- [NATO Alliance: Strengthening Through Clarity](https://fredfrancis2028.com/issues/nato): Strengthen interoperability with explicit, mutually agreeable terms.
+- [NAFTA: Good for No Worker](https://fredfrancis2028.com/issues/nafta): NAFTA created hard law for corporate investors and toothless side agreements for workers.
+- [Foreign Aid Budget Transparency](https://fredfrancis2028.com/issues/foreign-aid): Real-time public oversight of foreign aid spending by Executive Order.
+
+## Governance
+
+- [AI: Learning to Manage a Novel, Useful Tool](https://fredfrancis2028.com/issues/ai-standards): Federally coordinated AI research effort through NIST, NASA, DARPA, and the NTSB.
+- [AI Disinformation: Securing the Instruments of Truth](https://fredfrancis2028.com/issues/disinformation): The real threat isn't the fakes we see — it's the corruption of AI systems we trust.
+- [Full Disclosure of Epstein Materials](https://fredfrancis2028.com/issues/epstein): Complete transparency on all Epstein-related materials and accountability.
+
+## Speeches
+
+- [Campaign Introduction](https://fredfrancis2028.com/speeches/campaign-introduction): The campaign launch speech.
+- [The 250th Anniversary Address](https://fredfrancis2028.com/speeches/250th-anniversary-address): Adams and Jefferson nearly destroyed the nation they built together, then showed us how adversaries can reconcile.
+- [Reclaiming the Unfinished Promise](https://fredfrancis2028.com/speeches/reclaiming-the-unfinished-promise): Why claiming our founding documents matters more than ever.
+
+## Optional
+
+- [Endorsements](https://fredfrancis2028.com/endorsements): Organizations the campaign endorses.
+- [Our Tax Dollars at Work](https://fredfrancis2028.com/tax-dollars): Publicly funded projects that changed American life.
+- [View the Federal Budget](https://fredfrancis2028.com/seeing-the-budget): Working prototypes of budget transparency tools.
+- [Contact the Campaign](https://fredfrancis2028.com/contact): Volunteer signup, comments, and direct contact information.
