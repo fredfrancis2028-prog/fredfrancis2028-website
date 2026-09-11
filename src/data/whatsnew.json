@@ -1,5 +1,10 @@
 [
     {
+        "date": "September 11, 2026",
+        "text": "Some of My Thoughts: What They Can\u2019t Change",
+        "link": "/thinking-aloud"
+    },
+    {
         "date": "September 5, 2026",
         "text": "Campaign Introduction: Watch the speech (video)",
         "link": "/speeches/campaign-introduction"
@@ -18,10 +23,5 @@
         "date": "August 28, 2026",
         "text": "Skilled Trades: New proposal for a National Workforce Needs Commission",
         "link": "/issues/trades"
-    },
-    {
-        "date": "August 25, 2026",
-        "text": "NAFTA: Full research paper with 45 IEEE-cited references",
-        "link": "/issues/nafta"
     }
 ]

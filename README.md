@@ -55,6 +55,12 @@ navy `--blue` / `--blueDark` / `--blueRoyal`, red `--red` / `--redDark`, gold
 `--sans` (Arial/Helvetica -- body text, UI). Always reference these
 variables rather than hardcoding a hex value or font stack inline.
 
+**Newest-first ordering.**  All date-ordered content on this site is displayed
+newest first: the "What's New" list on the front page, entries on the "Some of My
+Thoughts" (thinking-aloud) page, and any other chronologically ordered collection.
+When adding a new entry, place it at the top.  When the "What's New" list exceeds
+five items, drop the oldest.
+
 ---
 
 ## Issue page architecture
