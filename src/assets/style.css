@@ -359,6 +359,17 @@ footer.site-footer .social-links a:hover{background:rgba(255,255,255,0.12); bord
 .volunteer-quote{background:rgba(255,255,255,0.7); border-left:4px solid var(--red); border-radius:6px; padding:26px 28px; margin-bottom:28px;}
 .volunteer-quote-text{font-family:var(--serif); font-size:20px; font-style:italic; color:var(--slate); line-height:1.5; margin:0 0 16px;}
 .volunteer-quote-attr{font-family:var(--sans); font-size:13px; color:var(--gray); line-height:1.6; margin:0;}
+/* Volunteer role listing */
+.vol-card{text-align:left; margin-top:18px;}
+.vol-card-priority{border-left:4px solid var(--red);}
+.vol-category{font-family:var(--serif); color:var(--blue); font-size:17px; margin:20px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--gold);}
+.vol-role-list{list-style:none; padding-left:0; margin:0;}
+.vol-role{margin-bottom:16px;}
+.vol-role:last-child{margin-bottom:0;}
+.vol-role-desc{padding-left:20px; display:inline-block;}
+.vol-role-commitment{padding-left:20px; display:inline-block; font-style:italic; color:#777; font-size:13px; margin-top:4px;}
+.vol-form-intro{text-align:center; margin-top:18px; border-left:4px solid var(--gold);}
+body.page-volunteers .contact-btn-wrap{display:none;}
 
 .endorse-empty{background:rgba(255,255,255,0.75); border:1px solid var(--border); border-radius:6px; padding:40px 24px; text-align:center;}
 .endorse-empty p.headline{font-family:var(--serif); font-size:20px; color:var(--blue); margin-bottom:12px;}

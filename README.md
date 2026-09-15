@@ -226,15 +226,32 @@ page without a `.content-wrap` element.
 The function is called explicitly in both the generic and issue layout
 templates.  It is NOT auto-initialized via DOMContentLoaded.
 
+## Volunteers page
+
+The volunteers page (`/volunteers`) has the role descriptions and the
+volunteer signup form on a single page:
+
+1. **Role descriptions** — organized under Ground Game, Message and
+   Communications, Research and Policy, Events and Logistics.  Each role
+   has a description and expected time commitment.  Styled with `.vol-*`
+   CSS classes (no inline styles).
+2. **Volunteer signup form** — name, email, phone, state, county,
+   12 role checkboxes, hours radio, skills textarea, musician checkboxes,
+   how-heard field.  Submits to `COMMENT_ENDPOINT` with
+   `issueId: 'volunteer-signup'`.
+
+The page uses `body_class: page-volunteers` in front matter, which
+suppresses the "CONTACT THE CAMPAIGN" footer button via CSS.
+
 ## Contact page
 
-The contact page (`/contact`) has three sections:
+The contact page (`/contact`) has two sections:
+
 1. **Talk to Us** — email address (`contact@fredfrancis2028.com`)
-2. **Volunteer With Us** — name/email (shared), phone, state, county,
-   12 role checkboxes, hours radio, skills textarea, musician checkboxes,
-   how-heard field.  Submits via `mailto:volunteers@fredfrancis2028.com`.
-3. **Something Else on Your Mind?** — subject, message (500 word limit
-   with live counter).  Submits via `mailto:contact@fredfrancis2028.com`.
+   and a link directing volunteer signups to `/volunteers`.
+2. **Something on Your Mind?** — name (optional), email (optional),
+   subject, message (500 word limit with live counter).  Submits to
+   `COMMENT_ENDPOINT` with `issueId: 'contact-message'`.
 
 The page uses `body_class: page-contact` in front matter, which
 suppresses the "CONTACT THE CAMPAIGN" footer button via CSS.
